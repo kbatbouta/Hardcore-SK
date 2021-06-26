@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Resources>
+<Defs>
 	<!-- =========== REALISTIC PRODUCTION SK MOD =========== -->
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>Silicon</defName>
 		<label>silicon</label>
 		<description>Silicon is the one of the most common elements in the universe by mass, but very rarely occurs as the pure free element in nature. It can be produced by smelting Sand.</description>
@@ -19,6 +19,8 @@
 			<MarketValue>4</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.1</Mass>
+			<Bulk>0.1</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>
@@ -26,7 +28,7 @@
 		<stackLimit>300</stackLimit>
 	</ThingDef>
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>Biomatter</defName>
 		<label>biomatter</label>
 		<description>BioMatter can be extracted from a humanlike corpse. It can be used to grow natural organs in an Organ Vat.</description>
@@ -36,12 +38,16 @@
 		</graphicData>
 		<soundInteract>Standard_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>75</stackLimit>
+		<stackLimit>150</stackLimit>
 		<tickerType>Rare</tickerType>
+		<techLevel>Industrial</techLevel>
 		<statBases>
-			<MarketValue>22</MarketValue>
+			<MarketValue>10</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
-			<Flammability>3</Flammability>
+			<Flammability>2</Flammability>
+			<Mass>0.1</Mass>
+			<Bulk>0.1</Bulk>
+			<SellPriceFactor>0.20</SellPriceFactor>
 		</statBases>
 		<thingCategories>
 			<li>SuperMaterialCat</li>
@@ -51,76 +57,32 @@
 		</tradeTags>
 	</ThingDef>
 
-	<ThingDef ParentName="ResourceBase">
-		<defName>ArtificialBone</defName>
-		<label>artificial bone</label>
-		<description>A carefully crafted synthetic bone piece. It is useful for repairing damaged bones.</description>
-		<graphicData>
-			<texPath>Things/Item/BodyPart/ArtificialBone</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>Standard_Drop</soundInteract>
-		<soundDrop>Standard_Drop</soundDrop>
-		<stackLimit>25</stackLimit>
-		<tickerType>Rare</tickerType>
-		<statBases>
-			<MarketValue>380</MarketValue>
-			<DeteriorationRate>0</DeteriorationRate>
-			<Flammability>1</Flammability>
-		</statBases>
-		<thingCategories>
-			<li>BodyParts</li>
-		</thingCategories>
-		<tradeTags>
-			<li>Exotic</li>
-		</tradeTags>
-	</ThingDef>
-
-	<ThingDef ParentName="ResourceBase">
-		<defName>CrushedStone</defName>
-		<label>rubble</label>
-		<description>Rough Rubble stones are created by smashing stone chunks or blocks. It can be gathered from gravel on the ground. It is a useful ingredient for concrete. It can also be smashed further to produce Sand.</description>
-		<graphicData>
-			<texPath>Things/Item/CrushedStone</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
-		<stackLimit>900</stackLimit>
-		<statBases>
-			<MarketValue>0.3</MarketValue>
-			<DeteriorationRate>0</DeteriorationRate>
-			<Flammability>0</Flammability>
-		</statBases>
-		<tickerType>Rare</tickerType>
-		<thingCategories>
-			<li>ResourcesRaw</li>
-		</thingCategories>
-	</ThingDef>
-
-
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>Ash</defName>
 		<label>ash</label>
 		<description>Ash is obtained by burning corpses or other materials in a crematorium or fire pit.</description>
 		<graphicData>
-			<texPath>Things/Item/Ash</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Item/Resource/Ash</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
-		<stackLimit>150</stackLimit>
+		<stackLimit>600</stackLimit>
 		<statBases>
-			<MarketValue>10</MarketValue>
+			<MarketValue>0.3</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.05</Mass>
+			<Bulk>0.05</Bulk>
+			<Beauty>-5</Beauty>
 		</statBases>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
+		<tradeability>None</tradeability>
 	</ThingDef>
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>ConcreteResource</defName>
 		<label>concrete</label>
 		<description>Concrete is a composite material composed of sand and rubble. It is a fluid material that bonds into a solid material over time. It can have metals added to create reinforced concrete, a durable and solid building material.</description>
@@ -129,11 +91,14 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<stackLimit>150</stackLimit>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MaxHitPoints>50</MaxHitPoints>
 			<MarketValue>6.0</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>ConstructionParts</li>
@@ -142,13 +107,14 @@
 		<stuffProps>
 			<appearance>Planks</appearance>
 			<color>(122,122,120)</color>
-			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
 			<stuffAdjective>concrete</stuffAdjective>
 		</stuffProps>
+		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 	</ThingDef>
 
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>ClayBrick</defName>
 		<label>clay bricks</label>
 		<description>A brick of hardened clay baked at a kiln. It can be used for construction purposes.</description>
@@ -162,6 +128,8 @@
 			<MarketValue>3</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>ConstructionParts</li>
@@ -170,9 +138,10 @@
 		<stuffProps>
 			<stuffAdjective>Clay Bricks</stuffAdjective>
 			<categories>
-				<li>Stony</li>
+				<li>Bricks</li>
 			</categories>
-			<color>(160,110,75)</color>
+			<appearance>Bricks</appearance>
+			<color>(153, 87, 61)</color>
 			<statOffsets>
 				<WorkToMake>70</WorkToMake>
 				<WorkToBuild>70</WorkToBuild>
@@ -185,11 +154,13 @@
 				<WorkToMake>1.3</WorkToMake>
 				<WorkToBuild>1.3</WorkToBuild>
 				<WorkTableWorkSpeedFactor>1.0</WorkTableWorkSpeedFactor>
+				<Mass>1.3</Mass>
 			</statFactors>
 		</stuffProps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 	</ThingDef>
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>Ceramics</defName>
 		<label>Ceramics</label>
 		<description>Glazed ceramics made using high-temperature kiln. Smooth and beautiful but fragile.</description>
@@ -199,13 +170,16 @@
 		</graphicData>
 		<soundInteract>Stone_Drop</soundInteract>
 		<soundDrop>Stone_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>12</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.4</Mass>
+			<Bulk>0.4</Bulk>
 		</statBases>
 		<thingCategories>
-			<li>Manufactured</li>
+			<li>Ceramic</li>
 		</thingCategories>
 		<stackLimit>300</stackLimit>
 		<stuffProps>
@@ -216,7 +190,7 @@
 			<color>(255,255,255)</color>
 			<statOffsets>
 				<WorkToMake>120</WorkToMake>
-				<WorkToBuild>120</WorkToBuild>
+				<WorkToBuild>110</WorkToBuild>
 				<Beauty>3</Beauty>
 			</statOffsets>
 			<statFactors>
@@ -226,15 +200,18 @@
 				<WorkToMake>1.3</WorkToMake>
 				<WorkToBuild>1.3</WorkToBuild>
 				<WorkTableWorkSpeedFactor>1.0</WorkTableWorkSpeedFactor>
+				<MeleePenetrationFactor>0.9</MeleePenetrationFactor>
+				<Mass>0.8</Mass>
 			</statFactors>
 		</stuffProps>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 	</ThingDef>
 
 	<!-- ============================================================== -->
 	<!-- Matter -->
 
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>Matter</defName>
 		<label>inorganic matter</label>
 		<description>A container of inorganic matter. It can be made at an inorganic matter converter from various types of raw resources or refined into specific resources. It can be used to feed a hadron collider for antimatter production.</description>
@@ -244,10 +221,13 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
 		<statBases>
 			<MarketValue>10</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.1</Mass>
+			<Bulk>0.1</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>SuperMaterialCat</li>
@@ -262,33 +242,7 @@
 	</ThingDef>
 
 
-	<!--=============== Drill head SK ====================-->
-
-
-	<ThingDef ParentName="ResourceBase">
-		<defName>DrillHead</defName>
-		<label>drill head</label>
-		<description>A drill head for the drilling rig. Drilling rigs are placed on deposits of crude oil to create oil fissures. These are openings in the ground that can produce crude oil through the use of an oil extractor.</description>
-		<graphicData>
-			<texPath>Things/Item/Resource/DrillHead</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<stackLimit>25</stackLimit>
-		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
-		<statBases>
-			<MaxHitPoints>300</MaxHitPoints>
-			<MarketValue>200</MarketValue>
-			<Flammability>0</Flammability>
-			<DeteriorationRate>0</DeteriorationRate>
-		</statBases>
-		<thingCategories>
-			<li>Manufactured</li>
-		</thingCategories>
-	</ThingDef>
-
-
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>PileOfBooks</defName>
 		<label>pile of books</label>
 		<description>A random assortment of books. Most are old and discarded classics, but occasionally a good quality book can be found.</description>
@@ -300,10 +254,13 @@
 		<soundInteract>Wood_Drop</soundInteract>
 		<soundDrop>Wood_Drop</soundDrop>
 		<tickerType>Rare</tickerType>
+		<techLevel>Medieval</techLevel>
 		<statBases>
 			<MarketValue>35</MarketValue>
 			<Flammability>4.0</Flammability>
 			<DeteriorationRate>0</DeteriorationRate>
+			<Mass>0.6</Mass>
+			<Bulk>0.6</Bulk>
 		</statBases>
 		<stackLimit>10</stackLimit>
 		<thingCategories>
@@ -313,12 +270,10 @@
 			<li>Exotic</li>
 			<li>JoyItem</li>
 		</tradeTags>
-		<techLevel>Spacer</techLevel>
-		<canBeSpawningInventory>true</canBeSpawningInventory>		
 	</ThingDef>
 
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>PaintingSupplies</defName>
 		<label>painting supplies</label>
 		<description>A large assortment of brushes and paints. Perfect for any aspiring artist.</description>
@@ -330,10 +285,13 @@
 		<soundInteract>Wood_Drop</soundInteract>
 		<soundDrop>Wood_Drop</soundDrop>
 		<tickerType>Rare</tickerType>
+		<techLevel>Medieval</techLevel>
 		<statBases>
 			<MarketValue>50</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>4</Flammability>
+			<Mass>0.6</Mass>
+			<Bulk>0.6</Bulk>
 		</statBases>
 		<stackLimit>10</stackLimit>
 		<thingCategories>
@@ -342,18 +300,17 @@
 		<tradeTags>
 			<li>Exotic</li>
 			<li>JoyItem</li>
-		</tradeTags>
-		<techLevel>Neolithic</techLevel>
-		<canBeSpawningInventory>true</canBeSpawningInventory>
+		</tradeTags>	
 		<stuffProps>
 			<categories>
 				<li>Paint</li>
 			</categories>
 		</stuffProps>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 	</ThingDef>
 
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>MineralSonarModule</defName>
 		<label>mineral sonar module</label>
 		<description>This is a mineral sonar module. When deployed on the field with some energy packs, it can scan the surrounding area for metallic objects or hidden deposits of ores.</description>
@@ -364,57 +321,25 @@
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
 		<tickerType>Rare</tickerType>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<DeteriorationRate>0</DeteriorationRate>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Flammability>0.1</Flammability>
 			<MarketValue>300</MarketValue>
+			<Mass>6</Mass>
+			<Bulk>8</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>ElectronicsCat</li>
 		</thingCategories>
-		<stackLimit>4</stackLimit>
-	</ThingDef>
-
-	<ThingDef ParentName="ResourceVerbBase">
-		<defName>ThrumboHorn</defName>
-		<label>thrumbo horn</label>
-		<description>The horn from a previously living thrumbo. It's razor-sharp, very hard and priceless in most markets. This is a true trophy.</description>
-		<graphicData>
-			<texPath>Things/Item/Special/ThrumboHorn</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<equippedAngleOffset>-20</equippedAngleOffset>
-		<statBases>
-			<MarketValue>900</MarketValue>
-			<MaxHitPoints>150</MaxHitPoints>
-			<Flammability>1.0</Flammability>
-			<DeteriorationRate>0.2</DeteriorationRate>
-			<MeleeWeapon_DamageAmount>15</MeleeWeapon_DamageAmount>
-			<MeleeWeapon_Cooldown>1.75</MeleeWeapon_Cooldown>
-		</statBases>
-		<techLevel>Neolithic</techLevel>
-		<resourceReadoutPriority>Middle</resourceReadoutPriority>
-		<stackLimit>10</stackLimit>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<hasStandardCommand>true</hasStandardCommand>
-				<meleeDamageDef>Scratch</meleeDamageDef>
-			</li>
-		</verbs>
-		<thingCategories>
-			<li>Items</li>
-		</thingCategories>
-		<tradeTags>
-			<li>Exotic</li>
-		</tradeTags>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
 	<!-- mai items -->
 
-	<ThingDef ParentName="ResourceBase">
+	<ThingDef ParentName="SK_ResourceBase">
 		<defName>RobotParts</defName>
 		<label>robot parts</label>
 		<description>These parts could be used to create a robot.</description>
@@ -424,12 +349,15 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
-		<stackLimit>25</stackLimit>
+		<stackLimit>75</stackLimit>
 		<tickerType>Rare</tickerType>
+		<techLevel>Spacer</techLevel>
 		<statBases>
-			<MarketValue>354</MarketValue>
+			<MarketValue>70</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
+			<Mass>0.2</Mass>
+			<Bulk>0.2</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>ElectronicsCat</li>
@@ -440,27 +368,30 @@
 		</tradeTags>
 	</ThingDef>
 
-
-	<ThingDef ParentName="ResourceBase">
-		<defName>RepairKit</defName>
-		<label>repair kit</label>
-		<description>A kit of resources to repair an item. Each kit can restore 5 hit points, and must be taken to a mending station in order to use them. An item can only be repaired fully, not partially, so be sure to stock enough kits.</description>
+	<ThingDef ParentName="SK_ResourceBase">
+		<defName>MendingKit</defName>
+		<label>mending kit</label>
+		<description>Miscellaneous cloth, bits and parts. Necessary for repairing weapons and mending apparel.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/RepairKit</texPath>
+			<texPath>Things/Item/Resource/MendingKit</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Standard_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
 		<stackLimit>75</stackLimit>
-		<thingCategories>
-			<li>Manufactured</li>
-		</thingCategories>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<MarketValue>30</MarketValue>
 			<Flammability>1.0</Flammability>
 			<DeteriorationRate>1</DeteriorationRate>
+			<Mass>0.4</Mass>
+			<Bulk>0.4</Bulk>
 		</statBases>
+		<intricate>true</intricate>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
 	</ThingDef>
-
-</Resources>
+	
+</Defs>

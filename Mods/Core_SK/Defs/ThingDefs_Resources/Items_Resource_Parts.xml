@@ -1,23 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Resources>
+<Defs>
 
 	<!-- =========== REALISTIC PRODUCTION SK MOD =========== -->
 
 	<ThingDef ParentName="CropsBase">
-		<defName>Component</defName>
-		<label>component</label>
-		<description>A collection of simple spare parts that have a variety of uses in construction and production.</description>
+		<defName>ComponentMedieval</defName>
+		<label>primitive component</label>
+		<description>Miscellaneous various simple components from medieval era.</description>
 		<graphicData>
-			<texPath>Things/Item/Resource/Component</texPath>
+			<texPath>Things/Item/Components/ComponentMedieval</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techLevel>Neolithic</techLevel>
+		<soundInteract>Wood_Drop</soundInteract>
+		<soundDrop>Wood_Drop</soundDrop>
+		<statBases>
+			<MarketValue>6</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0.2</Flammability>
+			<SellPriceFactor>0.50</SellPriceFactor>
+			<Mass>1.5</Mass>
+			<Bulk>1.5</Bulk>
+		</statBases>
+		<useHitPoints>true</useHitPoints>
+		<thingCategories>
+			<li>Parts</li>
+		</thingCategories>
+		<stackLimit>300</stackLimit>
+	</ThingDef>
+
+
+	<ThingDef ParentName="CropsBase">
+		<defName>ComponentIndustrial</defName>
+		<label>component</label>
+		<description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+		<graphicData>
+			<texPath>Things/Item/Components/Component</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
-			<MarketValue>50</MarketValue>
+			<MarketValue>40</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
-			<Flammability>0.5</Flammability>
-			<SellPriceFactor>0.25</SellPriceFactor>
+			<Flammability>0.2</Flammability>
+			<SellPriceFactor>0.50</SellPriceFactor>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
+		</statBases>
+		<useHitPoints>true</useHitPoints>
+		<thingCategories>
+			<li>Parts</li>
+		</thingCategories>
+		<stackLimit>150</stackLimit>
+	</ThingDef>
+	
+	<ThingDef ParentName="CropsBase">
+		<defName>ComponentAdvanced</defName>
+		<label>advanced component</label>
+		<description>Miscellaneous gears, capacitors, circuit boards, tubes, wheels, sensors, wires, chips, processors, and other electronic and industrial parts. Necessary for assembling complex machines or electronics.</description>
+		<graphicData>
+			<texPath>Things/Item/Components/SolidComponent</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<MarketValue>100</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0.3</Flammability>
+			<SellPriceFactor>0.50</SellPriceFactor>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -27,26 +83,63 @@
 	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
-		<defName>GlassJar</defName>
-		<label>glass jar</label>
-		<description>Empty glass jars are needed for canned meals.</description>
+		<defName>ComponentSpacer</defName>
+		<label>spacer component</label>
+		<description>Advanced computing and energy-directing machinery, miniaturized and hardened for the most demanding applications.</description>
 		<graphicData>
-			<texPath>Things/Item/Meal/Glassjarempty</texPath>
+			<texPath>Things/Item/Components/AdvancedComponent</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
-		<soundDrop>Metal_Drop</soundDrop>
+		<soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
 		<statBases>
-			<MarketValue>1.7</MarketValue>
+			<MarketValue>150</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
-			<Flammability>0.2</Flammability>
+			<Flammability>0.3</Flammability>
+			<SellPriceFactor>0.50</SellPriceFactor>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
-			<li>Canware</li>
+			<li>Parts</li>
 		</thingCategories>
-		<stackLimit>75</stackLimit>
+		<stackLimit>150</stackLimit>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
 	</ThingDef>
+	
+	<ThingDef ParentName="CropsBase">
+		<defName>ComponentUltra</defName>
+		<label>ultra component</label>
+		<description>Advanced computing and energy-directing machinery, miniaturized and hardened for the most demanding applications.</description>
+		<graphicData>
+			<texPath>Things/Item/Components/ComponentUltra</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<techLevel>Ultra</techLevel>
+		<statBases>
+			<MarketValue>200</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0.3</Flammability>
+			<SellPriceFactor>0.50</SellPriceFactor>
+			<Mass>0.5</Mass>
+			<Bulk>0.5</Bulk>
+		</statBases>
+		<useHitPoints>true</useHitPoints>
+		<thingCategories>
+			<li>Parts</li>
+		</thingCategories>
+		<stackLimit>150</stackLimit>
+		<tradeTags>
+		  <li>ExoticMisc</li>
+		</tradeTags>
+	</ThingDef>
+
 
 	<ThingDef ParentName="CropsBase">
 		<defName>MetalCan</defName>
@@ -58,16 +151,19 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>1.7</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0.2</Flammability>
+			<Mass>0.1</Mass>
+			<Bulk>0.1</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
 			<li>Canware</li>
 		</thingCategories>
-		<stackLimit>75</stackLimit>
+		<stackLimit>200</stackLimit>
 	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
@@ -80,10 +176,13 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>1.5</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0.1</Flammability>
+			<Mass>0.2</Mass>
+			<Bulk>0.2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -91,7 +190,32 @@
 		</thingCategories>
 		<stackLimit>600</stackLimit>
 	</ThingDef>
-
+	
+	<ThingDef ParentName="CropsBase">
+		<defName>Pipe</defName>
+		<label>pipe</label>
+		<description>Pipes is produced from tough metals and need to work producing oil rigs.</description>
+		<graphicData>
+			<texPath>Things/Item/Parts/Pipe</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+			<MarketValue>25</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0</Flammability>
+			<Mass>30</Mass>
+			<Bulk>50</Bulk>
+			<Beauty>-2</Beauty>
+		</statBases>
+		<useHitPoints>true</useHitPoints>
+		<thingCategories>
+			<li>Parts</li>
+		</thingCategories>
+		<stackLimit>75</stackLimit>
+	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
 		<defName>Weapon_Parts</defName>
@@ -103,11 +227,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>130</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -131,11 +258,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>100</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -146,7 +276,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>50</stackLimit>
+		<stackLimit>75</stackLimit>
 	</ThingDef>
 
 
@@ -160,11 +290,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>300</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.2</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -175,7 +308,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>20</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -189,11 +322,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>300</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.3</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -204,7 +340,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>20</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -218,11 +354,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>400</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.3</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -233,7 +372,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>15</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -247,11 +386,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>800</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.4</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -262,7 +404,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>7</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -276,11 +418,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>500</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.4</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -291,7 +436,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>10</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
@@ -304,11 +449,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>2500</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.35</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -319,7 +467,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>3</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -333,11 +481,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>1000</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>3</Mass>
+			<Bulk>4</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -348,7 +499,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>7</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -362,11 +513,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>1200</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>2</Mass>
+			<Bulk>3</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -377,7 +531,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>7</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
@@ -385,16 +539,19 @@
 		<label>launcher weapon component</label>
 		<description>Main components for rocket launcher weapons.</description>
 		<graphicData>
-			<texPath>Things/Item/Parts/heavy_component</texPath>
+			<texPath>Things/Item/Parts/launcher_component</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>1500</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>2.2</Mass>
+			<Bulk>3</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -405,7 +562,38 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>7</stackLimit>
+		<stackLimit>25</stackLimit>
+	</ThingDef>
+
+	<ThingDef ParentName="CropsBase">
+		<defName>Charged_Component</defName>
+		<label>charged weapon component</label>
+		<description>Main components for charged weapons.</description>
+		<graphicData>
+			<texPath>Things/Item/Parts/charged_component</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+			<MarketValue>1375</MarketValue>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>1</Flammability>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.45</Mass>
+			<Bulk>2</Bulk>
+		</statBases>
+		<useHitPoints>true</useHitPoints>
+		<thingCategories>
+			<li>WeaponParts</li>
+		</thingCategories>
+		<stuffProps>
+			<categories>
+				<li>Matty</li>
+			</categories>
+		</stuffProps>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -419,11 +607,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
 		<statBases>
 			<MarketValue>2000</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.6</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -434,7 +625,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>3</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 
@@ -448,11 +639,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
 		<statBases>
 			<MarketValue>2000</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.5</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>1.5</Mass>
+			<Bulk>2</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -463,7 +657,7 @@
 				<li>Matty</li>
 			</categories>
 		</stuffProps>
-		<stackLimit>3</stackLimit>
+		<stackLimit>25</stackLimit>
 	</ThingDef>
 
 	<ThingDef ParentName="CropsBase">
@@ -476,12 +670,15 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>16</MarketValue>
 			<SharpDamageMultiplier>1.3</SharpDamageMultiplier>
 			<BluntDamageMultiplier>1.3</BluntDamageMultiplier>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>0</Flammability>
+			<Mass>0.6</Mass>
+			<Bulk>1</Bulk>
 		</statBases>
 		<useHitPoints>true</useHitPoints>
 		<thingCategories>
@@ -495,7 +692,7 @@
 			<appearance>Planks</appearance>
 			<color>(122,122,120)</color>
 			<constructEffect>ConstructMetal</constructEffect>
-			<soundImpactStuff>BulletImpactGround</soundImpactStuff>
+			<soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
 			<soundMeleeHitSharp>MeleeHit_Metal_Sharp</soundMeleeHitSharp>
 			<soundMeleeHitBlunt>MeleeHit_Metal_Blunt</soundMeleeHitBlunt>
 			<statFactors>
@@ -506,7 +703,9 @@
 				<WorkToBuild>4.5</WorkToBuild>
 				<DoorOpenSpeed>0.45</DoorOpenSpeed>
 				<BedRestEffectiveness>0.9</BedRestEffectiveness>
-				<MeleeWeapon_Cooldown>1.3</MeleeWeapon_Cooldown>
+				<MeleeWeapon_CooldownMultiplier>1.3</MeleeWeapon_CooldownMultiplier>
+				<MeleePenetrationFactor>1.1</MeleePenetrationFactor>
+				<Mass>1.6</Mass>
 			</statFactors>
 		</stuffProps>
 		<stackLimit>75</stackLimit>
@@ -523,11 +722,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>200</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.75</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>0.65</Mass>
+			<Bulk>0.65</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>Parts</li>
@@ -545,11 +747,14 @@
 		</graphicData>
 		<soundInteract>Metal_Drop</soundInteract>
 		<soundDrop>Metal_Drop</soundDrop>
+		<techLevel>Spacer</techLevel>
 		<statBases>
 			<MarketValue>400</MarketValue>
 			<DeteriorationRate>0</DeteriorationRate>
 			<Flammability>1</Flammability>
-			<SellPriceFactor>0.75</SellPriceFactor>
+			<SellPriceFactor>0.70</SellPriceFactor>
+			<Mass>0.7</Mass>
+			<Bulk>0.7</Bulk>
 		</statBases>
 		<thingCategories>
 			<li>Parts</li>
@@ -557,4 +762,4 @@
 		<stackLimit>75</stackLimit>
 	</ThingDef>
 
-</Resources>
+</Defs>

@@ -1,438 +1,829 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<TerrainDefs>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>FloorStoneSlabsSandstone</DefName>
-		<Label>sandstone slabs</Label>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsSandstone</defName>
+		<label>sandstone slabs</label>
 		<color>(126,104,94)</color>
-		<RenderPrecedence>270</RenderPrecedence>
-		<Description>Sandstone flooring made with square slabs. 
-Beauty: 3.</Description>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Sandstone flooring made with square slabs. 
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksSandstone>4</BlocksSandstone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>FloorStoneSlabsGranite</DefName>
-		<Label>granite slabs</Label>
-		<color>(105,95,97)</color>
-		<RenderPrecedence>270</RenderPrecedence>
-		<Description>Granite flooring made with square slabs.
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksGranite>4</BlocksGranite>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>FloorStoneSlabsLimestone</DefName>
-		<Label>limestone slabs</Label>
-		<color>(158,153,135)</color>
-		<RenderPrecedence>270</RenderPrecedence>
-		<Description>Limestone flooring made with square slabs. 
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksLimestone>4</BlocksLimestone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>FloorStoneSlabsSlate</DefName>
-		<Label>slate slabs</Label>
-		<color>(70,70,70)</color>
-		<RenderPrecedence>270</RenderPrecedence>
-		<Description>Slate flooring made with square slabs. 
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksSlate>4</BlocksSlate>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>FloorStoneSlabsMarble</DefName>
-		<Label>marble slabs</Label>
-		<color>(132,135,132)</color>
-		<RenderPrecedence>270</RenderPrecedence>
-		<Description>Marble flooring made with square slabs. 
-Beauty: 4.</Description>
-		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
-		<statBases>
+			<WorkToBuild>760</WorkToBuild>
 			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksMarble>4</BlocksMarble>
-		</CostList>
+		<costList>
+			<BlocksSandstone>4</BlocksSandstone>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsGranite</defName>
+		<label>granite slabs</label>
+		<color>(105,95,97)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Granite flooring made with square slabs.
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksGranite>4</BlocksGranite>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
 
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsLimestone</defName>
+		<label>limestone slabs</label>
+		<color>(158,153,135)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Limestone flooring made with square slabs. 
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksLimestone>4</BlocksLimestone>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsSlate</defName>
+		<label>slate slabs</label>
+		<color>(70,70,70)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Slate flooring made with square slabs. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksSlate>4</BlocksSlate>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsMarble</defName>
+		<label>marble slabs</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Marble flooring made with square slabs. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksMarble>4</BlocksMarble>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneSlabsCeramics</defName>
+		<label>Ceramic slabs</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Ceramics flooring made with square slabs. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneSlabs</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneHexSandstone</defName>
-		<Label>sandstone hex paving</Label>
+		<label>sandstone hex paving</label>
 		<color>(126,104,94)</color>
-		<RenderPrecedence>269</RenderPrecedence>
-		<Description>Sandstone paving with hexagonal tiles. 
-Beauty: 3.</Description>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Sandstone paving with hexagonal tiles. 
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksSandstone>4</BlocksSandstone>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneHexGranite</defName>
-		<Label>granite hex paving</Label>
+		<label>granite hex paving</label>
 		<color>(105,95,97)</color>
-		<RenderPrecedence>269</RenderPrecedence>
-		<Description>Granite paving with hexagonal tiles.
-Beauty: 3.</Description>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Granite paving with hexagonal tiles.
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksGranite>4</BlocksGranite>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneHexLimestone</defName>
-		<Label>limestone hex paving</Label>
+		<label>limestone hex paving</label>
 		<color>(158,153,135)</color>
-		<RenderPrecedence>269</RenderPrecedence>
-		<Description>Limestone paving with hexagonal tiles. 
-Beauty: 3.</Description>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Limestone paving with hexagonal tiles. 
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksLimestone>4</BlocksLimestone>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneHexSlate</defName>
-		<Label>slate hex paving</Label>
+		<label>slate hex paving</label>
 		<color>(70,70,70)</color>
-		<RenderPrecedence>269</RenderPrecedence>
-		<Description>Slate paving with hexagonal tiles. 
-Beauty: 3.</Description>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Slate paving with hexagonal tiles. 
+Beauty: 5.</description>
 		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksSlate>4</BlocksSlate>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneHexMarble</defName>
-		<Label>marble hex paving</Label>
-		<color>(132,135,132)</color>
-		<RenderPrecedence>269</RenderPrecedence>
-		<Description>Marble paving with hexagonal tiles. 
-Beauty: 4.</Description>
+		<label>marble hex paving</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Marble paving with hexagonal tiles. 
+Beauty: 5.</description>
 		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>4</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksMarble>4</BlocksMarble>
-		</CostList>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneHexCeramics</defName>
+		<label>Ceramic hex paving</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>269</renderPrecedence>
+		<description>Ceramics paving with hexagonal tiles. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneHex</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
 
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneMosaicSandstone</defName>
-		<Label>sandstone mosaic paving</Label>
+		<label>sandstone mosaic paving</label>
 		<color>(126,104,94)</color>
-		<RenderPrecedence>268</RenderPrecedence>
-		<Description>Sandstone paving with a light/dark mosaic. 
-Beauty: 3.</Description>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Sandstone paving with a light/dark mosaic. 
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksSandstone>4</BlocksSandstone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneMosaicGranite</defName>
-		<Label>granite mosaic paving</Label>
-		<color>(105,95,97)</color>
-		<RenderPrecedence>268</RenderPrecedence>
-		<Description>Granite paving with a light/dark mosaic. 
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksGranite>4</BlocksGranite>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneMosaicLimestone</defName>
-		<Label>limestone mosaic paving</Label>
-		<color>(158,153,135)</color>
-		<RenderPrecedence>268</RenderPrecedence>
-		<Description>Limestone paving with a light/dark mosaic. 
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksLimestone>4</BlocksLimestone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneMosaicSlate</defName>
-		<Label>slate mosaic paving</Label>
-		<color>(70,70,70)</color>
-		<RenderPrecedence>268</RenderPrecedence>
-		<Description>Slate paving with a light/dark mosaic. 
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
-		<statBases>
-			<Beauty>3</Beauty>
-		</statBases>
-		<CostList>
-			<BlocksSlate>4</BlocksSlate>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneMosaicMarble</defName>
-		<Label>marble mosaic paving</Label>
-		<color>(132,135,132)</color>
-		<RenderPrecedence>268</RenderPrecedence>
-		<Description>Marble paving with a light/dark mosaic. 
-Beauty: 4.</Description>
-		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
-		<statBases>
+			<WorkToBuild>760</WorkToBuild>
 			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksMarble>4</BlocksMarble>
-		</CostList>
+		<costList>
+			<BlocksSandstone>4</BlocksSandstone>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicGranite</defName>
+		<label>granite mosaic paving</label>
+		<color>(105,95,97)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Granite paving with a light/dark mosaic. 
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksGranite>4</BlocksGranite>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicLimestone</defName>
+		<label>limestone mosaic paving</label>
+		<color>(158,153,135)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Limestone paving with a light/dark mosaic. 
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksLimestone>4</BlocksLimestone>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicSlate</defName>
+		<label>slate mosaic paving</label>
+		<color>(70,70,70)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Slate paving with a light/dark mosaic. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksSlate>4</BlocksSlate>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicMarble</defName>
+		<label>marble mosaic paving</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Marble paving with a light/dark mosaic. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksMarble>4</BlocksMarble>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicClayBrick</defName>
+		<label>Clay brick mosaic paving</label>
+		<color>(153,87,61)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Clay brick paving with a light/dark mosaic. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<ClayBrick>4</ClayBrick>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>	
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneMosaicCeramics</defName>
+		<label>Ceramics mosaic paving</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>268</renderPrecedence>
+		<description>Ceramic paving with a light/dark mosaic. 
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneMosaic</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>	
 
 
-	<TerrainDef ParentName="TileStoneBase">
+
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRoughSandstone</defName>
-		<Label>rough sandstone paving</Label>
+		<label>rough sandstone paving</label>
 		<color>(126,104,94)</color>
-		<RenderPrecedence>267</RenderPrecedence>
-		<Description>Sandstone stone paving. 
-Beauty: 2.</Description>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Sandstone stone paving. 
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
-		<CostList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksSandstone>4</BlocksSandstone>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRoughGranite</defName>
-		<Label>rough granite paving</Label>
+		<label>rough granite paving</label>
 		<color>(105,95,97)</color>
-		<RenderPrecedence>267</RenderPrecedence>
-		<Description>Rough stone paving.
-Beauty: 2.</Description>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Rough stone paving.
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
-		<CostList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksGranite>4</BlocksGranite>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRoughLimestone</defName>
-		<Label>rough limestone paving</Label>
+		<label>rough limestone paving</label>
 		<color>(158,153,135)</color>
-		<RenderPrecedence>267</RenderPrecedence>
-		<Description>Rough stone paving.
-Beauty: 2.</Description>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Rough stone paving.
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
-		<CostList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksLimestone>4</BlocksLimestone>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRoughSlate</defName>
-		<Label>rough slate paving</Label>
+		<label>rough slate paving</label>
 		<color>(70,70,70)</color>
-		<RenderPrecedence>267</RenderPrecedence>
-		<Description>Rough stone paving.
-Beauty: 2.</Description>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Rough stone paving.
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
-		<CostList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksSlate>4</BlocksSlate>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRoughMarble</defName>
-		<Label>rough marble paving</Label>
-		<color>(132,135,132)</color>
-		<RenderPrecedence>267</RenderPrecedence>
-		<Description>Rough stone paving.
-Beauty: 3.</Description>
+		<label>rough marble paving</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Rough stone paving.
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<BlocksMarble>4</BlocksMarble>
-		</CostList>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRoughCeramics</defName>
+		<label>rough Ceramic paving</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>267</renderPrecedence>
+		<description>Rough stone paving.
+Beauty: 2.</description>
+		<texturePath>Terrain/Surfaces/StoneRough</texturePath>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>	
 
 
-	<TerrainDef ParentName="TileStoneBase">
+
+	<TerrainDef ParentName="SK_TileStoneBase">
 		<defName>FloorStoneRandomSandstone</defName>
-		<Label>random sandstone paving</Label>
+		<label>random sandstone paving</label>
 		<color>(126,104,94)</color>
-		<RenderPrecedence>266</RenderPrecedence>
-		<Description>Stone paving with random square and rectangular slabs.
-Beauty: 2.</Description>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 4.</description>
 		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
-		<CostList>
-			<BlocksSandstone>4</BlocksSandstone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneRandomGranite</defName>
-		<Label>random granite paving</Label>
-		<color>(105,95,97)</color>
-		<RenderPrecedence>266</RenderPrecedence>
-		<Description>Stone paving with random square and rectangular slabs.
-Beauty: 2.</Description>
-		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
-		<CostList>
-			<BlocksGranite>4</BlocksGranite>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneRandomLimestone</defName>
-		<Label>random limestone paving</Label>
-		<color>(158,153,135)</color>
-		<RenderPrecedence>266</RenderPrecedence>
-		<Description>Stone paving with random square and rectangular slabs.
-Beauty: 2.</Description>
-		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
-		<CostList>
-			<BlocksLimestone>4</BlocksLimestone>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneRandomSlate</defName>
-		<Label>random slate paving</Label>
-		<color>(70,70,70)</color>
-		<RenderPrecedence>266</RenderPrecedence>
-		<Description>Stone paving with random square and rectangular slabs.
-Beauty: 2.</Description>
-		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
-		<CostList>
-			<BlocksSlate>4</BlocksSlate>
-		</CostList>
-		<designationCategory>NaturalFloors</designationCategory>
-	</TerrainDef>
-
-	<TerrainDef ParentName="TileStoneBase">
-		<defName>FloorStoneRandomMarble</defName>
-		<Label>random marble paving</Label>
-		<color>(132,135,132)</color>
-		<RenderPrecedence>266</RenderPrecedence>
-		<Description>Stone paving with random square and rectangular slabs.
-Beauty: 3.</Description>
-		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<statBases>
-			<Beauty>3</Beauty>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksMarble>4</BlocksMarble>
-		</CostList>
+		<costList>
+			<BlocksSandstone>4</BlocksSandstone>
+		</costList>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-</TerrainDefs>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomGranite</defName>
+		<label>random granite paving</label>
+		<color>(105,95,97)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksGranite>4</BlocksGranite>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomLimestone</defName>
+		<label>random limestone paving</label>
+		<color>(158,153,135)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 4.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>4</Beauty>
+		</statBases>
+		<costList>
+			<BlocksLimestone>4</BlocksLimestone>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomSlate</defName>
+		<label>random slate paving</label>
+		<color>(70,70,70)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksSlate>4</BlocksSlate>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomMarble</defName>
+		<label>random marble paving</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksMarble>4</BlocksMarble>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomClayBrick</defName>
+		<label>random clay brick paving</label>
+		<color>(153,87,61)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<ClayBrick>4</ClayBrick>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>	
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneRandomCeramics</defName>
+		<label>random Ceramic paving</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>266</renderPrecedence>
+		<description>Stone paving with random square and rectangular slabs.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneRandom</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>760</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>	
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredSandstone</defName>
+		<label>sandstone staggered tiles</label>
+		<color>(126,104,94)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Sandstone tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksSandstone>4</BlocksSandstone>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredGranite</defName>
+		<label>granite slabs</label>
+		<color>(105,95,97)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Granite tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksGranite>4</BlocksGranite>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredLimestone</defName>
+		<label>limestone slabs</label>
+		<color>(158,153,135)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Limestone tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksLimestone>4</BlocksLimestone>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredSlate</defName>
+		<label>slate slabs</label>
+		<color>(70,70,70)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Slate tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksSlate>4</BlocksSlate>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredMarble</defName>
+		<label>marble slabs</label>
+		<color>(151,156,151)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Marble tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<BlocksMarble>4</BlocksMarble>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredCeramics</defName>
+		<label>Ceramic slabs</label>
+		<color>(255,255,255)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Ceramics tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>4</Ceramics>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>FloorStoneStaggeredClayBrick</defName>
+		<label>Ceramic slabs</label>
+		<color>(153,87,61)</color>
+		<renderPrecedence>270</renderPrecedence>
+		<description>Clay brick tiles with rounded corners laid in a staggered pattern.
+Beauty: 5.</description>
+		<texturePath>Terrain/Surfaces/StoneStaggered</texturePath>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
+		<statBases>
+			<WorkToBuild>820</WorkToBuild>
+			<Beauty>5</Beauty>
+		</statBases>
+		<costList>
+			<ClayBrick>4</ClayBrick>
+		</costList>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+</Defs>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
+  <Fluffy_Relations>Relations Tab</Fluffy_Relations>
   <Fluffy_Relations.Possesive>{0}'s </Fluffy_Relations.Possesive>
   <Fluffy_Relations.Colonists>Colonists</Fluffy_Relations.Colonists>
   <Fluffy_Relations.Factions>Factions</Fluffy_Relations.Factions>
@@ -10,12 +11,10 @@
   <Fluffy_Relations.KidnappedColonists>Kidnapped colonists</Fluffy_Relations.KidnappedColonists>
   <Fluffy_Relations.OpinionOf> opinion of {0}: {1}</Fluffy_Relations.OpinionOf>
   <Fluffy_Relations.NothingSelected></Fluffy_Relations.NothingSelected>
-
   <Fluffy_Relations.ModeCircleTip>Switch to circular layout</Fluffy_Relations.ModeCircleTip>
   <Fluffy_Relations.GraphResetTip>Restart dynamic layout</Fluffy_Relations.GraphResetTip>
   <Fluffy_Relations.NodeInteractionTip>Left-Click to select.\nRight-Click to unpin.\nClick and drag to move.\n</Fluffy_Relations.NodeInteractionTip>
   <Fluffy_Relations.ModeGraphTip>Switch to dynamic layout</Fluffy_Relations.ModeGraphTip>
-
   <Fluffy_Relations.RelationOptions>Relation options</Fluffy_Relations.RelationOptions>
   <Fluffy_Relations.GraphOptions>Dynamic parameters</Fluffy_Relations.GraphOptions>
   <Fluffy_Relations.Graph.MaxIterations>Maximum iterations</Fluffy_Relations.Graph.MaxIterations>
@@ -36,4 +35,13 @@
   <Fluffy_Relations.SocialThoughsOfOthers>Current social status effects</Fluffy_Relations.SocialThoughsOfOthers>
   <Fluffy_Relations.ThoughtOptions>Listed social offsets</Fluffy_Relations.ThoughtOptions>
 
+  <Fluffy_Relations.LowerOpinionThreshold>Lower opinion threshold</Fluffy_Relations.LowerOpinionThreshold>
+  <Fluffy_Relations.LowerOpinionThreshold.Tip>Pawns with an opinion of eachother below this threshold will always be visually linked.</Fluffy_Relations.LowerOpinionThreshold.Tip>
+  <Fluffy_Relations.UpperOpinionThreshold>Upper opinion threshold</Fluffy_Relations.UpperOpinionThreshold>
+  <Fluffy_Relations.UpperOpinionThreshold.Tip>Pawns with an opinion of eachother above this threshold will always be visually linked.</Fluffy_Relations.UpperOpinionThreshold.Tip>
+  
+
+  <Fluffy_Relations.SelectLeaderTip>Change leader</Fluffy_Relations.SelectLeaderTip>
+  <Fluffy_Relations.FirstDegreeTip_On>Include relatives</Fluffy_Relations.FirstDegreeTip_On>
+  <Fluffy_Relations.FirstDegreeTip_Off>Exclude relatives</Fluffy_Relations.FirstDegreeTip_Off>
 </LanguageData>

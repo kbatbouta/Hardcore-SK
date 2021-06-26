@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
 	<RecipeDef>
 		<defName>MakeHerbMedicine</defName>
@@ -7,14 +7,14 @@
 		<description>Crafts herbal medicine from Raw Healroot. Produces 1.</description>
 		<jobString>Crafting herbal medicine.</jobString>
 		<workAmount>500</workAmount>
-		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Herbal</soundWorking>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HerbalMedicine</li>
+						<li>MedicineHerbal</li>
 					</thingDefs>
 				</filter>
 				<count>8</count>
@@ -33,83 +33,39 @@
 		</products>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HerbalMedicine</li>
+				<li>MedicineHerbal</li>
 				<li>Ash</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Medicine>5</Medicine>
 		</skillRequirements>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>0.8</workSkillLearnFactor>
 	</RecipeDef>
-
-
-	<RecipeDef>
-		<defName>Makeherbmeds</defName>
-		<label>make herbal medical kit</label>
-		<description>Combines herbs into a medical kit. Produces 1.</description>
-		<jobString>Mixing herbs into medicine kit.</jobString>
-		<workAmount>800</workAmount>
-		<workSpeedStat>CookSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Chemlab_Herbal</soundWorking>
-		<allowMixingIngredients>true</allowMixingIngredients>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>aloe</li>
-					</thingDefs>
-				</filter>
-				<count>8</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>HerbalMedicine</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-		</ingredients>
-		<fixedIngredientFilter>
-			<thingDefs>
-				<li>aloe</li>
-				<li>HerbalMedicine</li>			
-			</thingDefs>
-		</fixedIngredientFilter>
-		<products>
-			<HerbalMedicaKit>1</HerbalMedicaKit>
-		</products>
-		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>10</minLevel>
-			</li>
-		</skillRequirements>
-		<workSkill>Medicine</workSkill>
-		<workSkillLearnFactor>0.8</workSkillLearnFactor>
-	</RecipeDef>
-
 
 	<RecipeDef>
 		<defName>makemedicine</defName>
 		<label>craft medicine</label>
-		<description>Crafts a medicine kit from herbal medicines. Produces 1.</description>
+		<description>Crafts a medicine kit from herbal medicine and various other resources. Produces 1.</description>
 		<jobString>Crafting medicine.</jobString>
 		<workAmount>800</workAmount>
-		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Medicine</soundWorking>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HerbalMedicine</li>
+						<li>Neutroamine</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MedicineHerbal</li>
 					</thingDefs>
 				</filter>
 				<count>6</count>
@@ -120,7 +76,7 @@
 						<li>Paraffins</li>
 					</thingDefs>
 				</filter>
-				<count>2</count>
+				<count>10</count>
 			</li>
 			<li>
 				<filter>
@@ -132,79 +88,18 @@
 			</li>
 		</ingredients>
 		<products>
-			<Medicine>1</Medicine>
+			<MedicineIndustrial>1</MedicineIndustrial>
 		</products>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HerbalMedicine</li>
+				<li>Neutroamine</li>
+				<li>MedicineHerbal</li>
 				<li>SyntheticFibers</li>
 				<li>Paraffins</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>12</minLevel>
-			</li>
-		</skillRequirements>
-		<workSkill>Medicine</workSkill>
-		<workSkillLearnFactor>0.8</workSkillLearnFactor>
-	</RecipeDef>
-
-
-	<RecipeDef>
-		<defName>makelifesupport</defName>
-		<label>make life support device</label>
-		<description>Makes a life support device. Produces 1.</description>
-		<jobString>Making life support device.</jobString>
-		<workAmount>2500</workAmount>
-		<workSpeedStat>CookSpeed</workSpeedStat>
-		<effectWorking>Cook</effectWorking>
-		<soundWorking>Chemlab_Medicine</soundWorking>
-		<ingredients>
-			<li>
-				<filter>
-					<categories>
-						<li>Metallic</li>
-					</categories>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Component</li>
-					</thingDefs>
-				</filter>
-				<count>10</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Medicine</li>
-					</thingDefs>
-				</filter>
-				<count>3</count>
-			</li>
-		</ingredients>
-		<products>
-			<lifesupport>1</lifesupport>
-		</products>
-		<fixedIngredientFilter>
-			<categories>
-				<li>SLDBar</li>
-				<li>USLDBar</li>
-			</categories>
-			<thingDefs>
-				<li>Component</li>
-				<li>Medicine</li>
-			</thingDefs>
-		</fixedIngredientFilter>
-		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Medicine>10</Medicine>
 		</skillRequirements>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>0.8</workSkillLearnFactor>
@@ -214,36 +109,36 @@
 	<RecipeDef>
 		<defName>makeadvmedicine</defName>
 		<label>craft advanced medicine</label>
-		<description>Crafts advanced medicine from 'medical' plants. Produces 1.</description>
+		<description>Crafts advanced medicine from plants with high medical potency. Produces 1.</description>
 		<jobString>Crafting advanced medicine.</jobString>
 		<workAmount>1400</workAmount>
-		<workSpeedStat>CookSpeed</workSpeedStat>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Medicine</soundWorking>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>WildRose</li>
+						<li>Herbmedicine</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>4</count>
 			</li>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>Hypericum</li>
+						<li>MedicalDrink</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>1</count>
 			</li>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>MintLeaves</li>
+						<li>aloe</li>
 					</thingDefs>
 				</filter>
-				<count>3</count>
+				<count>10</count>
 			</li>
 			<li>
 				<filter>
@@ -271,26 +166,150 @@
 			</li>
 		</ingredients>
 		<products>
-			<GlitterworldMedicine>1</GlitterworldMedicine>
+			<MedicineUltratech>1</MedicineUltratech>
 		</products>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>WildRose</li>
-				<li>Hypericum</li>
-				<li>MintLeaves</li>
+				<li>Neutroamine</li>
+				<li>MedicalDrink</li>
+				<li>aloe</li>
 				<li>Paraffins</li>
 				<li>SyntheticFibers</li>
 				<li>SyntheticAmmonia</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>18</minLevel>
-			</li>
+			<Medicine>15</Medicine>
 		</skillRequirements>
 		<workSkill>Medicine</workSkill>
 		<workSkillLearnFactor>0.8</workSkillLearnFactor>
 	</RecipeDef>
 
-</RecipeDefs>
+	<RecipeDef>
+		<defName>MakeBandagekitcrude</defName>
+		<label>craft crude bandage kit</label>
+		<description>A pack of makeshift bandages. Looks bad, probably bad for your wounds. Good for stopping bleeding but nothing more. Produces 1.</description>
+		<jobString>Crafting crude bandage kit.</jobString>
+		<workAmount>150</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<soundWorking>Chemlab_Herbal</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>BTextiles</li>
+					</categories>
+				</filter>
+				<count>7</count>
+			</li>
+		</ingredients>
+		<products>
+			<Bandagekitcrude>1</Bandagekitcrude>
+		</products>
+		<recipeUsers>
+			<li>CraftingSpot</li>
+			<li>LeatherworkerTable</li>
+			<li>meditable</li>
+			<li>HandTailoringBench</li>
+			<li>ElectricTailoringBench</li>
+		</recipeUsers>
+		<fixedIngredientFilter>
+			<categories>
+				<li>BTextiles</li>
+			</categories>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Medicine>1</Medicine>
+			<Crafting>1</Crafting>
+		</skillRequirements>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>0.8</workSkillLearnFactor>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeBandageKit</defName>
+		<label>craft bandage kit</label>
+		<description>A pack of bandages made from cloth. Less potent than medical kits. Produces 1.</description>
+		<jobString>Crafting bandage kit.</jobString>
+		<workAmount>250</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<soundWorking>Chemlab_Herbal</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>BTextiles</li>
+					</categories>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<products>
+			<Bandagekit>1</Bandagekit>
+		</products>
+		<recipeUsers>
+			<li>meditable</li>
+			<li>HandTailoringBench</li>
+			<li>ElectricTailoringBench</li>
+		</recipeUsers>
+		<fixedIngredientFilter>
+			<categories>
+				<li>BTextiles</li>
+			</categories>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Medicine>2</Medicine>
+			<Crafting>2</Crafting>
+		</skillRequirements>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>0.8</workSkillLearnFactor>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>MakeHerbmedicine</defName>
+		<label>craft basic medicine kit</label>
+		<description>A pack of mix herbs. Less potent than industrial pharmaceuticals. \n\nMade from aloe and cloth. Produces 1.</description>
+		<jobString>Crafting basic medicine kit.</jobString>
+		<workAmount>500</workAmount>
+		<workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+		<soundWorking>Chemlab_Herbal</soundWorking>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>aloe</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Bandagekit</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<Herbmedicine>1</Herbmedicine>
+		</products>
+		<recipeUsers>
+			<li>DrugLab</li>
+			<li>TablePrimitiveProsthetic</li>
+		</recipeUsers>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>aloe</li>
+				<li>Bandagekit</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<skillRequirements>
+			<Medicine>4</Medicine>
+			<Crafting>2</Crafting>
+		</skillRequirements>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>0.8</workSkillLearnFactor>
+	</RecipeDef>
+
+</Defs>

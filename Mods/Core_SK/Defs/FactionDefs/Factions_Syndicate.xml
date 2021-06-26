@@ -1,98 +1,148 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FactionDefs>
+<Defs>
 
-	<FactionDef>
+	<FactionDef ParentName="SK_HumanFactionBase">
 		<defName>Syndicate</defName>
-		<label>Syndicate faction</label>
-    <description></description>
-    <pawnsPlural>syndicate faction</pawnsPlural>
-    <factionBaseSelectionWeight>1</factionBaseSelectionWeight>
-    <requiredCountAtGameStart>1</requiredCountAtGameStart>
-    <maxCountAtGameStart>1</maxCountAtGameStart>
-    <canMakeRandomly>true</canMakeRandomly>
-    <raidCommonality>92</raidCommonality>
-    <canSiege>true</canSiege>
-	<autoFlee>true</autoFlee>
-    <canStageAttacks>true</canStageAttacks>
-	<pawnNameMaker>NamerPersonNorbal</pawnNameMaker>
-	<leaderTitle>Supervisor</leaderTitle>
-	<earliestRaidDays>270</earliestRaidDays>
-    <expandingIconTexture>UI/Icons/Factions/Syndicate</expandingIconTexture>
-    <colorSpectrum>
-      <li>(0.45, 0.03, 0.02)</li>
-      <li>(0.8, 0.08, 0.18)</li>
-      <li>(0.92, 0.62, 0.06)</li>
-    </colorSpectrum>
-    <startingGoodwill>
-      <min>-50</min>
-      <max>10</max>
-    </startingGoodwill>
-    <mustStartOneEnemy>true</mustStartOneEnemy>
+		<label>Syndicate faction</label>		
+		<pawnSingular>syndicate faction</pawnSingular>
+		<pawnsPlural>syndicate faction</pawnsPlural>
+		<settlementGenerationWeight>1</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<maxCountAtGameStart>1</maxCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<autoFlee>true</autoFlee>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>Supervisor</leaderTitle>
+		<earliestRaidDays>340</earliestRaidDays>
+		<factionIconPath>World/WorldObjects/Expanding/Syndicate</factionIconPath>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(2500, 0.05)</li>
+				<li>(11000, 0.15)</li>
+				<li>(12000, 0.9)</li>
+				<li>(15000, 1.1)</li>
+				<li>(20000, 1.0)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0, 400)</li>
+				<li>(10000, 470)</li>
+				<li>(17000, 530)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<geneticVariance>0.8</geneticVariance>
+		<colorSpectrum>
+			<li>(0.45, 0.03, 0.02)</li>
+			<li>(0.8, 0.08, 0.18)</li>
+			<li>(0.92, 0.62, 0.06)</li>
+		</colorSpectrum>
+		<mustStartOneEnemy>true</mustStartOneEnemy>
 		<factionNameMaker>NamerFactionPirate</factionNameMaker>
-    <factionBaseNameMaker>NamerFactionBasePirate</factionBaseNameMaker>
-		<techLevel>Industrial</techLevel>
-		<backstoryCategory>Civil</backstoryCategory>
+		<settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
+		<techLevel>Spacer</techLevel>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Outlander</li>
+				</categories>
+				<commonality>0.55</commonality>
+			</li>
+			<li>
+				<categories>
+					<li>Pirate</li>
+				</categories>
+				<commonality>0.45</commonality>
+			</li>
+		</backstoryFilters>
 		<hairTags>
 			<li>Urban</li>
 			<li>Punk</li>
 		</hairTags>
-    <naturalColonyGoodwill>
-      <min>-100</min>
-      <max>25</max>
-    </naturalColonyGoodwill>
-    <visitorTraderKinds>
-      <li>Visitor_Outlander_Standard</li>
-    </visitorTraderKinds>
-    <factionBaseTraderKinds>
-      <li>FactionBase_Outlander_Standard</li>
-    </factionBaseTraderKinds>
-    <allowedArrivalTemperatureRange>
-      <min>-65</min>
-      <max>45</max>
-    </allowedArrivalTemperatureRange>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>DevilstrandCloth</li>
-		<li>Kevlar</li>
-        <li>Synthread</li>
-        <li>Hyperweave</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-        <li>AlnicoAlloy</li>
-		<li>NichromeAlloy</li>
-        <li>StelliteAlloy</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    <pawnGroupMakers>
-      <li>
-        <kindDef>Normal</kindDef>
-        <commonality>100</commonality>
-        <options>
-          <SyndicateProspector>200</SyndicateProspector>
-          <SyndicateStriker>150</SyndicateStriker>
-          <SyndicateHunter>120</SyndicateHunter>
-          <SyndicateHawkeye>100</SyndicateHawkeye>
-          <SyndicateDevastator>100</SyndicateDevastator>
-          <SyndicateAnnihilator>30</SyndicateAnnihilator>
-        </options>
-      </li>
-      <li>
-        <kindDef>FactionBase</kindDef>
-        <options>
-          <SyndicateProspector>200</SyndicateProspector>
-          <SyndicateStriker>150</SyndicateStriker>
-          <SyndicateHunter>120</SyndicateHunter>
-          <SyndicateHawkeye>100</SyndicateHawkeye>
-          <SyndicateDevastator>100</SyndicateDevastator>
-          <SyndicateAnnihilator>30</SyndicateAnnihilator>
-        </options>
-      </li>
-    </pawnGroupMakers>
-    <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
-  </FactionDef>
+		<startingGoodwill>-20</startingGoodwill>
+		<naturalColonyGoodwill>
+			<min>-60</min>
+			<max>30</max>
+		</naturalColonyGoodwill>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Outlander_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>-65~45</allowedArrivalTemperatureRange>
+		<raidLootMaker>PirateRaidLootMaker</raidLootMaker>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>DevilstrandCloth</li>
+				<li>Kevlar</li>
+				<li>Synthread</li>
+				<li>Hyperweave</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>SteelBar</li>
+				<li>AlnicoAlloy</li>
+				<li>StelliteAlloy</li>
+			</thingDefs>
+		</apparelStuffFilter>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>60</commonality>
+				<options>
+					<SyndicateProspector_Acidifier>30</SyndicateProspector_Acidifier>
+					<SyndicateStriker_Acidifier>25</SyndicateStriker_Acidifier>
+					<SyndicateHunter_Acidifier>20</SyndicateHunter_Acidifier>
+					<SyndicateHawkeye_Acidifier>17</SyndicateHawkeye_Acidifier>
+					<SyndicateDevastator_Acidifier>12</SyndicateDevastator_Acidifier>
+					<SyndicateDevastatorHeavy_Acidifier>7</SyndicateDevastatorHeavy_Acidifier>
+					<SyndicateAnnihilator_Acidifier>3</SyndicateAnnihilator_Acidifier>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>40</commonality>
+				<options>
+					<SyndicateProspector>30</SyndicateProspector>
+					<SyndicateStriker>25</SyndicateStriker>
+					<SyndicateHunter>20</SyndicateHunter>
+					<SyndicateHawkeye>17</SyndicateHawkeye>
+					<SyndicateDevastator>12</SyndicateDevastator>
+					<SyndicateDevastatorHeavy>7</SyndicateDevastatorHeavy>
+					<SyndicateAnnihilator>3</SyndicateAnnihilator>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<SyndicateProspector>30</SyndicateProspector>
+					<SyndicateStriker>25</SyndicateStriker>
+					<SyndicateHunter>22</SyndicateHunter>
+					<SyndicateHawkeye>20</SyndicateHawkeye>
+					<SyndicateDevastator>15</SyndicateDevastator>
+					<SyndicateDevastatorHeavy>7</SyndicateDevastatorHeavy>
+					<SyndicateAnnihilator>8</SyndicateAnnihilator>
+				</options>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<SyndicateProspector>30</SyndicateProspector>
+					<SyndicateStriker>25</SyndicateStriker>
+					<SyndicateHunter>22</SyndicateHunter>
+					<SyndicateHawkeye>20</SyndicateHawkeye>
+					<SyndicateDevastator>15</SyndicateDevastator>
+					<SyndicateDevastatorHeavy>7</SyndicateDevastatorHeavy>
+					<SyndicateAnnihilator>10</SyndicateAnnihilator>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+	</FactionDef>
 
-</FactionDefs>
+</Defs>

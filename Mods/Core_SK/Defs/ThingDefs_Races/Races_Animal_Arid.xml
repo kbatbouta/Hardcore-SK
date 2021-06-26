@@ -1,38 +1,99 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
 	<!-- ========================== Arid ============================ -->
-
-	<ThingDef ParentName="AnimalThingBase">
+	<ThingDef ParentName="SK_AnimalThingBase">
 		<defName>Muffalo</defName>
 		<label>muffalo</label>
-		<description>A muffalo is a large herding herbivore that descended from Buffalo and has adapted to some exotic environments. It is peaceful unless disturbed.</description>
+		<description>A large herding herbivore descended from buffalo and adapted for both cold and warm environments. While enraged muffalo are deadly, tamed muffalo are quite docile and can be used as pack animals.\n\nNobody is quite sure why they're blue - it might even be some early genetic modification test that just never got changed.</description>
 		<statBases>
-			<MoveSpeed>3.6</MoveSpeed>
+			<MoveSpeed>4.3</MoveSpeed>
 			<ComfyTemperatureMin>-70</ComfyTemperatureMin>
+			<ComfyTemperatureMax>45</ComfyTemperatureMax>
 			<MarketValue>900</MarketValue>
 			<ImmunityGainSpeed>1</ImmunityGainSpeed>
-			<ArmorPenetration>0.2</ArmorPenetration>
 			<Mass>140</Mass>
+			<MeleeDodgeChance>0.1</MeleeDodgeChance>
+			<MeleeCritChance>0.12</MeleeCritChance>
+			<CarryWeight>210</CarryWeight>
+			<CarryBulk>140</CarryBulk>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.65</defaultCooldownTime>
-				<meleeDamageBaseAmount>9</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg_2</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg_2</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<capacities>
+					<li>BiteBlunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>0.8</armorPenetrationBlunt>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>3.65</cooldownTime>
+				<chanceFactor>0.5</chanceFactor>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>10</armorPenetrationBlunt>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
 		<comps>
 			<li Class="CompProperties_Milkable">
 				<milkDef>Milk</milkDef>
-				<milkIntervalDays>2</milkIntervalDays>
-				<milkAmount>9</milkAmount>
+				<milkIntervalDays>1</milkIntervalDays>
+				<milkAmount>13</milkAmount>
 			</li>
 			<li Class="CompProperties_Shearable">
-				<woolDef>MuffaloWool</woolDef>
-				<shearIntervalDays>35</shearIntervalDays>
+				<woolDef>WoolMuffalo</woolDef>
+				<shearIntervalDays>25</shearIntervalDays>
 				<woolAmount>100</woolAmount>
 			</li>
 		</comps>
@@ -40,32 +101,17 @@
 			<packAnimal>true</packAnimal>
 			<herdAnimal>true</herdAnimal>
 			<body>QuadrupedAnimalWithHooves</body>
-			<baseBodySize>1.5</baseBodySize>
-			<baseHealthScale>1.5</baseHealthScale>
+			<baseBodySize>1.25</baseBodySize>
+			<baseHealthScale>1.55</baseHealthScale>
+			<baseHungerRate>1</baseHungerRate>
 			<foodType>VegetarianRoughAnimal</foodType>
+			<leatherDef>Leather_Bluefur</leatherDef>
 			<meatLabel>prime meat</meatLabel>
 			<manhunterOnDamageChance>0.025</manhunterOnDamageChance>
-			<leatherLabel>cowhide</leatherLabel>
-			<leatherColor>(240,233,212)</leatherColor>
-			<leatherMarketValueFactor>4.0</leatherMarketValueFactor>
-			<leatherStatFactors>
-				<MarketValue>2</MarketValue>
-				<ArmorRating_Blunt>1.3</ArmorRating_Blunt>
-				<ArmorRating_Sharp>1.2</ArmorRating_Sharp>
-				<ArmorRating_Electric>1.1</ArmorRating_Electric>
-				<ArmorRating_Heat>1.6</ArmorRating_Heat>
-				<Insulation_Cold>1.2</Insulation_Cold>
-				<Insulation_Heat>1</Insulation_Heat>
-				<BedRestEffectiveness>1.2</BedRestEffectiveness>
-				<ImmunityGainSpeedFactor>0.95</ImmunityGainSpeedFactor>
-				<WorkToMake>1</WorkToMake>
-				<MaxHitPoints>1.2</MaxHitPoints>
-				<MoveSpeed>0.85</MoveSpeed>
-				<Beauty>1</Beauty>			
-			</leatherStatFactors>
 			<gestationPeriodDays>30</gestationPeriodDays>
 			<wildness>0.4</wildness>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
+			<trainability>Simple</trainability>
+			<nuzzleMtbHours>60</nuzzleMtbHours>
 			<lifeExpectancy>15</lifeExpectancy>
 			<lifeStageAges>
 				<li>
@@ -78,7 +124,7 @@
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>1</minAge>
+					<minAge>0.5</minAge>
 					<soundWounded>Pawn_Muffalo_Wounded</soundWounded>
 					<soundDeath>Pawn_Muffalo_Death</soundDeath>
 					<soundCall>Pawn_Muffalo_Call</soundCall>
@@ -93,26 +139,30 @@
 			</hediffGiverSets>
 		</race>
 		<tradeTags>
-			<li>StandardAnimal</li>
+			<li>AnimalCommon</li>
+			<li>AnimalFarm</li>
 		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Quadruped</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-	<PawnKindDef Name="Muffalo" ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="SK_AnimalKindBase">
 		<defName>Muffalo</defName>
 		<label>muffalo</label>
 		<race>Muffalo</race>
 		<combatPower>110</combatPower>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
-		<wildSpawn_GroupSizeRange>
-			<min>3</min>
-			<max>9</max>
-		</wildSpawn_GroupSizeRange>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<wildGroupSize>3~9</wildGroupSize>
 		<labelMale>alpha muffalo</labelMale>
 		<labelFemale>muffalo</labelFemale>
 		<lifeStages>
 			<li>
 				<label>muffalo calf</label>
+				<labelPlural>muffalo calves</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Muffalo/Muffalo</texPath>
 					<drawSize>1.5</drawSize>
@@ -122,13 +172,13 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/Muffalo</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/AMuffalo</texPath>
 					<drawSize>2.25</drawSize>
 					<shadowData>
 						<volume>(0.6, 0.45, 0.45)</volume>
@@ -144,13 +194,13 @@
 					</shadowData>
 				</femaleGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>2.25</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/AMuffalo</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/AMuffalo</texPath>
 					<drawSize>3</drawSize>
 					<shadowData>
 						<volume>(0.8, 0.6, 0.6)</volume>
@@ -166,71 +216,86 @@
 					</shadowData>
 				</femaleGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
 
-
-	<ThingDef ParentName="AnimalThingBase">
+	<ThingDef ParentName="SK_AnimalThingBase">
 		<defName>Gazelle</defName>
 		<label>gazelle</label>
 		<description>A small, extremely quick antelope known for its amazingly long leap.</description>
 		<statBases>
 			<Mass>80</Mass>
-			<MoveSpeed>6.2</MoveSpeed>
+			<MoveSpeed>8.8</MoveSpeed>
 			<ComfyTemperatureMin>-10</ComfyTemperatureMin>
 			<MarketValue>320</MarketValue>
-			<ArmorPenetration>0.12</ArmorPenetration>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<MeleeCritChance>0.1</MeleeCritChance>
+			<MeleeParryChance>0.04</MeleeParryChance>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.50</defaultCooldownTime>
-				<meleeDamageBaseAmount>6</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.45</cooldownTime>
 				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>1.5</armorPenetrationBlunt>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.50</defaultCooldownTime>
-				<meleeDamageBaseAmount>6</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.45</cooldownTime>
 				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>1.5</armorPenetrationBlunt>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<capacities>
+					<li>BiteBlunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>0.8</armorPenetrationBlunt>
+				<chanceFactor>0.35</chanceFactor>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<armorPenetrationBlunt>2</armorPenetrationBlunt>
+			</li>
+		</tools>
 		<race>
 			<body>QuadrupedAnimalWithHooves</body>
 			<herdAnimal>true</herdAnimal>
 			<baseBodySize>0.7</baseBodySize>
-			<baseHungerRate>0.35</baseHungerRate>
+			<baseHungerRate>0.6</baseHungerRate>
 			<baseHealthScale>0.7</baseHealthScale>
 			<foodType>VegetarianRoughAnimal</foodType>
-			<leatherInsulation>0.75</leatherInsulation>
 			<useMeatFrom>Muffalo</useMeatFrom>
-			<leatherLabel>buckskin</leatherLabel>
-			<leatherColor>(179,119,0)</leatherColor>
-			<leatherMarketValueFactor>4.0</leatherMarketValueFactor>
-			<leatherStatFactors>
-				<MarketValue>2</MarketValue>
-				<ArmorRating_Blunt>1.1</ArmorRating_Blunt>
-				<ArmorRating_Sharp>1.35</ArmorRating_Sharp>
-				<ArmorRating_Electric>1.35</ArmorRating_Electric>
-				<ArmorRating_Heat>1</ArmorRating_Heat>
-				<Insulation_Cold>1.1</Insulation_Cold>
-				<Insulation_Heat>0.9</Insulation_Heat>
-				<BedRestEffectiveness>1.2</BedRestEffectiveness>
-				<ImmunityGainSpeedFactor>0.95</ImmunityGainSpeedFactor>
-				<WorkToMake>1</WorkToMake>
-				<MaxHitPoints>1</MaxHitPoints>
-				<MoveSpeed>1</MoveSpeed>
-				<Beauty>1.2</Beauty>			
-			</leatherStatFactors>
+			<leatherDef>Leather_Plain</leatherDef>
 			<wildness>0.75</wildness>
 			<gestationPeriodDays>20</gestationPeriodDays>
 			<lifeExpectancy>12</lifeExpectancy>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0</manhunterOnDamageChance>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -242,7 +307,7 @@
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>0.7</minAge>
+					<minAge>0.4</minAge>
 					<soundWounded>Pawn_Deer_Wounded</soundWounded>
 					<soundDeath>Pawn_Deer_Death</soundDeath>
 					<soundCall>Pawn_Deer_Call</soundCall>
@@ -254,21 +319,23 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
-			<li>StandardAnimal</li>
+			<li>AnimalCommon</li>
 		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Quadruped</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="SK_AnimalKindBase">
 		<defName>Gazelle</defName>
 		<label>gazelle</label>
 		<race>Gazelle</race>
-		<combatPower>80</combatPower>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_EcoSystemWeight>0.55</wildSpawn_EcoSystemWeight>
-		<wildSpawn_GroupSizeRange>
-			<min>4</min>
-			<max>13</max>
-		</wildSpawn_GroupSizeRange>
+		<combatPower>60</combatPower>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.45</ecoSystemWeight>
+		<wildGroupSize>4~13</wildGroupSize>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
@@ -276,8 +343,8 @@
 					<drawSize>1.0</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>0.9</drawSize>
+					<texPath>Things/Pawn/Animal/Gazelle/Dessicated_Gazelle</texPath>
+					<drawSize>1.0</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
@@ -290,8 +357,8 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>1.2</drawSize>
+					<texPath>Things/Pawn/Animal/Gazelle/Dessicated_Gazelle</texPath>
+					<drawSize>1.3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
@@ -304,58 +371,84 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+					<texPath>Things/Pawn/Animal/Gazelle/Dessicated_Gazelle</texPath>
 					<drawSize>1.65</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
 
-
-	<ThingDef ParentName="AnimalThingBase">
+	<ThingDef ParentName="SK_AnimalThingBase">
 		<defName>Iguana</defName>
 		<label>iguana</label>
-		<description>An Iguana is a large lizard that normally feeds on plant matter. However when angered, their tough hide and sharp claws can make them quite dangerous.</description>
+		<description>These large lizards normally feed on plant matter. However, when angered, their tough hide and sharp claws make them quite dangerous.\n\nResting iguanas hold their heads high, giving them an amusing 'proud' look. But they're not proud; they're just trying to see predators so they don't get eaten.</description>
 		<statBases>
 			<Mass>50</Mass>
-			<MoveSpeed>3.23</MoveSpeed>
+			<MoveSpeed>3.4</MoveSpeed>
 			<ComfyTemperatureMin>0</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
 			<MarketValue>160</MarketValue>
 			<ImmunityGainSpeed>1.5</ImmunityGainSpeed>
 			<MeatAmount>35</MeatAmount>
-			<ArmorPenetration>0.15</ArmorPenetration>
+			<MeleeDodgeChance>0.14</MeleeDodgeChance>
+			<MeleeCritChance>0.02</MeleeCritChance>
+			<GermResistance>0.3</GermResistance>
+			<GermContainment>0.15</GermContainment>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.50</defaultCooldownTime>
-				<meleeDamageBaseAmount>11</meleeDamageBaseAmount>
-				<meleeDamageDef>Scratch</meleeDamageDef>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.4</cooldownTime>
 				<linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+				<armorPenetrationSharp>1.2</armorPenetrationSharp>
+				<armorPenetrationBlunt>1.4</armorPenetrationBlunt>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.50</defaultCooldownTime>
-				<meleeDamageBaseAmount>11</meleeDamageBaseAmount>
-				<meleeDamageDef>Scratch</meleeDamageDef>
+			<li Class="CombatExtended.ToolCE">
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.4</cooldownTime>
 				<linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+				<armorPenetrationSharp>1.2</armorPenetrationSharp>
+				<armorPenetrationBlunt>1.4</armorPenetrationBlunt>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.60</defaultCooldownTime>
-				<meleeDamageBaseAmount>13</meleeDamageBaseAmount>
-				<meleeDamageDef>Bite</meleeDamageDef>
+			<li Class="CombatExtended.ToolCE">
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.65</cooldownTime>
 				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>15</amount>
+							<amount>25</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
+				<chanceFactor>2</chanceFactor>
+				<armorPenetrationBlunt>1.60</armorPenetrationBlunt>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>3</power>
+				<cooldownTime>2.65</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+				<armorPenetrationBlunt>1.2</armorPenetrationBlunt>
+			</li>
+		</tools>
 		<comps>
 			<li Class="CompProperties_EggLayer">
 				<eggFertilizedDef>EggIguanaFertilized</eggFertilizedDef>
@@ -363,22 +456,24 @@
 				<eggLayIntervalDays>10</eggLayIntervalDays>
 				<eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
 				<eggCountRange>
-					<min>5</min>
-					<max>7</max>
+					<min>2</min>
+					<max>3</max>
 				</eggCountRange>
 			</li>
 		</comps>
 		<race>
-			<baseHungerRate>0.4</baseHungerRate>
 			<body>QuadrupedAnimalWithClawsTailAndJowl</body>
-			<baseBodySize>0.7</baseBodySize>
+			<baseHungerRate>0.3</baseHungerRate>
+			<baseBodySize>0.55</baseBodySize>
 			<baseHealthScale>1.1</baseHealthScale>
 			<foodType>CarnivoreAnimal, CarnivoreAnimalStrict, OmnivoreRoughAnimal</foodType>
 			<manhunterOnDamageChance>0</manhunterOnDamageChance>
 			<useMeatFrom>Elephant</useMeatFrom>
-			<useLeatherFrom>Cobra</useLeatherFrom>
+			<leatherDef>Leather_Lizard</leatherDef>
 			<wildness>0.45</wildness>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
+			<trainability>Simple</trainability>
+			<petness>0.15</petness>
+			<nuzzleMtbHours>60</nuzzleMtbHours>
 			<gestationPeriodDays>14</gestationPeriodDays>
 			<litterSizeCurve>
 				<points>
@@ -400,7 +495,7 @@
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>0.35</minAge>
+					<minAge>0.25</minAge>
 					<soundWounded>Pawn_Iguana_Wounded</soundWounded>
 					<soundDeath>Pawn_Iguana_Death</soundDeath>
 					<soundCall>Pawn_Iguana_Call</soundCall>
@@ -414,44 +509,47 @@
 				<li>ThickPassiveSet</li>
 			</hediffGiverSets>
 		</race>
+		<tradeTags>
+			<li>AnimalUncommon</li>
+		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Serpentine</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="SK_AnimalKindBase">
 		<defName>Iguana</defName>
 		<label>iguana</label>
 		<race>Iguana</race>
-		<combatPower>90</combatPower>
-		<wildSpawn_EcoSystemWeight>0.33</wildSpawn_EcoSystemWeight>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_GroupSizeRange>
-			<min>1</min>
-			<max>3</max>
-		</wildSpawn_GroupSizeRange>
+		<combatPower>70</combatPower>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.3</ecoSystemWeight>
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Iguana/Iguana</texPath>
+					<texPath>Things/Pawn/ExtendedGraphic/Animal/Iguana/Iguana</texPath>
 					<drawSize>1</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+					<texPath>Things/Pawn/Animal/Iguana/Dessicated_Iguana</texPath>
 					<drawSize>1</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Iguana/Iguana</texPath>
+					<texPath>Things/Pawn/ExtendedGraphic/Animal/Iguana/Iguana</texPath>
 					<drawSize>1.25</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
+					<texPath>Things/Pawn/Animal/Iguana/Dessicated_Iguana</texPath>
 					<drawSize>1.25</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Iguana/Iguana</texPath>
+					<texPath>Things/Pawn/ExtendedGraphic/Animal/Iguana/Iguana</texPath>
 					<drawSize>1.5</drawSize>
 					<shadowData>
 						<volume>(0.25, 0.3, 0.25)</volume>
@@ -459,224 +557,102 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedSmall</texPath>
-					<drawSize>1.4</drawSize>
+					<texPath>Things/Pawn/Animal/Iguana/Dessicated_Iguana</texPath>
+					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
 
-	<ThingDef ParentName="AnimalThingBase">
-		<defName>Rhinoceros</defName>
-		<label>rhinoceros</label>
-		<description>A rhinoceros is a large land mammal with a horn on its nose. While it is typically quite peaceful, it will not hesitate to charge with its horn to fend off trespassers.</description>
-		<statBases>
-			<Mass>220</Mass>
-			<MoveSpeed>3.8</MoveSpeed>
-			<ComfyTemperatureMin>-8</ComfyTemperatureMin>
-			<MarketValue>2200</MarketValue>
-			<ImmunityGainSpeed>1.2</ImmunityGainSpeed>
-			<ArmorPenetration>0.5</ArmorPenetration>
-		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.65</defaultCooldownTime>
-				<meleeDamageBaseAmount>16</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
-				<surpriseAttack>
-					<extraMeleeDamages>
-						<li>
-							<def>Stun</def>
-							<amount>50</amount>
-						</li>
-					</extraMeleeDamages>
-				</surpriseAttack>
-			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.65</defaultCooldownTime>
-				<meleeDamageBaseAmount>18</meleeDamageBaseAmount>
-				<meleeDamageDef>Scratch</meleeDamageDef>
-				<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
-			</li>
-		</verbs>
-		<race>
-			<packAnimal>true</packAnimal>
-			<body>QuadrupedAnimalWithHoovesAndHorn</body>
-			<baseHungerRate>1.5</baseHungerRate>
-			<baseBodySize>1.7</baseBodySize>
-			<baseHealthScale>2.3</baseHealthScale>
-			<foodType>VegetarianRoughAnimal</foodType>
-			<useMeatFrom>Elephant</useMeatFrom>
-			<leatherColor>(204,204,204)</leatherColor>
-			<leatherLabel>Rhinoceros Hide</leatherLabel>
-			<leatherInsulation>0.9</leatherInsulation>
-			<leatherMarketValueFactor>8.0</leatherMarketValueFactor>
-			<leatherStatFactors>
-				<MaxHitPoints>1.5</MaxHitPoints>
-				<Beauty>1.2</Beauty>
-				<MarketValue>2.0</MarketValue>
-				<ArmorRating_Blunt>2.2</ArmorRating_Blunt>
-				<ArmorRating_Sharp>2.1</ArmorRating_Sharp>
-				<ArmorRating_Electric>1.1</ArmorRating_Electric>
-				<ArmorRating_Heat>1.4</ArmorRating_Heat>
-				<Insulation_Cold>0.6</Insulation_Cold>
-				<Insulation_Heat>1.15</Insulation_Heat>
-				<WorkToMake>1.7</WorkToMake>
-				<BedRestEffectiveness>0.8</BedRestEffectiveness>
-				<ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
-			</leatherStatFactors>
-			<wildness>0.50</wildness>
-			<manhunterOnTameFailChance>0.1</manhunterOnTameFailChance>
-			<manhunterOnDamageChance>0.4</manhunterOnDamageChance>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
-			<gestationPeriodDays>45</gestationPeriodDays>
-			<nameOnTameChance>1</nameOnTameChance>
-			<lifeExpectancy>45</lifeExpectancy>
-			<lifeStageAges>
-				<li>
-					<def>AnimalBaby</def>
-					<minAge>0</minAge>
-				</li>
-				<li>
-					<def>AnimalJuvenile</def>
-					<minAge>0.4</minAge>
-				</li>
-				<li>
-					<def>AnimalAdult</def>
-					<minAge>1.4</minAge>
-					<soundWounded>Pawn_Rhinoceros_Wounded</soundWounded>
-					<soundDeath>Pawn_Rhinoceros_Death</soundDeath>
-					<soundCall>Pawn_Rhinoceros_Call</soundCall>
-					<soundAngry>Pawn_Rhinoceros_Angry</soundAngry>
-				</li>
-			</lifeStageAges>
-			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
-			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
-			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
-			<hediffGiverSets>
-				<li>FuriousPassiveSet</li>
-			</hediffGiverSets>
-		</race>
-		<tradeTags>
-			<li>StandardAnimal</li>
-		</tradeTags>
-	</ThingDef>
-
-	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>Rhinoceros</defName>
-		<label>rhinoceros</label>
-		<race>Rhinoceros</race>
-		<combatPower>180</combatPower>
-		<wildSpawn_EcoSystemWeight>0.2</wildSpawn_EcoSystemWeight>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_GroupSizeRange>
-			<min>1</min>
-			<max>3</max>
-		</wildSpawn_GroupSizeRange>
-		<lifeStages>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rhino/Rhino</texPath>
-					<drawSize>1.5</drawSize>
-					<shadowData>
-						<volume>(0.475, 0.2, 0.3)</volume>
-						<offset>(0,0,-0.2)</offset>
-					</shadowData>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>1.5</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rhino/Rhino</texPath>
-					<drawSize>2.25</drawSize>
-					<shadowData>
-						<volume>(0.72, 0.3, 0.45)</volume>
-						<offset>(0,0,-0.25)</offset>
-					</shadowData>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>2.25</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rhino/Rhino</texPath>
-					<drawSize>3</drawSize>
-					<shadowData>
-						<volume>(0.95, 0.4, 0.6)</volume>
-						<offset>(0,0,-0.3)</offset>
-					</shadowData>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>3</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-		</lifeStages>
-	</PawnKindDef>
-
-
-	<ThingDef ParentName="AnimalThingBase">
+	<ThingDef ParentName="SK_AnimalThingBase">
 		<defName>Dromedary</defName>
 		<label>dromedary</label>
-		<description>A dromedary or camel is a distant cousin to horses that has adapted to survive in harsh desert climates. It has a distinctive hump in the middle of its back. It can go several days without food and water by regulating its internal temperature to avoid perspiring in hot temperatures.</description>
+		<description>A large land mammal adapted to arid environments. Domesticated since ancient times, its wool and leather are both exceptionally good at insulating against the desert heat, and its milk is quite nourishing. It can be used as a pack animal, but its bouncing gait makes it too uncomfortable to ride for any distance.\n\nBy storing water in its large humps and reclaiming moisture from its breath as it exhales, it can go weeks without drinking.</description>
 		<statBases>
 			<Mass>120</Mass>
-			<MoveSpeed>3.4</MoveSpeed>
+			<MoveSpeed>4.1</MoveSpeed>
 			<ComfyTemperatureMin>-15</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
 			<MarketValue>750</MarketValue>
 			<ImmunityGainSpeed>1.3</ImmunityGainSpeed>
-			<ArmorPenetration>0.15</ArmorPenetration>
+			<MeleeDodgeChance>0.08</MeleeDodgeChance>
+			<MeleeCritChance>0.12</MeleeCritChance>
+			<GermResistance>0.18</GermResistance>
+			<GermContainment>0.06</GermContainment>
 		</statBases>
 		<comps>
 			<li Class="CompProperties_Milkable">
 				<milkDef>Milk</milkDef>
-				<milkIntervalDays>4</milkIntervalDays>
-				<milkAmount>18</milkAmount>
+				<milkIntervalDays>2</milkIntervalDays>
+				<milkAmount>10</milkAmount>
 			</li>
 			<li Class="CompProperties_Shearable">
-				<woolDef>CamelHair</woolDef>
+				<woolDef>WoolDromedary</woolDef>
 				<shearIntervalDays>30</shearIntervalDays>
 				<woolAmount>80</woolAmount>
 			</li>
 		</comps>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.7</defaultCooldownTime>
-				<meleeDamageBaseAmount>6</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.45</cooldownTime>
 				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3.5</armorPenetrationBlunt>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.7</defaultCooldownTime>
-				<meleeDamageBaseAmount>6</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.45</cooldownTime>
 				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3.5</armorPenetrationBlunt>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<capacities>
+					<li>BiteBlunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>1.2</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
+				<chanceFactor>0.5</chanceFactor>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
 		<race>
-			<packAnimal>true</packAnimal>
 			<body>QuadrupedAnimalWithHoovesAndHump</body>
 			<herdAnimal>true</herdAnimal>
+			<packAnimal>true</packAnimal>
 			<baseHungerRate>0.6</baseHungerRate>
-			<baseBodySize>1.25</baseBodySize>
+			<baseBodySize>1.15</baseBodySize>
 			<baseHealthScale>1.7</baseHealthScale>
 			<foodType>VegetarianRoughAnimal</foodType>
 			<useMeatFrom>Elephant</useMeatFrom>
-			<useLeatherFrom>Monkey</useLeatherFrom>
+			<leatherDef>Leather_Heavy</leatherDef>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
 			<manhunterOnDamageChance>0</manhunterOnDamageChance>
-			<leatherInsulation>1.25</leatherInsulation>
 			<wildness>0.2</wildness>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
+			<trainability>Simple</trainability>
+			<nuzzleMtbHours>60</nuzzleMtbHours>
 			<gestationPeriodDays>30</gestationPeriodDays>
 			<lifeExpectancy>45</lifeExpectancy>
 			<lifeStageAges>
@@ -686,11 +662,11 @@
 				</li>
 				<li>
 					<def>AnimalJuvenile</def>
-					<minAge>0.5</minAge>
+					<minAge>0.25</minAge>
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>1.5</minAge>
+					<minAge>0.5</minAge>
 					<soundWounded>Pawn_Dromedary_Wounded</soundWounded>
 					<soundDeath>Pawn_Dromedary_Death</soundDeath>
 					<soundCall>Pawn_Dromedary_Call</soundCall>
@@ -701,24 +677,30 @@
 			<soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
+		<tradeTags>
+			<li>AnimalCommon</li>
+			<li>AnimalFarm</li>
+		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Quadruped</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-
-
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="SK_AnimalKindBase">
 		<defName>Dromedary</defName>
 		<label>dromedary</label>
+		<labelPlural>dromedaries</labelPlural>
 		<race>Dromedary</race>
 		<combatPower>95</combatPower>
-		<wildSpawn_EcoSystemWeight>0.2</wildSpawn_EcoSystemWeight>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_GroupSizeRange>
-			<min>2</min>
-			<max>5</max>
-		</wildSpawn_GroupSizeRange>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.7</ecoSystemWeight>
+		<wildGroupSize>2~5</wildGroupSize>
 		<lifeStages>
 			<li>
 				<label>dromedary calf</label>
+				<labelPlural>dromedary calves</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Dromedary/Dromedary</texPath>
 					<drawSize>1.5</drawSize>
@@ -728,7 +710,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+					<texPath>Things/Pawn/Animal/Dromedary/Dessicated_Dromedary</texPath>
 					<drawSize>1</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
@@ -742,7 +724,7 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+					<texPath>Things/Pawn/Animal/Dromedary/Dessicated_Dromedary</texPath>
 					<drawSize>2.25</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
@@ -756,61 +738,127 @@
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
+					<texPath>Things/Pawn/Animal/Dromedary/Dessicated_Dromedary</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
 
-	<ThingDef ParentName="AnimalThingBase">
+	<ThingDef ParentName="SK_AnimalThingBase">
 		<defName>Buffalo</defName>
 		<label>buffalo</label>
 		<description>A buffalo is a larger variation of muffalo that has survived the harsh landscape of a rimworld. They are known for their thick, brown wool, and the male's distinguished frontal tusks. They can be somewhat aggressive if you get too close.</description>
 		<statBases>
 			<Mass>155</Mass>
-			<MoveSpeed>2.75</MoveSpeed>
-			<ComfyTemperatureMin>-52</ComfyTemperatureMin>
+			<MoveSpeed>4.35</MoveSpeed>
+			<ComfyTemperatureMin>-55</ComfyTemperatureMin>
+			<ComfyTemperatureMax>52</ComfyTemperatureMax>
 			<MarketValue>1000</MarketValue>
 			<ImmunityGainSpeed>1.15</ImmunityGainSpeed>
-			<ArmorPenetration>0.2</ArmorPenetration>
+			<MeleeDodgeChance>0.2</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+			<CarryWeight>227</CarryWeight>
+			<CarryBulk>155</CarryBulk>
+			<GermResistance>0.15</GermResistance>
+			<GermContainment>0.05</GermContainment>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.7</defaultCooldownTime>
-				<meleeDamageBaseAmount>9</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>lefthoofblunt</id>-->
+				<label>left hoof</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftLeg_2</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<!--<id>righthoofblunt</id>-->
+				<label>right hoof</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.45</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightLeg_2</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>3</armorPenetrationBlunt>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<capacities>
+					<li>BiteBlunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>0.8</armorPenetrationBlunt>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>14</power>
+				<chanceFactor>0.5</chanceFactor>
+				<cooldownTime>2.75</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>10</armorPenetrationBlunt>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
 		<comps>
 			<li Class="CompProperties_Milkable">
 				<milkDef>Milk</milkDef>
-				<milkIntervalDays>2</milkIntervalDays>
-				<milkAmount>9</milkAmount>
+				<milkIntervalDays>1</milkIntervalDays>
+				<milkAmount>14</milkAmount>
 			</li>
 			<li Class="CompProperties_Shearable">
-				<woolDef>MuffaloWool</woolDef>
-				<shearIntervalDays>35</shearIntervalDays>
-				<woolAmount>80</woolAmount>
+				<woolDef>WoolMuffalo</woolDef>
+				<shearIntervalDays>25</shearIntervalDays>
+				<woolAmount>90</woolAmount>
 			</li>
 		</comps>
 		<race>
+			<body>QuadrupedAnimalWithHooves</body>
 			<packAnimal>true</packAnimal>
 			<herdAnimal>true</herdAnimal>
-			<body>QuadrupedAnimalWithHooves</body>
-			<baseBodySize>1.6</baseBodySize>
-			<baseHungerRate>1.1</baseHungerRate>
-			<baseHealthScale>2.2</baseHealthScale>
+			<baseBodySize>1.25</baseBodySize>
+			<baseHungerRate>1.2</baseHungerRate>
+			<baseHealthScale>2.35</baseHealthScale>
 			<foodType>VegetarianRoughAnimal</foodType>
 			<useMeatFrom>Muffalo</useMeatFrom>
-			<useLeatherFrom>Muffalo</useLeatherFrom>
+			<leatherDef>Leather_Plain</leatherDef>
+			<trainability>Simple</trainability>
 			<gestationPeriodDays>22.5</gestationPeriodDays>
 			<wildness>0.6</wildness>
 			<manhunterOnDamageChance>0.1</manhunterOnDamageChance>
 			<manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
+			<nuzzleMtbHours>60</nuzzleMtbHours>
 			<lifeExpectancy>15</lifeExpectancy>
 			<lifeStageAges>
 				<li>
@@ -823,7 +871,7 @@
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>1</minAge>
+					<minAge>0.5</minAge>
 					<soundWounded>Pawn_Muffalo_Wounded</soundWounded>
 					<soundDeath>Pawn_Muffalo_Death</soundDeath>
 					<soundCall>Pawn_Muffalo_Call</soundCall>
@@ -838,21 +886,28 @@
 			</hediffGiverSets>
 		</race>
 		<tradeTags>
-			<li>StandardAnimal</li>
+			<li>AnimalCommon</li>
+			<li>AnimalFarm</li>
 		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Quadruped</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-
-	<PawnKindDef ParentName="AnimalKindBase">
+	<PawnKindDef ParentName="SK_AnimalKindBase">
 		<defName>Buffalo</defName>
 		<label>buffalo</label>
 		<race>Buffalo</race>
 		<combatPower>110</combatPower>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_EcoSystemWeight>1</wildSpawn_EcoSystemWeight>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>1</ecoSystemWeight>
+		<wildGroupSize>3~8</wildGroupSize>
 		<lifeStages>
 			<li>
-				<label>Buffalo Calf</label>
+				<label>buffalo Calf</label>
+				<labelPlural>buffalo calves</labelPlural>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Mamuffalo</texPath>
 					<drawSize>1.5</drawSize>
@@ -870,7 +925,7 @@
 					</shadowData>
 				</femaleGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>1.5</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
@@ -892,7 +947,7 @@
 					</shadowData>
 				</femaleGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>2.25</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
@@ -914,41 +969,41 @@
 					</shadowData>
 				</femaleGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Muffalo/MuffaloDessicated</texPath>
+					<texPath>Things/Pawn/Animal/Muffalo/Dessicated_Muffalo</texPath>
 					<drawSize>3</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
 
-	<ThingDef ParentName="AnimalThingBase">
-		<defName>Rimram</defName>
-		<label>rimram</label>
+	<ThingDef ParentName="SK_AnimalThingBase">
+		<defName>Sheep</defName>
+		<label>Sheep</label>
 		<description>The thick wool on these rams makes them very common sight in cold climates. They are known for their ability to climb nearly vertical, sheer cliff faces. They have no fear of falling.</description>
 		<statBases>
 			<Mass>40</Mass>
-			<MoveSpeed>4.84</MoveSpeed>
+			<MoveSpeed>5.15</MoveSpeed>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<ComfyTemperatureMax>55</ComfyTemperatureMax>
 			<MarketValue>400</MarketValue>
 			<ImmunityGainSpeed>1.15</ImmunityGainSpeed>
-			<ArmorPenetration>0.07</ArmorPenetration>
+			<MeleeDodgeChance>0.05</MeleeDodgeChance>
+			<MeleeCritChance>0</MeleeCritChance>
+			<GermResistance>0.12</GermResistance>
+			<GermContainment>0.06</GermContainment>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.7</defaultCooldownTime>
-				<meleeDamageBaseAmount>5</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-				<linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>6</power>
+				<cooldownTime>1.65</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<armorPenetrationBlunt>5</armorPenetrationBlunt>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.7</defaultCooldownTime>
-				<meleeDamageBaseAmount>5</meleeDamageBaseAmount>
-				<meleeDamageDef>Blunt</meleeDamageDef>
-				<linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
-			</li>
-		</verbs>
+		</tools>
 		<comps>
 			<li Class="CompProperties_Milkable">
 				<milkDef>Milk</milkDef>
@@ -956,25 +1011,34 @@
 				<milkAmount>9</milkAmount>
 			</li>
 			<li Class="CompProperties_Shearable">
-				<woolDef>RamWool</woolDef>
+				<woolDef>WoolSheep</woolDef>
 				<shearIntervalDays>10</shearIntervalDays>
-				<woolAmount>40</woolAmount>
+				<woolAmount>45</woolAmount>
 			</li>
 		</comps>
 		<race>
+			<body>QuadrupedAnimalWithHooves</body>
 			<herdAnimal>true</herdAnimal>
 			<baseHungerRate>0.35</baseHungerRate>
-			<body>QuadrupedAnimalWithHooves</body>
-			<baseBodySize>0.45</baseBodySize>
-			<baseHealthScale>1.0</baseHealthScale>
+			<baseBodySize>0.47</baseBodySize>
+			<baseHealthScale>0.7</baseHealthScale>
 			<foodType>VegetarianRoughAnimal</foodType>
 			<useMeatFrom>Elephant</useMeatFrom>
-			<useLeatherFrom>Ibex</useLeatherFrom>
+			<leatherDef>Leather_Plain</leatherDef>
 			<wildness>0.05</wildness>
+			<trainability>None</trainability>
 			<manhunterOnDamageChance>0.025</manhunterOnDamageChance>
-			<nuzzleMtbHours>120</nuzzleMtbHours>
-			<gestationPeriodDays>22.5</gestationPeriodDays>
-			<lifeExpectancy>15</lifeExpectancy>
+			<nuzzleMtbHours>60</nuzzleMtbHours>
+			<gestationPeriodDays>17</gestationPeriodDays>
+			<lifeExpectancy>12</lifeExpectancy>
+			<litterSizeCurve>
+				<points>
+					<li>(0.5, 0)</li>
+					<li>(1, 1)</li>
+					<li>(1.7, 1)</li>
+					<li>(2.0, 0)</li>
+				</points>
+			</litterSizeCurve>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -986,11 +1050,11 @@
 				</li>
 				<li>
 					<def>AnimalAdult</def>
-					<minAge>0.8</minAge>
-					<soundWounded>Pawn_Elk_Wounded</soundWounded>
-					<soundDeath>Pawn_Elk_Death</soundDeath>
-					<soundCall>Pawn_Elk_Call</soundCall>
-					<soundAngry>Pawn_Elk_Angry</soundAngry>
+					<minAge>0.7</minAge>
+					<soundWounded>Pawn_Sheep_Wounded</soundWounded>
+					<soundDeath>Pawn_Sheep_Death</soundDeath>
+					<soundCall>Pawn_Sheep_Call</soundCall>
+					<soundAngry>Pawn_Sheep_Angry</soundAngry>
 				</li>
 			</lifeStageAges>
 			<soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
@@ -998,60 +1062,95 @@
 			<soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
 		</race>
 		<tradeTags>
-			<li>StandardAnimal</li>
+			<li>AnimalCommon</li>
+			<li>AnimalFarm</li>
 		</tradeTags>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Quadruped</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-
-	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>Rimram</defName>
-		<label>rimram</label>
-		<race>Rimram</race>
+	<PawnKindDef ParentName="SK_AnimalKindBase">
+		<defName>Sheep</defName>
+		<label>sheep</label>
+		<labelPlural>sheep</labelPlural>
+		<labelMale>ram</labelMale>
+		<labelFemale>ewe</labelFemale>
+		<race>Sheep</race>
 		<combatPower>60</combatPower>
-		<wildSpawn_EcoSystemWeight>0.5</wildSpawn_EcoSystemWeight>
-		<wildSpawn_spawnWild>true</wildSpawn_spawnWild>
-		<wildSpawn_GroupSizeRange>
-			<min>3</min>
-			<max>7</max>
-		</wildSpawn_GroupSizeRange>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.5</ecoSystemWeight>
+		<wildGroupSize>3~7</wildGroupSize>
 		<lifeStages>
 			<li>
+				<label>lamb</label>
+				<labelPlural>lambs</labelPlural>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rimram</texPath>
-					<drawSize>1.5</drawSize>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>1.5</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rimram</texPath>
-					<drawSize>2.25</drawSize>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>0.6</drawSize>
 					<shadowData>
-						<volume>(0.3, 0.3, 0.3)</volume>
-						<offset>(0,0,-0.3)</offset>
-					</shadowData>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>2.25</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/Rimram</texPath>
-					<drawSize>3</drawSize>
-					<shadowData>
-						<volume>(0.4, 0.4, 0.4)</volume>
+						<volume>(0.4, 0.3, 0.3)</volume>
 						<offset>(0,0,-0.2)</offset>
 					</shadowData>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/Dessicated/CritterDessicatedMedium</texPath>
-					<drawSize>3</drawSize>
+					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepFemale</texPath>
+					<drawSize>0.6</drawSize>
 				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMale</texPath>
+					<drawSize>1.30</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>1.30</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepMale</texPath>
+					<drawSize>1.30</drawSize>
+				</dessicatedBodyGraphicData>
+				<femaleDessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepFemale</texPath>
+					<drawSize>1.30</drawSize>
+				</femaleDessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepMale</texPath>
+					<drawSize>1.75</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<femaleGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/SheepFemale</texPath>
+					<drawSize>1.70</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.45, 0.45)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</femaleGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepMale</texPath>
+					<drawSize>1.75</drawSize>
+				</dessicatedBodyGraphicData>
+				<femaleDessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/Sheep/Dessicated_SheepFemale</texPath>
+					<drawSize>1.70</drawSize>
+				</femaleDessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>

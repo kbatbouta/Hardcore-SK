@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DefPackage-TraderKindDef>
+<Defs>
 
 	<!--========================= Animal trader =============================-->
 	
@@ -7,42 +7,34 @@
 	<TraderKindDef>
 		<defName>AnimalTrader</defName>
 		<label>Animal Trader</label>
+		<commonality>1.2</commonality>
 		<orbital>true</orbital>
 		<stockGenerators>
 			<li Class="StockGenerator_SingleDef">
 				<thingDef>Silver</thingDef>
-				<countRange>
-					<min>5000</min>
-					<max>8000</max>
-				</countRange>
+				<countRange>5000~8000</countRange>
 			</li>
       <li Class="StockGenerator_Animals">
-        <tradeTags>
-          <li>StandardAnimal</li>
-        </tradeTags>
-        <kindCountRange>
-          <min>4</min>
-          <max>7</max>
-        </kindCountRange>
-        <countRange>
-          <min>10</min>
-          <max>20</max>
-        </countRange>
+        <tradeTagsSell>
+			<li>AnimalCommon</li>
+          <li>AnimalFighter</li>
+        </tradeTagsSell>
+        <tradeTagsBuy>
+			<li>AnimalCommon</li>
+          <li>AnimalFighter</li>
+          <li>AnimalExotic</li>
+        </tradeTagsBuy>
+        <kindCountRange>4~7</kindCountRange>
+        <countRange>10~20</countRange>
       </li>
-      <li Class="StockGenerator_BuyWeirdOrganic" />
+      <!--<li Class="StockGenerator_BuyWeirdOrganic" />-->
 			<li Class="StockGenerator_Category">
 				<categoryDef>Leathers</categoryDef>
-				<thingDefCountRange>
-					<min>2</min>
-					<max>8</max>
-				</thingDefCountRange>
-				<totalPriceRange>
-					<min>600</min>
-					<max>2200</max>
-				</totalPriceRange>
+				<thingDefCountRange>2~8</thingDefCountRange>
+				<totalPriceRange>600~2200</totalPriceRange>
 			</li>
-			<li Class="StockGenerator_BuyWeirdOrganic" />
+			<!--<li Class="StockGenerator_BuyWeirdOrganic" />-->
     </stockGenerators>
   </TraderKindDef>
 	
-</DefPackage-TraderKindDef>
+</Defs>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<ThingDefs>
+<Defs>
 
 	<ThingDef ParentName="ApparelNeoliticBase">
-		<defName>Apparello_Skullhood</defName>
-		<label>Human Skull</label>
+		<defName>Apparel_WarMask</defName>
+		<label>War mask</label>
 		<description>A partial mask crafted out of a human's skull. There is something very unsettling about it.</description>
 		<graphicData>
-		  <texPath>Things/Apparel/Apparello/Hats/Animalhats/Skull</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Apparel/Apparello/Hats/Animalhats/Skull</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>				
 		<stuffCategories>
 			<li>Leathery</li>
@@ -17,17 +17,17 @@
 		<statBases>
 			<WorkToMake>3000</WorkToMake>
 			<MaxHitPoints>35</MaxHitPoints>
-			<Flammability>5</Flammability>
-			<Insulation_Heat>3</Insulation_Heat>
-			<Insulation_Cold>-5</Insulation_Cold>
-			<ArmorRating_Blunt>0.14</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.12</ArmorRating_Sharp>
-			<ArmorRating_Heat>0.1</ArmorRating_Heat>
-			<ArmorRating_Electric>0.05</ArmorRating_Electric>
+			<Flammability>1.4</Flammability>
 			<Mass>0.2</Mass>
 			<Bulk>3</Bulk>
-			<WornWeight>0.2</WornWeight>
 			<WornBulk>0</WornBulk>
+			<EquipDelay>0.9</EquipDelay>
+            <StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.96</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>-0.03</MoveSpeed>
@@ -35,40 +35,43 @@
 			<SocialImpact>-0.4</SocialImpact>
 			<MentalBreakThreshold>0.1</MentalBreakThreshold>
 			<PsychicSensitivity>-0.11</PsychicSensitivity>
-			<ShootingAccuracy>-0.08</ShootingAccuracy>
+			<ShootingAccuracyPawn>-0.08</ShootingAccuracyPawn>
 			<AimingDelayFactor>0.05</AimingDelayFactor>
 			<MeleeHitChance>-0.05</MeleeHitChance>
 			<TrainAnimalChance>0.1</TrainAnimalChance>
 			<TameAnimalChance>0.07</TameAnimalChance>
+			<Suppressability>-0.05</Suppressability>
+			<GermResistance>0.10</GermResistance>
+			<GermContainment>0.15</GermContainment>
 		</equippedStatOffsets>
+		<generateCommonality>1</generateCommonality>
 		<apparel>
-		  <bodyPartGroups>
-			<li>FullHead</li>
-		  </bodyPartGroups>
-		  <worngraphicPath>Things/Apparel/Apparello/Hats/Animalhats/Skull</worngraphicPath>
-		  <layers>
-			<li>Overhead</li>
-		  </layers>
-			<commonality>1</commonality>
-		<tags>
-			<li>Animal</li>
-			<li>Tribal</li>
-			<li>PredatorsLight</li>
-			<li>PredatorsMedium</li>
-			<li>PredatorsScout</li>
-		</tags>
-		  <defaultOutfitTags>
-			<li>Soldier</li>
-		  </defaultOutfitTags>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/Apparello/Hats/Animalhats/Skull</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Animal</li>
+				<li>Tribal</li>
+				<li>PredatorsLight</li>
+				<li>PredatorsMedium</li>
+				<li>PredatorsScout</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
 		</apparel>		
 		<colorGenerator Class="ColorGenerator_Options">
-		  <options>
-			<li>
-			  <weight>4</weight>
-			  <min>RGBA(0.9,0.9,0.9,1)</min>
-			  <max>RGBA(1,1,1,1)</max>
-			</li>
-		  </options>
+			<options>
+				<li>
+					<weight>4</weight>
+					<min>(0.9,0.9,0.9,1)</min>
+					<max>(1,1,1,1)</max>
+				</li>
+			</options>
 		</colorGenerator>
 		<thingCategories>
 			<li>AnimalHeaddressCat</li>
@@ -76,13 +79,13 @@
 		</thingCategories>
 	</ThingDef>
 
-	<ThingDef ParentName="ApparelNeoliticBase">
+	<ThingDef ParentName="ApparelNeoliticSimpleBase">
 		<defName>Apparello_HornedHead</defName>
 		<label>Horned Head Garment</label>
 		<description>Lovingly crafted out of sturdiest horned head garment. You can almost feel the spirit of this brave animal beast within you. It's very warm and horny.</description>
 		<graphicData>
-		  <texPath>Things/Apparel/AMH/DeerHood</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Apparel/AMH/DeerHood</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>			
 		<stuffCategories>
 			<li>Leathery</li>
@@ -91,72 +94,75 @@
 		<statBases>
 			<WorkToMake>3500</WorkToMake>
 			<MaxHitPoints>40</MaxHitPoints>
-			<Flammability>8</Flammability>
-			<Insulation_Heat>3</Insulation_Heat>
-			<Insulation_Cold>-7</Insulation_Cold>
-			<ArmorRating_Blunt>0.14</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.12</ArmorRating_Sharp>
-			<ArmorRating_Electric>0.1</ArmorRating_Electric>
+			<Flammability>1.8</Flammability>
 			<Mass>0.7</Mass>
 			<Bulk>3</Bulk>
-			<WornWeight>0.7</WornWeight>
 			<WornBulk>0</WornBulk>
+			<EquipDelay>0.9</EquipDelay>
+            <StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.88</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>-0.04</MoveSpeed>
 			<WorkSpeedGlobal>-0.03</WorkSpeedGlobal>
 			<SocialImpact>-0.15</SocialImpact>
-			<ShootingAccuracy>0.07</ShootingAccuracy>
+			<ShootingAccuracyPawn>0.07</ShootingAccuracyPawn>
 			<AimingDelayFactor>0.1</AimingDelayFactor>
 			<GlobalLearningFactor>0.015</GlobalLearningFactor>
-			<RecruitPrisonerChance>0.07</RecruitPrisonerChance>
-			<GiftImpact>0.07</GiftImpact>
+			<NegotiationAbility>0.07</NegotiationAbility>
 			<TradePriceImprovement>0.06</TradePriceImprovement>
 			<TrainAnimalChance>0.13</TrainAnimalChance>
 			<TameAnimalChance>0.11</TameAnimalChance>
+			<Suppressability>-0.04</Suppressability>
+			<GermResistance>0.10</GermResistance>
+			<GermContainment>0.15</GermContainment>
 		</equippedStatOffsets>
+		<generateCommonality>1</generateCommonality>
 		<apparel>
-		  <bodyPartGroups>
-			<li>FullHead</li>
-		  </bodyPartGroups>
-		  <worngraphicPath>Things/Apparel/AMH/DeerHood</worngraphicPath>
-		  <layers>
-			<li>Overhead</li>
-		  </layers>
-			<commonality>1</commonality>
-		<tags>
-			<li>Animal</li>
-			<li>Tribal</li>
-			<li>PredatorsLight</li>
-			<li>PredatorsMedium</li>
-			<li>PredatorsScout</li>
-		</tags>
-		  <defaultOutfitTags>
-			<li>Soldier</li>
-		  </defaultOutfitTags>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/AMH/DeerHood</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Animal</li>
+				<li>Tribal</li>
+				<li>PredatorsLight</li>
+				<li>PredatorsMedium</li>
+				<li>PredatorsScout</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
 		</apparel>			
 		<colorGenerator Class="ColorGenerator_Options">
-		  <options>
-			<li>
-			  <weight>4</weight>
-			  <min>RGBA(0.9,0.9,0.9,1)</min>
-			  <max>RGBA(1,1,1,1)</max>
-			</li>
-		  </options>
+			<options>
+				<li>
+					<weight>4</weight>
+					<min>(0.9,0.9,0.9,1)</min>
+					<max>(1,1,1,1)</max>
+				</li>
+			</options>
 		</colorGenerator>
 		<thingCategories>
 			<li>AnimalHeaddressCat</li>
 		</thingCategories>
 	</ThingDef>
-	
-	
-	<ThingDef ParentName="ApparelNeoliticBase">
+
+
+	<ThingDef ParentName="ApparelNeoliticSimpleBase">
 		<defName>Apparello_Slughood</defName>
 		<label>Thick Leather Head Garment</label>
 		<description>A head piece that was lovingly crafted out of thick leather. You can almost feel the spirit of this determined beast within you.</description>
 		<graphicData>
-		  <texPath>Things/Apparel/Apparello/Hats/Animalhats/Slughat</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
+			<texPath>Things/Apparel/Apparello/Hats/Animalhats/Slughat</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>			
 		<stuffCategories>
 			<li>Leathery</li>
@@ -165,16 +171,17 @@
 		<statBases>
 			<WorkToMake>4000</WorkToMake>
 			<MaxHitPoints>40</MaxHitPoints>
-			<Flammability>6</Flammability>
-			<Insulation_Heat>4</Insulation_Heat>
-			<Insulation_Cold>-7</Insulation_Cold>
-			<ArmorRating_Blunt>0.12</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.14</ArmorRating_Sharp>
-			<ArmorRating_Electric>0.1</ArmorRating_Electric>
+			<Flammability>1.55</Flammability>
 			<Mass>0.7</Mass>
 			<Bulk>3</Bulk>
-			<WornWeight>0.7</WornWeight>
 			<WornBulk>0</WornBulk>
+			<EquipDelay>0.9</EquipDelay>
+            <StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>1.04</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
 		</statBases>
 		<equippedStatOffsets>
 			<MoveSpeed>-0.03</MoveSpeed>
@@ -182,42 +189,44 @@
 			<SocialImpact>-0.15</SocialImpact>
 			<PsychicSensitivity>-0.2</PsychicSensitivity>
 			<GlobalLearningFactor>0.02</GlobalLearningFactor>
-			<RecruitPrisonerChance>0.06</RecruitPrisonerChance>
-			<GiftImpact>0.05</GiftImpact>
+			<NegotiationAbility>0.06</NegotiationAbility>
 			<TradePriceImprovement>0.05</TradePriceImprovement>
 			<TrainAnimalChance>0.1</TrainAnimalChance>
 			<TameAnimalChance>0.07</TameAnimalChance>
+			<Suppressability>-0.04</Suppressability>
+			<GermResistance>0.10</GermResistance>
+			<GermContainment>0.14</GermContainment>
 		</equippedStatOffsets>
+		<generateCommonality>1</generateCommonality>
 		<apparel>
-		  <bodyPartGroups>
-			<li>FullHead</li>
-		  </bodyPartGroups>
-		  <worngraphicPath>Things/Apparel/Apparello/Hats/Animalhats/Slughat</worngraphicPath>
-		  <layers>
-			<li>Overhead</li>
-		  </layers>
-			<commonality>1</commonality>
-		<tags>
-			<li>Animal</li>
-			<li>Tribal</li>
-		</tags>
-		  <defaultOutfitTags>
-			<li>Worker</li>
-			<li>Soldier</li>
-		  </defaultOutfitTags>
+			<bodyPartGroups>
+				<li>FullHead</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/Apparello/Hats/Animalhats/Slughat</wornGraphicPath>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Animal</li>
+				<li>Tribal</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Worker</li>
+				<li>Soldier</li>
+			</defaultOutfitTags>
 		</apparel>
 		<colorGenerator Class="ColorGenerator_Options">
-		  <options>
-			<li>
-			  <weight>4</weight>
-			  <min>RGBA(0.9,0.9,0.9,1)</min>
-			  <max>RGBA(1,1,1,1)</max>
-			</li>
-		  </options>
+			<options>
+				<li>
+					<weight>4</weight>
+					<min>(0.9,0.9,0.9,1)</min>
+					<max>(1,1,1,1)</max>
+				</li>
+			</options>
 		</colorGenerator>
 		<thingCategories>
 			<li>AnimalHeaddressCat</li>
 		</thingCategories>
 	</ThingDef>
-	
-</ThingDefs>
+
+</Defs>

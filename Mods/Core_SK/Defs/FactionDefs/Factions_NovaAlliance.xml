@@ -1,143 +1,159 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FactionDefs>
+<Defs>
 
-  <FactionDef>
+	<FactionDef ParentName="SK_HumanFactionBase">
 		<defName>NovaAlliance</defName>
 		<label>Nova alliance</label>
 		<description>The Nova Corps is a fictional intergalactic military force.</description>
+		<pawnSingular>nova alliance</pawnSingular>
 		<pawnsPlural>nova alliance</pawnsPlural>
-    <factionBaseSelectionWeight>1</factionBaseSelectionWeight>
-    <requiredCountAtGameStart>1</requiredCountAtGameStart>
-    <canMakeRandomly>true</canMakeRandomly>
-    <raidCommonality>75</raidCommonality>
-	<canSiege>false</canSiege>
-	<autoFlee>true</autoFlee>
-    <canStageAttacks>true</canStageAttacks>
-	<leaderTitle>General</leaderTitle>
-    <expandingIconTexture>UI/Icons/Factions/NovaAlliance</expandingIconTexture>
-    <colorSpectrum>
-      <li>(0.64, 0.42, 0.36)</li>
-      <li>(0.47, 0.5, 0.91)</li>
-    </colorSpectrum>
-		<startingGoodwill>
-		  <min>-60</min>
-		  <max>20</max>
-		</startingGoodwill>
+		<settlementGenerationWeight>1</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>false</canSiege>
+		<autoFlee>true</autoFlee>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>General</leaderTitle>
+		<earliestRaidDays>150</earliestRaidDays>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(500, 0.05)</li>
+				<li>(7000, 0.35)</li>
+				<li>(7500, 0.8)</li>
+				<li>(8000, 1.2)</li>
+				<li>(10000, 0.8)</li>
+				<li>(15000, 0.7)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0, 200)</li>
+				<li>(4000, 220)</li>
+				<li>(6000, 450)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<geneticVariance>0</geneticVariance>
+		<factionIconPath>World/WorldObjects/Expanding/NovaAlliance</factionIconPath>
+		<colorSpectrum>
+			<li>(0.64, 0.42, 0.36)</li>
+			<li>(0.47, 0.5, 0.91)</li>
+		</colorSpectrum>
 		<pawnNameMaker>NamerPersonNorbal</pawnNameMaker>
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
-		<factionBaseNameMaker>NamerFactionBaseOutlander</factionBaseNameMaker>
-		<techLevel>Industrial</techLevel>
-		<backstoryCategory>Raider</backstoryCategory>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Spacer</techLevel>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Outlander</li>
+				</categories>
+				<commonality>0.65</commonality>
+			</li>
+			<li>
+				<categories>
+					<li>Pirate</li>
+				</categories>
+				<commonality>0.35</commonality>
+			</li>
+		</backstoryFilters>
 		<hairTags>
 			<li>Urban</li>
 		</hairTags>
 		<naturalColonyGoodwill>
-			<min>-100</min>
-			<max>10</max>
+			<min>0</min>
+			<max>20</max>
 		</naturalColonyGoodwill>
-    <caravanTraderKinds>
-      <li>Caravan_Outlander_BulkGoods</li>
-      <li>Caravan_Outlander_CombatSupplier</li>
-      <li>Caravan_Outlander_Exotic</li>
-      <li>Caravan_Outlander_PirateMerchant</li>
-    </caravanTraderKinds>
-    <visitorTraderKinds>
-      <li>Visitor_Outlander_Standard</li>
-    </visitorTraderKinds>
-    <factionBaseTraderKinds>
-      <li>FactionBase_Outlander_Standard</li>
-    </factionBaseTraderKinds>
-    <allowedArrivalTemperatureRange>
-      <min>-45</min>
-      <max>40</max>
-    </allowedArrivalTemperatureRange>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>Cloth</li>
-        <li>MuffaloWool</li>
-        <li>CamelHair</li>
-        <li>AlpacaWool</li>
-		<li>HempCloth</li>
-        <li>RamWool</li>
-		<li>Kevlar</li>
-        <li>CopperBar</li>
-        <li>AluminiumBar</li>
-		<li>Bronze</li>
-        <li>SteelBar</li>
-        <li>SilverBar</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    <pawnGroupMakers>
-      <li>
-        <kindDef>Normal</kindDef>
-			<commonality>100</commonality>
-			<disallowedStrategies>
-			  <li>ImmediateAttackSappers</li>	
-			</disallowedStrategies>
-        <options>
-			 <NovaAllianceSoldier>250</NovaAllianceSoldier>
-			 <NovaAllianceAssault>70</NovaAllianceAssault>
-			 <NovaCommander>20</NovaCommander>
-        </options>
-      </li>
-      <li>
-        <kindDef>Normal</kindDef>
-			<commonality>20</commonality>
-			<disallowedStrategies>
-			  <li>ImmediateAttack</li>	
-			  <li>ImmediateAttackSmart</li>		
-			  <li>ImmediateAttackSmartCenter</li>
-			  <li>StageThenAttack</li>
-			  <li>Siege</li>		  
-			</disallowedStrategies>
-        <options>
-			 <NovaAllianceSoldier>250</NovaAllianceSoldier>
-			 <NovaAllianceAssault>70</NovaAllianceAssault>
-			 <NovaAllianceSapper>70</NovaAllianceSapper>
-			 <NovaCommander>20</NovaCommander>
-        </options>
-      </li>
-      <li>
-        <kindDef>Trader</kindDef>
-        <traders>
-			  <NovaTrader>1</NovaTrader>
-        </traders>
-        <carriers>
-          <Muffalo>1</Muffalo>
-          <Dromedary>1</Dromedary>
-          <Megabadger>1</Megabadger>
-          <WoolyHorse>1</WoolyHorse>
-          <WoolyRhino>1</WoolyRhino>
-          <Horse>1</Horse>
-          <Blackbear>1</Blackbear>
-          <Rhinoceros>1</Rhinoceros>
-          <Elephant>1</Elephant>
-          <Buffalo>1</Buffalo>
-          <GrizzlyBear>1</GrizzlyBear>
-          <PolarBear>1</PolarBear>
-        </carriers>
-        <guards>
-			<NovaAllianceSoldier>100</NovaAllianceSoldier>
-			<NovaAllianceAssault>40</NovaAllianceAssault>
-        </guards>
-      </li>
-      <li>
-        <kindDef>FactionBase</kindDef>
-        <options>
-			 <NovaAllianceSoldier>250</NovaAllianceSoldier>
-			 <NovaAllianceAssault>70</NovaAllianceAssault>
-			 <NovaAllianceSapper>70</NovaAllianceSapper>
-			 <NovaCommander>20</NovaCommander>
-        </options>
-      </li>
-    </pawnGroupMakers>
-    <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
-  </FactionDef>
+		<startingGoodwill>0</startingGoodwill>
+		<caravanTraderKinds>
+			<li>Caravan_Outlander_BulkGoods</li>
+			<li>Caravan_Outlander_CombatSupplier</li>
+			<li>Caravan_Outlander_Exotic</li>
+			<li>Caravan_Outlander_PirateMerchant</li>
+		</caravanTraderKinds>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Outlander_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>-45~40</allowedArrivalTemperatureRange>
+		<raidLootMaker>PirateRaidLootMaker</raidLootMaker>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolDromedary</li>
+				<li>WoolAlpaca</li>
+				<li>HempCloth</li>
+				<li>WoolSheep</li>
+				<li>Kevlar</li>
+				<li>CopperBar</li>
+				<li>AluminiumBar</li>
+				<li>Bronze</li>
+				<li>SteelBar</li>
+				<li>SilverBar</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>Plasteel</li>
+			</thingDefs>
+		</apparelStuffFilter>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<NovaAllianceSoldier>20</NovaAllianceSoldier>
+					<NovaAllianceAssault>15</NovaAllianceAssault>
+					<NovaAllianceSapper>10</NovaAllianceSapper>
+					<NovaCommander>2</NovaCommander>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<NovaAllianceSoldier>20</NovaAllianceSoldier>
+					<NovaAllianceAssault>15</NovaAllianceAssault>
+					<NovaAllianceSapper>10</NovaAllianceSapper>
+					<NovaCommander>5</NovaCommander>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<NovaTrader>1</NovaTrader>
+				</traders>
+				<carriers>
+					<Muffalo>6</Muffalo>
+					<Dromedary>3</Dromedary>
+					<Rhinoceros>2</Rhinoceros>
+					<Elephant>2</Elephant>
+					<Megabadger>1</Megabadger>
+					<Horse_Wooly>5</Horse_Wooly>
+					<Rhino_Wooly>2</Rhino_Wooly>
+					<Horse>7</Horse>
+					<Buffalo>4</Buffalo>
+					<Bear_Grizzly>2</Bear_Grizzly>
+					<Bear_Polar>1</Bear_Polar>
+					<Mammoth>2</Mammoth>
+				</carriers>
+				<guards>
+					<NovaAllianceSoldier>10</NovaAllianceSoldier>
+					<NovaAllianceAssault>5</NovaAllianceAssault>
+				</guards>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<NovaAllianceSoldier>15</NovaAllianceSoldier>
+					<NovaAllianceAssault>10</NovaAllianceAssault>
+					<NovaCommander>2</NovaCommander>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+	</FactionDef>
 
-</FactionDefs>
+</Defs>

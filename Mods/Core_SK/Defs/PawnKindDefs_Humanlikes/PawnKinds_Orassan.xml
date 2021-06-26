@@ -1,36 +1,86 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<PawnKindDefs>
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Orassan Bases -->
+	<PawnKindDef Name="OrassanVillagerBase" Abstract="True">
+		<race>Alien_Orassan</race>
+		<baseRecruitDifficulty>0.40</baseRecruitDifficulty>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Orassan</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<defaultFactionType>Orassan</defaultFactionType>
+		<chemicalAddictionChance>0.1</chemicalAddictionChance>
+		<invNutrition>2</invNutrition>
+		<invFoodDef>MealJerky</invFoodDef>
+		<itemQuality>Normal</itemQuality>
+		<backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
+		<minGenerationAge>18</minGenerationAge>
+		<maxGenerationAge>65</maxGenerationAge>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.5</max>
+		</gearHealthRange>
+		<techHediffsMoney>
+			<min>700</min>
+			<max>1200</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Simple</li>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsMaxAmount>3</techHediffsMaxAmount>
+		<techHediffsChance>0.25</techHediffsChance>
+	</PawnKindDef>
 
-  <PawnKindDef Name="OrassanVillagerBase" Abstract="True">
-    <race>Alien_Orassan</race>
-    <baseRecruitDifficulty>0.70</baseRecruitDifficulty>
-    <backstoryCategory>Orassan</backstoryCategory>
-    <defaultFactionType>Orassan</defaultFactionType>
-    <chemicalAddictionChance>0.1</chemicalAddictionChance>
-    <invNutrition>1.65</invNutrition>
-    <invFoodDef>MealJerky</invFoodDef>
-    <itemQuality>Normal</itemQuality>
-    <backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
-    <maxGenerationAge>65</maxGenerationAge>
-    <gearHealthRange>
-      <min>0.5</min>
-      <max>1.5</max>
-    </gearHealthRange>	
-    <techHediffsMoney>
-      <min>600</min>
-      <max>1200</max>
-    </techHediffsMoney>
-    <techHediffsTags>
-      <li>Advanced</li>
-    </techHediffsTags>
-    <techHediffsChance>0.006</techHediffsChance>
-  </PawnKindDef>
+	<!-- Refugee -->
+	<PawnKindDef ParentName="OrassanVillagerBase">
+		<defName>OrassanRefugee</defName>
+		<label>orassan refugee</label>
+		<combatPower>70</combatPower>
+		<isFighter>false</isFighter>
+		<defaultFactionType />
+		<apparelMoney>
+			<min>1200</min>
+			<max>1750</max>
+		</apparelMoney>
+		<apparelTags>
+			<li>PredatorsLight</li>
+			<li>BanditsLight</li>
+			<li>Outlander</li>
+		</apparelTags>
+		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+		<inventoryOptions>
+			<skipChance>0.75</skipChance>
+			<subOptionsChooseOne>
+				<li>
+					<choiceChance>80</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>50</min>
+						<max>200</max>
+					</countRange>
+				</li>
+				<li>
+					<choiceChance>20</choiceChance>
+					<thingDef>Silver</thingDef>
+					<countRange>
+						<min>250</min>
+						<max>900</max>
+					</countRange>
+				</li>
+			</subOptionsChooseOne>
+		</inventoryOptions>
+	</PawnKindDef>
 
-  <PawnKindDef Name="OrassanVillager" ParentName="OrassanVillagerBase">
-    <defName>OrassanVillager</defName>
-    <label>orassan villager</label>
-    <combatPower>120</combatPower>
-    <isFighter>false</isFighter>
+	<!-- Villager -->
+	<PawnKindDef Name="OrassanVillager" ParentName="OrassanVillagerBase">
+		<defName>OrassanVillager</defName>
+		<label>orassan villager</label>
+		<combatPower>70</combatPower>
+		<isFighter>false</isFighter>
 		<apparelMoney>
 			<min>1200</min>
 			<max>1750</max>
@@ -39,36 +89,30 @@
 			<li>PredatorsLight</li>
 			<li>BanditsLight</li>
 		</apparelTags>
-    <apparelAllowHeadwearChance>0.4</apparelAllowHeadwearChance>
-    <inventoryOptions>
-      <skipChance>0</skipChance>
-      <subOptionsChooseOne>
-        <li>
-          <choiceChance>90</choiceChance>
-          <thingDef>Silver</thingDef>
-          <countRange>
-            <min>25</min>
-            <max>70</max>
-          </countRange>
-        </li>
-        <li>
-          <choiceChance>30</choiceChance>
-          <thingDef>Silver</thingDef>
-          <countRange>
-            <min>700</min>
-            <max>1000</max>
-          </countRange>
-        </li>
-      </subOptionsChooseOne>
-    </inventoryOptions>
-  </PawnKindDef>
-  
-  <PawnKindDef Name="OrassanWindrunner" ParentName="OrassanVillagerBase">
-    <defName>OrassanWindrunner</defName>
-    <label>Orassan windrunner</label>
-    <combatPower>135</combatPower>
-    <itemQuality>Poor</itemQuality>
-    <isFighter>false</isFighter>
+		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>1500</min>
+			<max>2550</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>SMG2</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>9</min>
+					<max>10</max>
+				</primaryMagazineCount>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Windrunner -->
+	<PawnKindDef Name="OrassanWindrunner" ParentName="OrassanVillagerBase">
+		<defName>OrassanWindrunner</defName>
+		<label>Orassan windrunner</label>
+		<combatPower>180</combatPower>
+		<itemQuality>Poor</itemQuality>
+		<isFighter>true</isFighter>
 		<apparelMoney>
 			<min>1200</min>
 			<max>1750</max>
@@ -78,106 +122,171 @@
 			<li>BanditsLight</li>
 			<li>PredatorsMedium</li>
 		</apparelTags>
-		<apparelAllowHeadwearChance>0.4</apparelAllowHeadwearChance>
+		<apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
 		<weaponMoney>
 			<min>1500</min>
 			<max>2550</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>TierOneRifle</li>
-			<li>TierOneSniper</li>
+			<li>RF2</li>
+			<li>SMG2</li>
 		</weaponTags>
-	<fixedInventory>
-	  <LoadoutGen_AmmoTypeF>1</LoadoutGen_AmmoTypeF>
-	  <LoadoutGen_SidearmGrenadeTierOne>1</LoadoutGen_SidearmGrenadeTierOne>
-	</fixedInventory>
-  </PawnKindDef>
-
-  <PawnKindDef ParentName="OrassanWindrunner">
-    <defName>OrassanElder</defName>
-    <label>Orassan elder</label>
-    <factionLeader>true</factionLeader>
-    <defaultFactionType>Orassan</defaultFactionType>
-    <minGenerationAge>40</minGenerationAge>
-    <maxGenerationAge>100</maxGenerationAge>
-  </PawnKindDef>
-  
-  <PawnKindDef ParentName="OrassanVillager">
-    <defName>OrassanTrader</defName>
-    <label>Orassan trader</label>
-    <defaultFactionType>Orassan</defaultFactionType>
-    <trader>true</trader>
-    <combatPower>80</combatPower>
-	<apparelMoney>
-		<min>2200</min>
-		<max>2900</max>
-	</apparelMoney>
-    <apparelRequired>
-      <li>Apparello_Trypophobia</li>
-      <li>Apparello_Sandtrader</li>
-    </apparelRequired>
-  </PawnKindDef>
-  
-  <PawnKindDef ParentName="OrassanVillagerBase">
-    <defName>OrassanAdventurer</defName>
-    <label>Orassan adventurer</label>
-    <combatPower>145</combatPower>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>9</min>
+					<max>10</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>0.25</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>50</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>GrenadeTierZero</li>
+							<li>GrenadeTierOne</li>
+							<li>GrenadeTierTwo</li>
+						</weaponTags>
+						<magazineCount>
+							<min>1</min>
+							<max>2</max>
+						</magazineCount>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Elder -->
+	<PawnKindDef ParentName="OrassanWindrunner">
+		<defName>OrassanElder</defName>
+		<label>Orassan elder</label>
+		<factionLeader>true</factionLeader>
+		<combatPower>300</combatPower>
+		<canBeSapper>true</canBeSapper>
+		<defaultFactionType>Orassan</defaultFactionType>
+		<minGenerationAge>40</minGenerationAge>
+		<maxGenerationAge>100</maxGenerationAge>
+		<baseRecruitDifficulty>0.70</baseRecruitDifficulty>
+	</PawnKindDef>
+	<!-- Trader -->
+	<PawnKindDef ParentName="OrassanVillager">
+		<defName>OrassanTrader</defName>
+		<label>Orassan trader</label>
+		<defaultFactionType>Orassan</defaultFactionType>
+		<trader>true</trader>
+		<combatPower>50</combatPower>
+		<apparelMoney>
+			<min>2200</min>
+			<max>2900</max>
+		</apparelMoney>
+		<apparelRequired>
+			<li>Apparello_Trypophobia</li>
+			<li>Apparello_Sandtrader</li>
+		</apparelRequired>
+	</PawnKindDef>
+	<!-- Adventurer -->
+	<PawnKindDef ParentName="OrassanVillagerBase">
+		<defName>OrassanAdventurer</defName>
+		<label>Orassan adventurer</label>
+		<combatPower>190</combatPower>
+		<canBeSapper>true</canBeSapper>
+		<isFighter>true</isFighter>
 		<apparelMoney>
 			<min>1300</min>
 			<max>1850</max>
 		</apparelMoney>
-    <apparelTags>
+		<apparelTags>
 			<li>PredatorsLight</li>
 			<li>BanditsLight</li>
-    </apparelTags>
-    <apparelAllowHeadwearChance>0.4</apparelAllowHeadwearChance>
+			<li>BoneShield</li>
+		</apparelTags>
+		<apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
 		<weaponMoney>
-			<min>700</min>
-			<max>1750</max>
+			<min>17</min>
+			<max>35</max>
 		</weaponMoney>
-    <weaponTags>
-			<li>TierOneSMG</li>
-    </weaponTags>
-	<fixedInventory>
-	  <LoadoutGen_AmmoTypeHH>1</LoadoutGen_AmmoTypeHH>
-	  <LoadoutGen_SidearmGrenadeTierOne>1</LoadoutGen_SidearmGrenadeTierOne>
-	</fixedInventory>
-  </PawnKindDef>
-
-  <PawnKindDef ParentName="OrassanVillagerBase">
-    <defName>OrassanHunter</defName>
-    <label>Orassan hunter</label>
-    <combatPower>165</combatPower>
-    <maxGenerationAge>40</maxGenerationAge>
-    <apparelTags>
-		<li>PredatorsMedium</li>
-		<li>PredatorsUnique</li>
-    </apparelTags>
+		<weaponTags>
+			<li>GrenadeTierTwo</li>
+		</weaponTags>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>7</min>
+					<max>10</max>
+				</primaryMagazineCount>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Hunter -->
+	<PawnKindDef ParentName="OrassanVillagerBase">
+		<defName>OrassanHunter</defName>
+		<label>Orassan hunter</label>
+		<combatPower>205</combatPower>
+		<maxGenerationAge>40</maxGenerationAge>
+		<isFighter>true</isFighter>
+		<apparelTags>
+			<li>PredatorsMedium</li>
+			<li>PredatorsUnique</li>
+		</apparelTags>
 		<apparelMoney>
 			<min>1350</min>
 			<max>1850</max>
 		</apparelMoney>
-    <apparelAllowHeadwearChance>0.5</apparelAllowHeadwearChance>
+		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
 		<weaponMoney>
 			<min>1500</min>
 			<max>2550</max>
 		</weaponMoney>
-    <weaponTags>
-			<li>TierOneRifle</li>
-			<li>TierOneSMG</li>
-    </weaponTags>
-	<fixedInventory>
-	  <LoadoutGen_AmmoTypeG>1</LoadoutGen_AmmoTypeG>
-	  <LoadoutGen_SidearmGrenadeTierOne>1</LoadoutGen_SidearmGrenadeTierOne>
-	</fixedInventory>
-  </PawnKindDef>
-
-  <PawnKindDef ParentName="OrassanVillagerBase">
-    <defName>OrassanPredator</defName>
-    <label>Orassan predator</label>
-    <combatPower>120</combatPower>
-    <maxGenerationAge>30</maxGenerationAge>
-    <apparelAllowHeadwearChance>0.75</apparelAllowHeadwearChance>
+		<weaponTags>
+			<li>RF2</li>
+			<li>SMG1</li>
+		</weaponTags>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>9</min>
+					<max>10</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>0.25</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>50</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>GrenadeTierOne</li>
+							<li>GrenadeTierTwo</li>
+						</weaponTags>
+						<magazineCount>
+							<min>1</min>
+							<max>2</max>
+						</magazineCount>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Predator -->
+	<PawnKindDef ParentName="OrassanVillagerBase">
+		<defName>OrassanPredator</defName>
+		<label>Orassan predator</label>
+		<combatPower>170</combatPower>
+		<canBeSapper>true</canBeSapper>
+		<isFighter>true</isFighter>
+		<maxGenerationAge>30</maxGenerationAge>
+		<apparelAllowHeadgearChance>0.75</apparelAllowHeadgearChance>
 		<apparelMoney>
 			<min>1360</min>
 			<max>1820</max>
@@ -188,15 +297,235 @@
 			<li>BoneShield</li>
 		</apparelTags>
 		<weaponMoney>
-			  <min>160</min>
-			  <max>260</max>
+			<min>160</min>
+			<max>260</max>
 		</weaponMoney>
-    	<weaponTags>
+		<weaponTags>
 			<li>MedievalMelee</li>
-    	</weaponTags>
-	<fixedInventory>
-	  <LoadoutGen_SidearmGrenadeTierOne>1</LoadoutGen_SidearmGrenadeTierOne>
-	</fixedInventory>
-  </PawnKindDef>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<sidearms>
+					<li>
+						<generateChance>0.25</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>50</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>GrenadeTierZero</li>
+							<li>GrenadeTierOne</li>
+							<li>GrenadeTierTwo</li>
+						</weaponTags>
+						<magazineCount>
+							<min>1</min>
+							<max>2</max>
+						</magazineCount>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
 
-</PawnKindDefs>
+	<!-- Tier 2 pawns -->
+	<PawnKindDef Name="OrassanTacticalBase" ParentName="OrassanVillagerBase" Abstract="True">
+		<combatPower>325</combatPower>
+		<invFoodDef>MealNutrientPaste</invFoodDef>
+		<itemQuality>Normal</itemQuality>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+		<gearHealthRange>
+			<min>0.75</min>
+			<max>1.25</max>
+		</gearHealthRange>
+		<apparelColor>(235,140,65)</apparelColor>
+		<techHediffsMoney>
+			<min>2200</min>
+			<max>3600</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsMaxAmount>1</techHediffsMaxAmount>
+		<techHediffsChance>0.75</techHediffsChance>
+		<apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
+	</PawnKindDef>
+	<!-- Tactical Engineer -->
+	<PawnKindDef ParentName="OrassanTacticalBase">
+		<defName>OrassanTacticalEngineer</defName>
+		<label>tactical engineer</label>
+		<isFighter>true</isFighter>
+		<canBeSapper>true</canBeSapper>
+		<apparelTags>
+			<li>OrassanTacticalSuit</li>
+			<li>OrassanTacticalEngineer</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>6400</min>
+			<max>8550</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>1500</min>
+			<max>2550</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>SMG2</li>
+			<li>SMG3</li>
+			<li>ST1</li>
+			<li>ST2</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>7</min>
+					<max>8</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>1</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>25</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>MonkeyWrenchMelee</li>
+						</weaponTags>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Tactical Sniper -->
+	<PawnKindDef ParentName="OrassanTacticalBase">
+		<defName>OrassanTacticalSniper</defName>
+		<label>tactical sniper</label>
+		<isFighter>true</isFighter>
+		<apparelTags>
+			<li>OrassanTacticalSuit</li>
+			<li>OrassanTacticalSniper</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>6800</min>
+			<max>8950</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>2400</min>
+			<max>3450</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>SNIP1</li>
+			<li>SNIP2</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>5</min>
+					<max>7</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>0.75</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>25</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>MidworldMelee</li>
+						</weaponTags>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Tactical Demolisher -->
+	<PawnKindDef ParentName="OrassanTacticalBase">
+		<defName>OrassanTacticalDemolisher</defName>
+		<label>tactical demolisher</label>
+		<isFighter>true</isFighter>
+		<canBeSapper>true</canBeSapper>
+		<apparelTags>
+			<li>OrassanTacticalSuit</li>
+			<li>OrassanTacticalDemolisher</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>6800</min>
+			<max>8950</max>
+		</apparelMoney>
+		<weaponMoney>
+			<min>150</min>
+			<max>350</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>GrenadeTierTwo</li>
+			<li>GrenadeTierThree</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>12</min>
+					<max>20</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>0.75</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>25</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>MidworldMelee</li>
+						</weaponTags>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+	<!-- Tactical Commander -->
+	<PawnKindDef ParentName="OrassanTacticalBase">
+		<defName>OrassanTacticalCommander</defName>
+		<label>tactical commander</label>
+		<combatPower>350</combatPower>
+		<itemQuality>Good</itemQuality>
+		<isFighter>true</isFighter>
+		<canBeSapper>true</canBeSapper>
+		<apparelTags>
+			<li>OrassanTacticalCommander</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>8300</min>
+			<max>10800</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>3150</min>
+			<max>4000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>ASN1</li>
+		</weaponTags>
+		<modExtensions>
+			<li Class="CombatExtended.LoadoutPropertiesExtension">
+				<primaryMagazineCount>
+					<min>6</min>
+					<max>9</max>
+				</primaryMagazineCount>
+				<sidearms>
+					<li>
+						<generateChance>0.75</generateChance>
+						<sidearmMoney>
+							<min>0</min>
+							<max>125</max>
+						</sidearmMoney>
+						<weaponTags>
+							<li>MidworldMelee</li>
+						</weaponTags>
+					</li>
+				</sidearms>
+			</li>
+		</modExtensions>
+		<techHediffsMaxAmount>3</techHediffsMaxAmount>
+		<techHediffsChance>1</techHediffsChance>
+	</PawnKindDef>
+</Defs>

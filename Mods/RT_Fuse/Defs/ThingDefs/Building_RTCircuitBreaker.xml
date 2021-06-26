@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Buildings>
+<Defs>
 
 	<ThingDef>
 		<defName>Building_RTCircuitBreaker</defName>
@@ -9,21 +9,24 @@
 
 		<category>Building</category>
 		<thingClass>Building</thingClass>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsPower</li>
+		</thingCategories>
 
 		<graphicData>
 			<texPath>RT_Buildings/Building_RTCircuitBreaker</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
-			<drawSize>(1, 2)</drawSize>
+			<drawSize>(1.25, 2.25)</drawSize>
 			<damageData>
 				<rect>(0, 0, 1, 2)</rect>
 			</damageData>
 		</graphicData>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<repairEffect>Repair</repairEffect>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-		<filthLeaving>BuildingRubble</filthLeaving>
-		<staticSunShadowHeight>0.5</staticSunShadowHeight>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<staticSunShadowHeight>0.2</staticSunShadowHeight>
 		<castEdgeShadows>true</castEdgeShadows>
 
 		<researchPrerequisites>
@@ -37,28 +40,26 @@
 		<selectable>True</selectable>
 		<rotatable>True</rotatable>
 		<fillPercent>0.30</fillPercent>
-		<pathCost>30</pathCost>
-		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+		<pathCost>70</pathCost>
 		<statBases>
-		  <MaxHitPoints>100</MaxHitPoints>
-		  <WorkToBuild>4000</WorkToBuild>
-		  <Flammability>1.0</Flammability>
-		  <Beauty>-10</Beauty>
+			<MaxHitPoints>100</MaxHitPoints>
+		  <WorkToBuild>2040</WorkToBuild>
+			<Flammability>1.0</Flammability>
+			<Mass>20</Mass>
+			<Beauty>-10</Beauty>
 		</statBases>
+		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<stuffCategories>
 		<li>Metallic</li>
 		</stuffCategories>
 		<costStuffCount>55</costStuffCount>
 		<costList>
-		<Component>5</Component>
-		<MagneticMaterial>3</MagneticMaterial>
-		<AdvMechanism>2</AdvMechanism>
-		<Microchips>1</Microchips>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<MagneticMaterial>3</MagneticMaterial>
+			<AdvMechanism>2</AdvMechanism>
+			<Microchips>1</Microchips>
 		</costList>
-		<building>
-			<ignoreNeedsPower>True</ignoreNeedsPower>
-		</building>
-
+		<constructionSkillPrerequisite>11</constructionSkillPrerequisite>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTransmitter</compClass>
@@ -74,4 +75,4 @@
 		</comps>
 	</ThingDef>
 
-</Buildings>
+</Defs>

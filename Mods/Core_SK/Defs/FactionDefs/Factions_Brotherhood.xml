@@ -1,131 +1,167 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FactionDefs>
+<Defs>
 
-	<FactionDef>
+	<FactionDef ParentName="SK_HumanFactionBase">
 		<defName>Brotherhood</defName>
-		<label>Bloodmoon brotherhood</label>
-    <description></description>
-    <pawnsPlural>Bloodmoon brotherhood</pawnsPlural>
-    <factionBaseSelectionWeight>1</factionBaseSelectionWeight>
-    <requiredCountAtGameStart>1</requiredCountAtGameStart>
-    <canMakeRandomly>true</canMakeRandomly>
-    <raidCommonality>78</raidCommonality>
-    <canSiege>true</canSiege>
-    <canStageAttacks>true</canStageAttacks>
-	<leaderTitle>Chief</leaderTitle>
-	<autoFlee>true</autoFlee>
-	<earliestRaidDays>160</earliestRaidDays>
-    <expandingIconTexture>UI/Icons/Factions/Brotherhood</expandingIconTexture>
-    <colorSpectrum>
-      <li>(0.45, 0.03, 0.02)</li>
-      <li>(0.8, 0.08, 0.18)</li>
-      <li>(0.92, 0.62, 0.06)</li>
-    </colorSpectrum>
-    <startingGoodwill>
-      <min>-60</min>
-      <max>0</max>
-    </startingGoodwill>
-    <mustStartOneEnemy>true</mustStartOneEnemy>
+		<label>Bloodmoon brotherhood</label>		
+		<pawnSingular>bloodmoon brotherhood</pawnSingular>
+		<pawnsPlural>bloodmoon brotherhood</pawnsPlural>
+		<settlementGenerationWeight>1</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>Chief</leaderTitle>
+		<autoFlee>true</autoFlee>
+		<earliestRaidDays>165</earliestRaidDays>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(500, 0.1)</li>
+				<li>(7000, 0.3)</li>
+				<li>(7500, 1.2)</li>
+				<li>(10000, 1.0)</li>
+				<li>(15000, 0.7)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0, 220)</li>
+				<li>(7000, 240)</li>
+				<li>(10000, 370)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<geneticVariance>0.7</geneticVariance>
+		<factionIconPath>World/WorldObjects/Expanding/Brotherhood</factionIconPath>
+		<colorSpectrum>
+			<li>(0.45, 0.03, 0.02)</li>
+			<li>(0.8, 0.08, 0.18)</li>
+			<li>(0.92, 0.62, 0.06)</li>
+		</colorSpectrum>
+		<mustStartOneEnemy>true</mustStartOneEnemy>
 		<factionNameMaker>NamerFactionPirate</factionNameMaker>
-		<factionBaseNameMaker>NamerFactionBasePirate</factionBaseNameMaker>
-		<techLevel>Industrial</techLevel>
-		<backstoryCategory>Civil</backstoryCategory>
+		<settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
+		<techLevel>Spacer</techLevel>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>Outlander</li>
+				</categories>
+				<commonality>0.85</commonality>
+			</li>
+			<li>
+				<categories>
+					<li>Offworld</li>
+				</categories>
+				<commonality>0.15</commonality>
+			</li>
+		</backstoryFilters>
 		<hairTags>
 			<li>Urban</li>
 		</hairTags>
-    <naturalColonyGoodwill>
-      <min>-60</min>
-      <max>0</max>
-    </naturalColonyGoodwill>
-    <caravanTraderKinds>
-      <li>Caravan_Outlander_BulkGoods</li>
-      <li>Caravan_Outlander_CombatSupplier</li>
-      <li>Caravan_Outlander_Exotic</li>
-      <li>Caravan_Outlander_PirateMerchant</li>
-    </caravanTraderKinds>
-    <visitorTraderKinds>
-      <li>Visitor_Outlander_Standard</li>
-    </visitorTraderKinds>
-    <factionBaseTraderKinds>
-      <li>FactionBase_Outlander_Standard</li>
-    </factionBaseTraderKinds>
-    <allowedArrivalTemperatureRange>
-      <min>-45</min>
-      <max>45</max>
-    </allowedArrivalTemperatureRange>
-    <apparelStuffFilter>
-	<categories>
-		<li>Leathers</li>
-	</categories>
-    <thingDefs>
-        <li>Cloth</li>
-        <li>MuffaloWool</li>
-        <li>CamelHair</li>
-        <li>AlpacaWool</li>
-		<li>HempCloth</li>
-        <li>RamWool</li>
-		<li>Kevlar</li>
-        <li>CopperBar</li>
-        <li>AluminiumBar</li>
-		<li>Bronze</li>
-        <li>SteelBar</li>
-        <li>SilverBar</li>
-		<li>FerrosiliconAlloy</li>
-        <li>CupronickelAlloy</li>
-        <li>Plasteel</li>
-    </thingDefs>
-    </apparelStuffFilter>
-    <pawnGroupMakers>
-      <li>
-        <kindDef>Normal</kindDef>
-        <commonality>100</commonality>
-        <options>
-          <BrotherhoodGuard>250</BrotherhoodGuard>
-          <BrotherhoodStriker>150</BrotherhoodStriker>
-          <BrotherhoodProtector>100</BrotherhoodProtector>
-          <BrotherhoodScout>80</BrotherhoodScout>
-          <BrotherhoodDestroyer>95</BrotherhoodDestroyer>
-          <BrotherhoodSentinel>15</BrotherhoodSentinel>
-        </options>
-      </li>
-      <li>
-        <kindDef>Trader</kindDef>
-        <traders>
-			  <BrotherhoodTrader>1</BrotherhoodTrader>
-        </traders>
-        <carriers>
-          <Muffalo>1</Muffalo>
-          <Dromedary>1</Dromedary>
-          <Megabadger>1</Megabadger>
-          <WoolyHorse>1</WoolyHorse>
-          <WoolyRhino>1</WoolyRhino>
-          <Horse>1</Horse>
-          <Blackbear>1</Blackbear>
-          <Rhinoceros>1</Rhinoceros>
-          <Elephant>1</Elephant>
-          <Buffalo>1</Buffalo>
-          <GrizzlyBear>1</GrizzlyBear>
-		  <PolarBear>1</PolarBear>
-        </carriers>
-        <guards>
-			  <BrotherhoodGuard>60</BrotherhoodGuard>
-			  <BrotherhoodStriker>100</BrotherhoodStriker>
-			  <BrotherhoodProtector>40</BrotherhoodProtector>
-        </guards>
-      </li>  
-      <li>
-        <kindDef>FactionBase</kindDef>
-        <options>
-          <BrotherhoodGuard>250</BrotherhoodGuard>
-          <BrotherhoodStriker>150</BrotherhoodStriker>
-          <BrotherhoodProtector>100</BrotherhoodProtector>
-          <BrotherhoodScout>80</BrotherhoodScout>
-          <BrotherhoodDestroyer>95</BrotherhoodDestroyer>
-          <BrotherhoodSentinel>15</BrotherhoodSentinel>
-        </options>
-      </li>
-    </pawnGroupMakers>
-    <homeIconPath>World/WorldObjects/DefaultFactionBase</homeIconPath>
-  </FactionDef>
+		<startingGoodwill>-20</startingGoodwill>
+		<naturalColonyGoodwill>
+			<min>-50</min>
+			<max>50</max>
+		</naturalColonyGoodwill>
+		<caravanTraderKinds>
+			<li>Caravan_Outlander_BulkGoods</li>
+			<li>Caravan_Outlander_CombatSupplier</li>
+			<li>Caravan_Outlander_Exotic</li>
+			<li>Caravan_Outlander_PirateMerchant</li>
+		</caravanTraderKinds>
+		<visitorTraderKinds>
+			<li>Visitor_Outlander_Standard</li>
+		</visitorTraderKinds>
+		<baseTraderKinds>
+			<li>Base_Outlander_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>-50~45</allowedArrivalTemperatureRange>
+		<raidLootMaker>PirateRaidLootMaker</raidLootMaker>
+		<apparelStuffFilter>
+			<categories>
+				<li>Leathers</li>
+			</categories>
+			<thingDefs>
+				<li>Cloth</li>
+				<li>WoolMuffalo</li>
+				<li>WoolDromedary</li>
+				<li>WoolAlpaca</li>
+				<li>HempCloth</li>
+				<li>WoolSheep</li>
+				<li>Kevlar</li>
+				<li>CopperBar</li>
+				<li>AluminiumBar</li>
+				<li>Bronze</li>
+				<li>SteelBar</li>
+				<li>FerrosiliconAlloy</li>
+				<li>CupronickelAlloy</li>
+				<li>Plasteel</li>
+			</thingDefs>
+		</apparelStuffFilter>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<BrotherhoodGuard>20</BrotherhoodGuard>
+					<BrotherhoodStriker>15</BrotherhoodStriker>
+					<BrotherhoodProtector>10</BrotherhoodProtector>
+					<BrotherhoodScout>9</BrotherhoodScout>
+					<BrotherhoodDestroyer>8</BrotherhoodDestroyer>
+					<BrotherhoodDemolisher>7</BrotherhoodDemolisher>
+					<BrotherhoodSentinel>3</BrotherhoodSentinel>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<BrotherhoodGuard>20</BrotherhoodGuard>
+					<BrotherhoodStriker>15</BrotherhoodStriker>
+					<BrotherhoodProtector>10</BrotherhoodProtector>
+					<BrotherhoodScout>9</BrotherhoodScout>
+					<BrotherhoodDestroyer>8</BrotherhoodDestroyer>
+					<BrotherhoodDemolisher>7</BrotherhoodDemolisher>
+					<BrotherhoodSentinel>3</BrotherhoodSentinel>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<BrotherhoodTrader>1</BrotherhoodTrader>
+				</traders>
+				<carriers>
+					<Muffalo>6</Muffalo>
+					<Dromedary>3</Dromedary>
+					<Rhinoceros>2</Rhinoceros>
+					<Elephant>2</Elephant>
+					<Megabadger>1</Megabadger>
+					<Horse_Wooly>5</Horse_Wooly>
+					<Rhino_Wooly>2</Rhino_Wooly>
+					<Horse>7</Horse>
+					<Buffalo>4</Buffalo>
+					<Bear_Grizzly>2</Bear_Grizzly>
+					<Bear_Polar>1</Bear_Polar>
+					<Mammoth>2</Mammoth>
+				</carriers>
+				<guards>
+					<BrotherhoodGuard>20</BrotherhoodGuard>
+					<BrotherhoodStriker>10</BrotherhoodStriker>
+					<BrotherhoodProtector>5</BrotherhoodProtector>
+				</guards>
+			</li>  
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<BrotherhoodGuard>20</BrotherhoodGuard>
+					<BrotherhoodStriker>15</BrotherhoodStriker>
+					<BrotherhoodProtector>10</BrotherhoodProtector>
+					<BrotherhoodScout>9</BrotherhoodScout>
+					<BrotherhoodDestroyer>8</BrotherhoodDestroyer>
+					<BrotherhoodSentinel>3</BrotherhoodSentinel>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+	</FactionDef>
 
-</FactionDefs>
+</Defs>

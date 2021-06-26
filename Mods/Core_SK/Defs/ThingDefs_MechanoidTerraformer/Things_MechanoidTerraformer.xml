@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThingDefinitions>
+<Defs>
 
   <ThingDef>
     <defName>MechanoidTerraformerIncoming</defName>
     <label>Mechanoid terraformer (incoming)</label>
-    <thingClass>MechanoidTerraformer.MechanoidTerraformerIncoming</thingClass>
+    <thingClass>SK.Events.MechanoidTerraformerIncoming</thingClass>
     <category>Ethereal</category>
     <tickerType>Normal</tickerType>
     <graphicData>
@@ -18,4 +18,4 @@
     <useHitPoints>false</useHitPoints>
   </ThingDef>
 
-</ThingDefinitions>
+</Defs>

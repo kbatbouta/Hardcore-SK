@@ -1,112 +1,264 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Buildings>
+<Defs>
 
-	<ThingDef Name="BuildingBase" Abstract = "True">
+	<ThingDef Name="SK_BuildingBase" Abstract = "True">
 		<category>Building</category>
 		<thingClass>Building</thingClass>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<selectable>true</selectable>
 		<drawerType>MapMeshAndRealTime</drawerType>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<repairEffect>Repair</repairEffect>
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
-		<filthLeaving>BuildingRubble</filthLeaving>
-		<comps>
-			<li>
-				<compClass>SK.CompFadingShadowThrower</compClass>
-			</li>
-		</comps>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<statBases>
+			<SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
 		<damageMultipliers>
 			<li>
 				<damageDef>Bomb</damageDef>
-				<multiplier>3.0</multiplier>
+				<multiplier>1.0</multiplier>
 			</li>
 			<li>
 				<damageDef>Thermobaric</damageDef>
-				<multiplier>2.5</multiplier>
+				<multiplier>1.2</multiplier>
 			</li>
 			<li>
 				<damageDef>Bullet</damageDef>
 				<multiplier>0.5</multiplier>
 			</li>
 			<li>
-				<damageDef>Fragment</damageDef>
+				<damageDef>Dart</damageDef>
+				<multiplier>0.1</multiplier>
+			</li>
+			<li>
+				<damageDef>Arrow</damageDef>
 				<multiplier>0.2</multiplier>
 			</li>
 			<li>
-				<damageDef>ArmorPiercing</damageDef>
-				<multiplier>2.5</multiplier>
+				<damageDef>Poison</damageDef>
+				<multiplier>0.05</multiplier>
+			</li>
+			<li>
+				<damageDef>Acid</damageDef>
+				<multiplier>0.7</multiplier>
+			</li>
+			<li>
+				<damageDef>AcidPoison</damageDef>
+				<multiplier>0.3</multiplier>
+			</li>	
+			<li>
+				<damageDef>Beanbag</damageDef>
+				<multiplier>0.1</multiplier>
 			</li>
 			<li>
 				<damageDef>LaserBurn</damageDef>
-				<multiplier>2.0</multiplier>
-			</li>
-			<li>
-				<damageDef>AntiMateriel</damageDef>
-				<multiplier>2.5</multiplier>
+				<multiplier>1.0</multiplier>
 			</li>
 			<li>
 				<damageDef>Optic</damageDef>
-				<multiplier>1.5</multiplier>
+				<multiplier>0.7</multiplier>
 			</li>
 			<li>
 				<damageDef>Plasma</damageDef>
-				<multiplier>2.0</multiplier>
+				<multiplier>1.1</multiplier>
 			</li>
 			<li>
 				<damageDef>Microwave</damageDef>
-				<multiplier>1.5</multiplier>
+				<multiplier>0.8</multiplier>
 			</li>
 			<li>
 				<damageDef>Blunt</damageDef>
-				<multiplier>0.6</multiplier>
+				<multiplier>1.2</multiplier>
 			</li>
 			<li>
 				<damageDef>Cut</damageDef>
-				<multiplier>0.4</multiplier>
+				<multiplier>0.7</multiplier>
+			</li>
+			<li>
+				<damageDef>Bite</damageDef>
+				<multiplier>0.55</multiplier>
+			</li>
+			<li>
+				<damageDef>PlagueBite</damageDef>
+				<multiplier>0.55</multiplier>
+			</li>
+			<li>
+				<damageDef>MalariaBite</damageDef>
+				<multiplier>0.55</multiplier>
 			</li>
 			<li>
 				<damageDef>Electrical</damageDef>
 				<multiplier>1.0</multiplier>
 			</li>
+			<li>
+				<damageDef>KineticPulse</damageDef>
+				<multiplier>1.2</multiplier>
+			</li>
 		</damageMultipliers>
 	</ThingDef>
 
-	<ThingDef Name="FurnitureBase" ParentName="BuildingBase" Abstract="True">
+	<ThingDef Name="BenchBaseNoShadows" ParentName="SK_BuildingBase" Abstract="True">
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<building>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+		</building>
+	</ThingDef>
+
+	<ThingDef Name="SK_BenchBase" ParentName="BenchBaseNoShadows" Abstract="True">
+		<castEdgeShadows>true</castEdgeShadows>
+		<staticSunShadowHeight>0.20</staticSunShadowHeight>
+	</ThingDef>
+
+	<ThingDef Name="StandartBuilding" ParentName="SK_BuildingBase" Abstract="True">
 		<altitudeLayer>Building</altitudeLayer>
-		<PathCost>50</PathCost>
+		<passability>PassThroughOnly</passability>
+		<pathCost>80</pathCost>
 		<fillPercent>0.6</fillPercent>
-		<Passability>PassThroughOnly</Passability>
+		<useHitPoints>True</useHitPoints>
+		<rotatable>true</rotatable>
+		<comps>
+			<li>
+				<compClass>SK.CompFadingShadowThrower</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Base Worktable -->
+	<ThingDef Name="WorkTable" ParentName="StandartBuilding" Abstract="True">
+		<thingClass>SK.SK_Building_WorkTable</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+		</graphicData>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<buildingTags>
+				<li>Production</li>
+			</buildingTags>
+		</building>
+		<surfaceType>Item</surfaceType>
+		<size>(1,1)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<hasInteractionCell>True</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef Name="BuildingFueled" ParentName="WorkTable" Abstract="True">
+		<thingClass>SK.WorkTableFueled</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- 		<comps>
+			<li Class="CompProperties_Flickable"/>
+		</comps> -->
+		<inspectorTabs>
+			<li>SK.ITab_Fuel</li>
+		</inspectorTabs>
+	</ThingDef>
+
+	<ThingDef Name="WorkTableFueled" ParentName="WorkTable" Abstract="True">
+		<thingClass>SK.WorkTableFueled</thingClass>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<!-- 		<comps>
+			<li Class="CompProperties_Flickable"/>
+		</comps> -->
+		<inspectorTabs>
+			<li>SK.ITab_Fuel</li>
+		</inspectorTabs>
+	</ThingDef>
+
+	<!-- Base Hopper -->
+	<ThingDef Name="HopperBase" ParentName="StandartBuilding" Abstract="True">
+		<thingClass>Building_Storage</thingClass>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shadowData>
+				<volume>(0.7, 0.5, 0.7)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+			<damageData>
+				<rect>(0.05,0.1,0.9,0.9)</rect>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+			</damageData>
+		</graphicData>
+		<tickerType>Never</tickerType>
+		<neverMultiSelect>true</neverMultiSelect>
+		<surfaceType>Item</surfaceType>
+		<size>(1,1)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<building>
+			<uninstallWork>700</uninstallWork>
+		</building>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_Storage</li>
+		</inspectorTabs>
+		<placeWorkers>
+			<li>PlaceWorker_NextToHopperAccepter</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef Name="ResearchBase" ParentName="StandartBuilding" Abstract="True">
+		<canOverlapZones>false</canOverlapZones>
+		<surfaceType>Item</surfaceType>
+		<hasInteractionCell>true</hasInteractionCell>
+		<comps>
+			<li>
+				<compClass>CompReportWorkSpeed</compClass>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_ReportWorkSpeedPenalties</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef Name="SK_FurnitureBase" ParentName="StandartBuilding" Abstract="True">
+		<fillPercent>0.6</fillPercent>
+		<tradeTags>
+			<li>Furniture</li>
+		</tradeTags>
 		<statBases>
 			<Flammability>1.0</Flammability>
 		</statBases>
+		<designationCategory>Furniture</designationCategory>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<building>
+			<uninstallWork>700</uninstallWork>
+		</building>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Name="SK_FurnitureWithQualityBase" ParentName="SK_FurnitureBase" Abstract="True">
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
 			</li>
 		</comps>
-		<DesignationCategory>Furniture</DesignationCategory>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
 	</ThingDef>
 
-
-	<ThingDef Name="BenchBaseNoShadows" ParentName="BuildingBase" Abstract="True">
-		<castEdgeShadows>false</castEdgeShadows>
-	</ThingDef>
-
-	<ThingDef Name="BenchBase" ParentName="BenchBaseNoShadows" Abstract="True">
-		<castEdgeShadows>true</castEdgeShadows>
-		<staticSunShadowHeight>0.20</staticSunShadowHeight>
-	</ThingDef>
-
-	<ThingDef Name="HighQualityFurnitureBase" ParentName="BuildingBase" Abstract="True">
-		<Passability>PassThroughOnly</Passability>	
+	<ThingDef Name="SK_ArtableFurnitureBase" ParentName="SK_FurnitureWithQualityBase" Abstract="True">
 		<comps>
-			<li>
-				<compClass>CompQuality</compClass>
-			</li>
 			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Sculpture</nameMaker>
+				<nameMaker>NamerArtSculpture</nameMaker>
 				<descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
 			</li>
@@ -114,8 +266,34 @@
 		<inspectorTabs>
 			<li>ITab_Art</li>
 		</inspectorTabs>
-		<DesignationCategory>Furniture</DesignationCategory>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
 	</ThingDef>
 
-</Buildings>
+	<ThingDef Name="SK_ArtableFurnitureRegardlessOfQualityBase" ParentName="SK_FurnitureWithQualityBase" Abstract="True">
+		<comps>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtFurniture</nameMaker>
+				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
+				<minQualityForArtistic>Awful</minQualityForArtistic>
+			</li>
+		</comps>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+	</ThingDef>
+
+
+
+<ThingDef Name="UniversalFermenterBase" ParentName="StandartBuilding" Abstract="True">
+        <thingClass>UniversalFermenter.Building_UF</thingClass>
+        <tickerType>Normal</tickerType>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <inspectorTabs>
+            <li>UniversalFermenter.ITab_UFBills</li>
+            <li>UniversalFermenter.ITab_UFContents</li>
+        </inspectorTabs>
+    </ThingDef>
+
+
+</Defs>

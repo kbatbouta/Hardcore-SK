@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
   <RecipeDef Abstract="True" Name="cratecraftbase">
 		<workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -10,20 +10,18 @@
 		<recipeUsers>
 			<li>HeavyArmsBench</li>
 		</recipeUsers>
+		<unfinishedThingDef>UnfinishedTurretGun</unfinishedThingDef>
    </RecipeDef>
 
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildBalista_Crate</defName>
-		<label>Build Balista crate</label>
-		<description>Use this to build neolitic balista.</description>
-		<jobString>Building neolitic balista crate.</jobString>
+		<label>Build balista crate</label>
+		<description>Use this to build a neolithic balista.</description>
+		<jobString>Building neolithic balista crate.</jobString>
 		<workAmount>4500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>3</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>3</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -56,20 +54,18 @@
 		<recipeUsers>
 			<li>CraftingSpot</li>
 		</recipeUsers>
+		<unfinishedThingDef>UnfinishedTurretMedieval</unfinishedThingDef>
 	</RecipeDef>
 	
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildCatapult_Crate</defName>
-		<label>Build Catapult crate</label>
-		<description>Use this to build catapult that launches explosive/incendiary shells. Must be manned.</description>
-		<jobString>Building neolitic catapult crate.</jobString>
+		<label>Build catapult crate</label>
+		<description>Use this to build a catapult that launches explosive/incendiary shells. Must be manned.</description>
+		<jobString>Building a neolithic catapult crate.</jobString>
 		<workAmount>10500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>5</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>5</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -102,6 +98,7 @@
 		<recipeUsers>
 			<li>CraftingSpot</li>
 		</recipeUsers>
+		<unfinishedThingDef>UnfinishedTurretMedieval</unfinishedThingDef>
 	</RecipeDef>
    
 	<!-- MG crates -->
@@ -113,11 +110,8 @@
 		<jobString>Building 7.62x51mm M240B MG crate.</jobString>
 		<workAmount>10500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>7</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>7</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -158,7 +152,7 @@
              </categories>
 		</fixedIngredientFilter>
 		<workSkill>Crafting</workSkill>
-		<researchPrerequisite>SK_MachinegunsturretsI</researchPrerequisite>
+		<researchPrerequisite>GasOperation</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef ParentName="cratecraftbase">
@@ -168,11 +162,8 @@
 		<jobString>Building 7.62x51mm M134 Minigun crate</jobString>
 		<workAmount>10500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>8</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -223,11 +214,8 @@
 		<jobString>Building 50BMG M2 Browning MG crate.</jobString>
 		<workAmount>11500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>7</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>7</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -267,7 +255,7 @@
 			<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>SK_MachinegunsturretsI</researchPrerequisite>
+		<researchPrerequisite>GasOperation</researchPrerequisite>
 	</RecipeDef>
 	
 	<RecipeDef ParentName="cratecraftbase">
@@ -277,11 +265,8 @@
 		<jobString>Building 14.5mm KPV MG crate</jobString>
 		<workAmount>11500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>7</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>7</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -331,11 +316,8 @@
 		<jobString>Building 20x102mm Oerlikon autocannon crate.</jobString>
 		<workAmount>13500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>12</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -394,11 +376,8 @@
 		<jobString>Building 20mm Vulcan Cannon crate.</jobString>
 		<workAmount>17500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>16</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>16</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -452,79 +431,14 @@
 	<!-- Cannon mortars turrets crates -->
 
 	<RecipeDef ParentName="cratecraftbase">
-		<defName>BuildChain_Crate</defName>
-		<label>Build 30x165mm GSh-30 cannon crate</label>
-		<description>Use this to build a 30x165mm GSh-30 cannon, a type of stationary manned turret. It uses 30x165mm for ammo.</description>
-		<jobString>Building 30x165mm GSh-30 cannon crate.</jobString>
-		<workAmount>17500</workAmount>
-		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>15</minLevel>
-				</li>
-			</skillRequirements>
-		<ingredients>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Weapon_Parts</li>
-					</thingDefs>
-				</filter>
-				<count>20</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Cannon_Component</li>
-					</thingDefs>
-				</filter>
-				<count>1</count>
-			</li>
-			<li>
-				<filter>
-				<categories>
-				<li>Metallic</li>
-                  </categories>
-				</filter>
-				<count>60</count>
-			</li>
-			<li>
-				<filter>
-					<thingDefs>
-						<li>Rubber</li>
-					</thingDefs>
-				</filter>
-				<count>30</count>
-			</li>
-		</ingredients>
-		<products>
-			<Chain_Crate>1</Chain_Crate>
-		</products>
-		<fixedIngredientFilter>
-			<thingDefs>
-						<li>Weapon_Parts</li>
-						<li>Cannon_Component</li>
-						<li>Rubber</li>
-			</thingDefs>
-			<categories>
-			<li>USLDBar</li>
-             </categories>
-		</fixedIngredientFilter>
-		<researchPrerequisite>ChargedShot</researchPrerequisite>
-	</RecipeDef>
-	
-	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildAvenger_Crate</defName>
 		<label>Build 30x165mm GAU-8 Avenger crate</label>
 		<description>Use this to build a 30x165mm GAU-8 Avenger, a type of stationary manned turret. It uses 30x165mm shells for ammo.</description>
 		<jobString>Building 30x165mm GAU-8 Avenger crate.</jobString>
 		<workAmount>18500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>16</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>16</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -582,11 +496,8 @@
 		<jobString>Building 30mm AGS-17 crate.</jobString>
 		<workAmount>11500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>8</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -645,11 +556,8 @@
 		<jobString>Building 30mm AGS-30 crate.</jobString>
 		<workAmount>15500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>8</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>8</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -705,15 +613,12 @@
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildMortar_Crate</defName>
 		<label>Build 81mm Mortar Launcher crate</label>
-		<description>Use this to build an Mortar Launcher, a type of stationary manned turret. It uses 81mm Explosive Mortar Shells for ammo.</description>
+		<description>Use this to build a mortar launcher, a type of stationary manned turret. It uses 81mm Explosive Mortar Shells for ammo.</description>
 		<jobString>Building 81mm Mortar Launcher crate.</jobString>
 		<workAmount>12500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>9</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>9</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -763,11 +668,8 @@
 		<jobString>Building 90mm Flak turret crate.</jobString>
 		<workAmount>14500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>12</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -826,11 +728,8 @@
 		<jobString>Building 120mm Tank cannon crate.</jobString>
 		<workAmount>17500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>14</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>14</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -879,7 +778,7 @@
 			<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>SK_CannonturretsIII</researchPrerequisite>
+		<researchPrerequisite>SniperTurret</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef ParentName="cratecraftbase">
@@ -889,11 +788,8 @@
 		<jobString>Building 155mm Howitzer Cannon Crate</jobString>
 		<workAmount>20500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>15</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -942,7 +838,7 @@
 			<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>SK_CannonturretsIII</researchPrerequisite>
+		<researchPrerequisite>SniperTurret</researchPrerequisite>
 	</RecipeDef>
 	
 	<!-- Missile turrets crates -->
@@ -954,11 +850,8 @@
 		<jobString>Building AT missile BGM-71 TOW crate.</jobString>
 		<workAmount>16500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>13</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>13</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1017,11 +910,8 @@
 		<jobString>Building AT missile FGM-148 Javelin crate.</jobString>
 		<workAmount>16500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>13</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>13</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1080,11 +970,8 @@
 		<jobString>Building 130mm Medium Missile System crate.</jobString>
 		<workAmount>18500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>14</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>14</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1135,11 +1022,8 @@
 		<jobString>Building 130mm Heavy Missile System crate.</jobString>
 		<workAmount>19500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>15</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1187,16 +1071,13 @@
 
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildSentryTurret_Crate</defName>
-		<label>Build .40Rimfire Sentry light crate</label>
-		<description>Use this to build an Automated Sentry light turret, a type of stationary automatic turret. It requires power to function.</description>
-		<jobString>Building .40Rimfire Sentry light crate</jobString>
+		<label>Build 5.56x45mm NATO Sentry light crate</label>
+		<description>Use this to build an automated sentry light turret, a type of stationary automatic turret. It requires power to function.</description>
+		<jobString>Building 5.56x45mm NATO Sentry light crate.</jobString>
 		<workAmount>10500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>11</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>11</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1209,7 +1090,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>SMG_Component</li>
+						<li>Rifle_Component</li>
 					</thingDefs>
 				</filter>
 				<count>2</count>
@@ -1237,7 +1118,7 @@
 		<fixedIngredientFilter>
 			<thingDefs>
 						<li>Weapon_Parts</li>
-						<li>SMG_Component</li>
+						<li>Rifle_Component</li>
 						<li>Electronics</li>
 			</thingDefs>
 			<categories>
@@ -1251,15 +1132,12 @@
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildHeavyTurret_Crate</defName>
 		<label>Build 145x114mm Sentry heavy crate</label>
-		<description>Use this to build a Laser Turret, a type of unmanned automatic turret. It requires power to function.</description>
-		<jobString>Building Sentry heavy crate</jobString>
+		<description>Use this to build a laser turret, a type of unmanned automatic turret. It requires power to function.</description>
+		<jobString>Building Sentry heavy crate.</jobString>
 		<workAmount>13500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>12</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1308,7 +1186,7 @@
 			<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>AdvGunTurrets</researchPrerequisite>
+		<researchPrerequisite>HeavyTurrets</researchPrerequisite>
 	</RecipeDef>
 	
 	<RecipeDef ParentName="cratecraftbase">
@@ -1318,11 +1196,8 @@
 		<jobString>Building 30x165mm Sentry naval crate.</jobString>
 		<workAmount>14500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>13</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>13</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1371,7 +1246,7 @@
 			<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>AdvGunTurrets</researchPrerequisite>
+		<researchPrerequisite>HeavyTurrets</researchPrerequisite>
 	</RecipeDef>
 	
 	<RecipeDef ParentName="cratecraftbase">
@@ -1381,11 +1256,8 @@
 		<jobString>Building AT missile Sentry rocket launcher crate.</jobString>
 		<workAmount>16500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>15</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1434,7 +1306,7 @@
 				<li>USLDBar</li>
              </categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>AdvGunTurrets</researchPrerequisite>
+		<researchPrerequisite>HeavyTurrets</researchPrerequisite>
 	</RecipeDef>
 	
 	<RecipeDef ParentName="cratecraftbase">
@@ -1444,11 +1316,8 @@
 		<jobString>Building 6x24mm Sentry blaster crate.</jobString>
 		<workAmount>17500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>17</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>17</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1498,20 +1367,18 @@
              </categories>
 		</fixedIngredientFilter>
 		<researchPrerequisite>SK_Futuristicturrets</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedTurretHiTech</unfinishedThingDef>
 	</RecipeDef>
   
 	<RecipeDef ParentName="cratecraftbase">
 		<defName>BuildLaserTurret_Crate</defName>
-		<label>Build LaserTurret_Crate</label>
+		<label>Build Laser Turret crate</label>
 		<description>Use this to build a Laser Turret, a type of unmanned automatic turret. It requires power to function.</description>
-		<jobString>Building LaserTurret_Crate</jobString>
+		<jobString>Building Laser Turret crate</jobString>
 		<workAmount>17500</workAmount>
 		<skillRequirements>
-				<li>
-					<skill>Crafting</skill>
-					<minLevel>17</minLevel>
-				</li>
-			</skillRequirements>
+			<Crafting>17</Crafting>
+		</skillRequirements>
 		<ingredients>
 			<li>
 				<filter>
@@ -1561,6 +1428,7 @@
 			</categories>
 		</fixedIngredientFilter>
 		<researchPrerequisite>SK_Futuristicturrets</researchPrerequisite>
+		<unfinishedThingDef>UnfinishedTurretHiTech</unfinishedThingDef>
 	</RecipeDef>
 	
-</RecipeDefs>
+</Defs>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
 	<ThingDef Name="SkyfallerFlying" Abstract="True">
 		<thingClass>SK.SkyfallerFlying</thingClass>
-		<category>Skyfaller</category>
+		<category>Ethereal</category>
 		<tickerType>Normal</tickerType>
-		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<altitudeLayer>Skyfaller</altitudeLayer>
+		<drawerType>RealtimeOnly</drawerType>
 		<useHitPoints>false</useHitPoints>
 		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
@@ -13,7 +14,7 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="SkyfallerFlying">
 		<defName>DropPodFlying</defName>
 		<label>flying drop pod</label>
@@ -52,10 +53,10 @@
 			<drawSize>(1.3,1.3)</drawSize>
 		</graphicData>
 	</ThingDef>
-	
+
 	<ThingDef>
 		<defName>Crater</defName>
-		<category>Ethereal</category>
+		<category>Building</category>
 		<label>crater</label>
 		<thingClass>SK.Crater</thingClass>
 		<graphicData>
@@ -68,13 +69,70 @@
 				<lifespanTicks>50000</lifespanTicks>
 			</li>
 		</comps>
+		<drawerType>MapMeshOnly</drawerType>
+		<pathCost>40</pathCost>
+		<scatterableOnMapGen>false</scatterableOnMapGen>
 		<altitudeLayer>Floor</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
 		<drawOffscreen>true</drawOffscreen>
-		<selectable>true</selectable>
+		<selectable>false</selectable>
 		<tickerType>Rare</tickerType>
+		<tradeability>None</tradeability>
+		<blockPlants>true</blockPlants>
+		<neverOverlapFloors>true</neverOverlapFloors>
+		<building>
+			<isEdifice>false</isEdifice>
+			<claimable>false</claimable>
+			<deconstructible>false</deconstructible>
+		</building>
+	</ThingDef>
+
+	<ThingDef>
+		<defName>Tornado</defName>
+		<label>tornado</label>
+		<thingClass>SK.Events.Tornado</thingClass>
+		<category>Ethereal</category>
+		<useHitPoints>false</useHitPoints>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<drawOffscreen>true</drawOffscreen>
+		<seeThroughFog>true</seeThroughFog>
+		<alwaysFlee>true</alwaysFlee>
+		<comps>
+			<li Class="CompProperties_WindSource" />
+		</comps>
 	</ThingDef>
 	
+	<ThingDef>
+		<defName>SandTornado</defName>
+		<label>sand tornado</label>
+		<thingClass>SK.Events.SandTornado</thingClass>
+		<category>Ethereal</category>
+		<useHitPoints>false</useHitPoints>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<drawOffscreen>true</drawOffscreen>
+		<seeThroughFog>true</seeThroughFog>
+		<alwaysFlee>true</alwaysFlee>
+		<comps>
+			<li Class="CompProperties_WindSource" />
+		</comps>
+	</ThingDef>
+	
+	<ThingDef>
+		<defName>IceVortex</defName>
+		<label>ice vortex</label>
+		<thingClass>SK.Events.IceVortex</thingClass>
+		<category>Ethereal</category>
+		<useHitPoints>false</useHitPoints>
+		<tickerType>Normal</tickerType>
+		<drawerType>RealtimeOnly</drawerType>
+		<drawOffscreen>true</drawOffscreen>
+		<seeThroughFog>true</seeThroughFog>
+		<alwaysFlee>true</alwaysFlee>
+		<comps>
+			<li Class="CompProperties_WindSource" />
+		</comps>
+	</ThingDef>
 
-
-</ThingDefs>
+</Defs>

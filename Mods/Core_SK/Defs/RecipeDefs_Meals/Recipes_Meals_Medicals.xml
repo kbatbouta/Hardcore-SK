@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
+
 	<RecipeDef>
 		<defName>MakeTincture</defName>
-		<label>make mushroom tincture</label>
-		<description>Instill mushrooms into tincture. Useful for medicine. Produces 1.</description>
-		<jobString>Making Mushroom Tincture.</jobString>
-		<workSpeedStat>BrewingSpeed</workSpeedStat>
+		<label>brew mushroom tincture</label>
+		<description>Instill mushrooms into tincture. Useful for medicine. Requires basic understanding of cooking. Produces 1.</description>
+		<jobString>Brewing mushroom tincture.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
 		<soundWorking>Chemlab_Medicine_Drink</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<workAmount>400</workAmount>
@@ -30,28 +32,28 @@
 			<MushroomTincture>1</MushroomTincture>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>3</minLevel>
-			</li>
+			<Medicine>1</Medicine>
 		</skillRequirements>
-		<workSkill>Cooking</workSkill>
+		<workSkill>Medicine</workSkill>
 		<recipeUsers>
-			<li>ButcheringSpot</li>
-			<li>TableButcherNeolithic</li>
+			<li>ButcherSpot</li>
 			<li>TableButcher</li>
+			<li>TableKitchen</li>
+			<li>Brewery</li>
+			<li>ElectricBrewery</li>
 		</recipeUsers>
 		<researchPrerequisite>SK_Medicalcare</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef>
 		<defName>MakeTincture_Bulk</defName>
-		<label>make bottles of mushroom tincture</label>
-		<description>Instill a few bottles of tincture from mushrooms. Useful for medicine. Produces 4.</description>
-		<jobString>Making bottles of Mushroom Tincture.</jobString>
-		<workSpeedStat>BrewingSpeed</workSpeedStat>
+		<label>brew bottles of mushroom tincture</label>
+		<description>Instill a few bottles of tincture from mushrooms. Useful for medicine. Requires basic understanding of cooking. Produces 4.</description>
+		<jobString>Brewing bottles of mushroom tincture.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Medicine_Drink</soundWorking>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<workAmount>800</workAmount>
 		<targetCountAdjustment>1</targetCountAdjustment>
@@ -74,26 +76,25 @@
 			<MushroomTincture>4</MushroomTincture>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Medicine>6</Medicine>
 		</skillRequirements>
-		<workSkill>Cooking</workSkill>
+		<workSkill>Medicine</workSkill>
 		<recipeUsers>
 			<li>Brewery</li>
+			<li>ElectricBrewery</li>
 		</recipeUsers>
 		<researchPrerequisite>SK_FungiIII</researchPrerequisite>
 	</RecipeDef>
 
 	<RecipeDef>
 		<defName>MakeTinctureHealroot</defName>
-		<label>make Healroot Tincture</label>
-		<description>Instill healroot into tincture. Useful for medicine. Produces 1.</description>
-		<jobString>Making Mushroom Tincture.</jobString>
-		<workSpeedStat>BrewingSpeed</workSpeedStat>
+		<label>brew healroot tincture</label>
+		<description>Instill healroot into a tincture. Useful for medicine. Requires basic understanding of cooking. Produces 1.</description>
+		<jobString>Brewing healroot tincture.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Medicine_Drink</soundWorking>
+		<requiredGiverWorkType>Cooking</requiredGiverWorkType>
 		<allowMixingIngredients>true</allowMixingIngredients>
 		<workAmount>400</workAmount>
 		<targetCountAdjustment>1</targetCountAdjustment>
@@ -101,7 +102,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HerbalMedicine</li>
+						<li>MedicineHerbal</li>
 					</thingDefs>
 				</filter>
 				<count>3</count>
@@ -117,7 +118,7 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HerbalMedicine</li>
+				<li>MedicineHerbal</li>
 				<li>Ash</li>
 			</thingDefs>
 		</fixedIngredientFilter>
@@ -125,26 +126,25 @@
 			<HealrootTincture>1</HealrootTincture>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>3</minLevel>
-			</li>
+			<Medicine>3</Medicine>
 		</skillRequirements>
-		<workSkill>Cooking</workSkill>
+		<workSkill>Medicine</workSkill>
 		<recipeUsers>
-			<li>ButcheringSpot</li>
-			<li>TableButcherNeolithic</li>
+			<li>ButcherSpot</li>
 			<li>TableButcher</li>
+			<li>TableKitchen</li>
+			<li>Brewery</li>
+			<li>ElectricBrewery</li>
 		</recipeUsers>
 		<researchPrerequisite>SK_Medicalcare</researchPrerequisite>
 	</RecipeDef>	
 
 	<RecipeDef>
 		<defName>BrewMedicalDrink</defName>
-		<label>brew medical drink</label>
-		<description>Brew a bottle of healthy medical drink from Healroot and Hops. Produces 1.</description>
-		<jobString>Brewing Medical Drink.</jobString>
-		<workSpeedStat>BrewingSpeed</workSpeedStat>
+		<label>Make Antibiotics</label>
+		<description>Make Antibiotics from healroot and hops or yeast. Requires basic understanding of cooking. Produces 1.</description>
+		<jobString>Brewing medical drink.</jobString>
+		<workSpeedStat>DrugCookingSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Chemlab_Medicine_Drink</soundWorking>
 		<allowMixingIngredients>true</allowMixingIngredients>
@@ -157,7 +157,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HerbalMedicine</li>
+						<li>MedicineHerbal</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -166,6 +166,7 @@
 				<filter>
 					<thingDefs>
 						<li>RawHops</li>
+						<li>Yeast</li>
 					</thingDefs>
 				</filter>
 				<count>10</count>
@@ -173,20 +174,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
+				<li>Yeast</li>
 				<li>RawHops</li>
-				<li>HerbalMedicine</li>
+				<li>MedicineHerbal</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<products>
 			<MedicalDrink>1</MedicalDrink>
 		</products>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>10</minLevel>
-			</li>
+			<Medicine>10</Medicine>
 		</skillRequirements>
-		<workSkill>Cooking</workSkill>
+		<workSkill>Medicine</workSkill>
 		<researchPrerequisite>MedicineProduction</researchPrerequisite>
 	</RecipeDef>
-</RecipeDefs>
+
+</Defs>

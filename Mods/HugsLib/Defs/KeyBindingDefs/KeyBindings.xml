@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<KeyBindingDefs>
+<Defs>
 
 	<KeyBindingDef>
 		<category>HugsLibShortcuts</category>
@@ -21,4 +21,16 @@
 		<label>Restart Rimworld</label>
 	</KeyBindingDef>
 
-</KeyBindingDefs>
+	<KeyBindingDef>
+		<category>HugsLibShortcuts</category>
+		<defName>HLOpenModSettings</defName>
+		<label>Open Mod Setting window</label>
+	</KeyBindingDef>
+
+	<KeyBindingDef>
+		<category>HugsLibShortcuts</category>
+		<defName>HLOpenUpdateNews</defName>
+		<label>Open Mod Update News window</label>
+	</KeyBindingDef>
+
+</Defs>

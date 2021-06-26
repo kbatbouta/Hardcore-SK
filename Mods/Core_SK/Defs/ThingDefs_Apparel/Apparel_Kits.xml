@@ -1,66 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
-
-	<ThingDef ParentName="ArmorSpacerBase">
-		<defName>Apparel_Jetpack</defName>
-		<label>Jetpack</label>
-		<description>The future is finally here with your own personalized jetpack, allowing you move around the map much faster than any competing colonist.</description>
-		<graphicData>
-			<texPath>Things/Apparel/Jetpack/Jetpack</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>	
-		<statBases>
-			<WorkToMake>12500</WorkToMake>
-			<MaxHitPoints>80</MaxHitPoints>
-			<Flammability>1</Flammability>
-			<Mass>12</Mass>
-			<Bulk>8</Bulk>
-			<WornWeight>12</WornWeight>
-			<WornBulk>12</WornBulk>
-		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>0.50</MoveSpeed>
-			<WorkSpeedGlobal>0.20</WorkSpeedGlobal>
-			<AimingDelayFactor>0.10</AimingDelayFactor>
-			<ShootingAccuracy>-0.1</ShootingAccuracy>
-		</equippedStatOffsets>
-		<stuffCategories>
-			<li>HF</li>
-			<li>Metallic</li>
-		</stuffCategories>
-		<costStuffCount>25</costStuffCount>
-		<CostList>
-			<Component>10</Component>
-			<BiosyntheticMaterial>5</BiosyntheticMaterial>
-			<MagneticMaterial>10</MagneticMaterial>
-			<Carbon>5</Carbon>
-			<Microchips>1</Microchips>
-		</CostList>
-		<apparel>
-			<bodyPartGroups>
-				<li>Torso</li>
-				<li>Shoulders</li>  
-			</bodyPartGroups>
-			<worngraphicPath>Things/Apparel/Jetpack/Jetpack</worngraphicPath>
-			<layers>
-				<li>Shell</li>
-			</layers>
-			<commonality>1</commonality>
-			<defaultOutfitTags>
-				<li>Soldier</li>
-			</defaultOutfitTags>
-		</apparel>
-		<thingCategories>
-			<li>SpecialApparelCat</li>
-			<li>SetJet</li>
-		</thingCategories>
-	</ThingDef>
-
+<Defs>
 
 	<ThingDef ParentName="ApparelIndustrialBase">
 		<defName>Apparel_TacVest</defName>
 		<label>Loadbearing Kit</label>
-		<ThingClass>Combat_Realism.Apparel_TacVest</ThingClass>
+		<thingClass>CombatExtended.Apparel_VisibleAccessory</thingClass>
 		<description>A loadbearing vest with a number of pouches to store magazines and other equipment.\n\nSpeeds up reloading but is quite bulky to wear.</description>
 		<graphicData>
 			<texPath>Things/Apparel/TacRigging/TacRigging</texPath>
@@ -71,8 +15,14 @@
 			<WorkToMake>8000</WorkToMake>
 			<Mass>2</Mass>
 			<Bulk>10</Bulk>
-			<WornWeight>2</WornWeight>
-			<WornBulk>8</WornBulk>
+			<WornBulk>5</WornBulk>
+			<EquipDelay>4.5</EquipDelay>			
+			<StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.15</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
 		</statBases>
 		<equippedStatOffsets>
 			<CarryBulk>30</CarryBulk>
@@ -80,6 +30,8 @@
 			<MoveSpeed>-0.06</MoveSpeed>
 			<WorkSpeedGlobal>-0.05</WorkSpeedGlobal>
 			<AimingDelayFactor>-0.1</AimingDelayFactor>
+			<GermResistance>0.02</GermResistance>
+			<GermContainment>0.02</GermContainment>
 		</equippedStatOffsets>
 		<stuffCategories>
 			<li>HF</li>
@@ -87,16 +39,17 @@
 		</stuffCategories>
 		<costStuffCount>55</costStuffCount>
 		<costList>
-			<Component>3</Component>
+			<ComponentIndustrial>3</ComponentIndustrial>
 		</costList>
+		<generateCommonality>1</generateCommonality>
 		<apparel>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<bodyPartGroups>
 				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Accessory</li>
+				<li>Webbing</li>
 			</layers>
-			<commonality>1</commonality>
 			<tags>
 				<li>Outlander</li>
 				<li>Military</li>
@@ -119,25 +72,103 @@
 			<defaultOutfitTags>
 				<li>Soldier</li>
 			</defaultOutfitTags>
+			<wornGraphicPath>Things/Apparel/TacRigging/TacRigging</wornGraphicPath>
 		</apparel>
 		<colorGenerator Class="ColorGenerator_Options">
 			<options>
 				<li>
 					<weight>10</weight>
-					<only>RGBA(0.33,0.33,0.33,1)</only>
+					<only>(0.33,0.33,0.33,1)</only>
 				</li>
 			</options>
 		</colorGenerator>
 		<thingCategories>
 			<li>SpecialApparelCat</li>
 		</thingCategories>
+		<generateAllowChance>0.8</generateAllowChance>
 	</ThingDef>
-
+	
+	<ThingDef ParentName="ApparelIndustrialBase">
+		<defName>Apparello_Ammobelt</defName>
+		<label>Ammo belt</label>
+		<description>Belt designed for carrying ammunition.</description>
+		<graphicData>
+			<texPath>Things/Apparel/Apparellonew/Belt/Belt</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<costStuffCount>45</costStuffCount>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costList>
+			<ComponentIndustrial>5</ComponentIndustrial>
+			<Compaste>5</Compaste>
+		</costList>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToMake>4000</WorkToMake>
+			<Mass>1</Mass>
+			<Bulk>7</Bulk>
+			<WornBulk>5</WornBulk>
+			<EquipDelay>1.8</EquipDelay>			
+			<StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.26</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+		</statBases>
+		<equippedStatOffsets>
+			<CarryBulk>25</CarryBulk>
+			<ReloadSpeed>0.1</ReloadSpeed>
+			<MoveSpeed>-0.04</MoveSpeed>
+			<WorkSpeedGlobal>-0.04</WorkSpeedGlobal>
+			<AimingDelayFactor>-0.07</AimingDelayFactor>
+			<GermResistance>0.02</GermResistance>
+			<GermContainment>0.02</GermContainment>
+		</equippedStatOffsets>
+		<generateCommonality>1.15</generateCommonality>
+		<apparel>
+			<bodyPartGroups>
+				<li>Shoulders</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Webbing</li>
+			</layers>
+			<wornGraphicPath>Things/Apparel/Apparellonew/Belt/Belt</wornGraphicPath>
+			<tags>
+				<li>Outlander</li>
+				<li>Military</li>
+				<li>OrionLight</li>
+				<li>OrionMedium</li>
+				<li>OrionScout</li>
+				<li>BrotherhoodLight</li>
+				<li>BrotherhoodMedium</li>
+				<li>BrotherhoodScout</li>
+				<li>SectarianScout</li>
+				<li>SectarianLight</li>
+				<li>SectarianMedium</li>
+				<li>SyndicateLight</li>
+				<li>SyndicateMedium</li>
+				<li>SyndicateScout</li>
+				<li>SyndicateMedium</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Worker</li>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_StandardApparel" />
+		<thingCategories>
+			<li>SpecialApparelCat</li>
+		</thingCategories>
+		<generateAllowChance>0.8</generateAllowChance>
+	</ThingDef>
 
 	<ThingDef ParentName="ApparelIndustrialBase">
 		<defName>Apparel_Backpack</defName>
 		<label>Backpack</label>
-		<ThingClass>Combat_Realism.Apparel_Backpack</ThingClass>
+		<thingClass>CombatExtended.Apparel_VisibleAccessory</thingClass>
 		<description>A comfortable and spacious backpack for storing all kinds of items.</description>
 		<graphicData>
 			<texPath>Things/Apparel/Backpack/Milpack</texPath>
@@ -148,12 +179,20 @@
 			<WorkToMake>5000</WorkToMake>
 			<Mass>1</Mass>
 			<Bulk>3</Bulk>
-			<WornWeight>0</WornWeight>
+			<EquipDelay>2</EquipDelay>			
+			<StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.45</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
 		</statBases>
 		<equippedStatOffsets>
 			<CarryBulk>30</CarryBulk>
 			<MoveSpeed>-0.15</MoveSpeed>
 			<WorkSpeedGlobal>-0.13</WorkSpeedGlobal>
+			<GermResistance>0.02</GermResistance>
+			<GermContainment>0.02</GermContainment>
 		</equippedStatOffsets>
 		<stuffCategories>
 			<li>HF</li>
@@ -161,14 +200,15 @@
 			<li>Leathery</li>
 		</stuffCategories>
 		<costStuffCount>50</costStuffCount>
+		<generateCommonality>2</generateCommonality>
 		<apparel>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
 			<bodyPartGroups>
-				<li>Torso</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<layers>
-				<li>Accessory</li>
+				<li>Backpack</li>
 			</layers>
-			<commonality>2</commonality>
 			<tags>
 				<li>Outlander</li>
 				<li>Military</li>
@@ -185,28 +225,108 @@
 				<li>SyndicateMedium</li>
 				<li>SyndicateScout</li>
 				<li>SyndicateMedium</li>
-				<li>PredatorsLight</li>
-				<li>PredatorsMedium</li>
-				<li>PredatorsScout</li>
 				<li>RenegadesMedium</li>
 				<li>BanditsLight</li>
 				<li>AsariCommando</li>
 				<li>AsariPowerArmor</li>
+				<li>OrassanTacticalSuit</li>
+				<li>OrassanTacticalCommander</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Soldier</li>
 			</defaultOutfitTags>
+			<wornGraphicPath>Things/Apparel/Backpack/Milpack</wornGraphicPath>
 		</apparel>
 		<colorGenerator Class="ColorGenerator_Options">
 			<options>
 				<li>
 					<weight>10</weight>
-					<only>RGBA(0.33,0.33,0.33,1)</only>
+					<only>(0.33,0.33,0.33,1)</only>
 				</li>
 			</options>
 		</colorGenerator>
 		<thingCategories>
 			<li>SpecialApparelCat</li>
 		</thingCategories>
+		<generateAllowChance>0.8</generateAllowChance>
 	</ThingDef>
-</ThingDefs>
+
+	<ThingDef ParentName="ApparelNeoliticBase">
+		<defName>Apparel_TribalBackpack</defName>
+		<label>tribal backpack</label>
+		<description>Primitive backpack made from animal furs, useful for storing items when travelling.</description>
+		<thingClass>CombatExtended.Apparel_VisibleAccessory</thingClass>
+		<graphicData>
+			<texPath>Things/Apparel/TribalPack/Tribalpack</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<tradeability>Sellable</tradeability>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<WorkToMake>3000</WorkToMake>
+			<Mass>1</Mass>
+			<Bulk>3</Bulk>
+			<EquipDelay>2</EquipDelay>			
+			<StuffEffectMultiplierInsulation_Cold>0.25</StuffEffectMultiplierInsulation_Cold>
+			<StuffEffectMultiplierInsulation_Heat>0.25</StuffEffectMultiplierInsulation_Heat>
+			<StuffEffectMultiplierArmor>0.26</StuffEffectMultiplierArmor>
+			<ArmorRating_Sharp>0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0</ArmorRating_Blunt>
+			<ArmorRating_Heat>0</ArmorRating_Heat>
+		</statBases>
+		<equippedStatOffsets>
+			<CarryBulk>15</CarryBulk>
+			<MoveSpeed>-0.17</MoveSpeed>
+			<WorkSpeedGlobal>-0.14</WorkSpeedGlobal>
+			<GermResistance>0.01</GermResistance>
+			<GermContainment>0.01</GermContainment>
+		</equippedStatOffsets>
+		<stuffCategories>
+			<li>Leathery</li>
+		</stuffCategories>
+		<costStuffCount>25</costStuffCount>
+		<generateCommonality>1.5</generateCommonality>
+		<apparel>
+			<careIfWornByCorpse>false</careIfWornByCorpse>
+			<bodyPartGroups>
+				<li>Shoulders</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Backpack</li>
+			</layers>
+			<tags>
+				<li>Tribal</li>
+				<li>Neolithic</li>
+				<li>Outlander</li>
+				<li>PredatorsLight</li>
+				<li>PredatorsMedium</li>
+				<li>PredatorsScout</li>
+			</tags>
+			<defaultOutfitTags>
+				<li>Soldier</li>
+			</defaultOutfitTags>
+			<wornGraphicPath>Things/Apparel/TribalPack/Tribalpack</wornGraphicPath>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li>
+					<weight>10</weight>
+					<only>(0.4,0.3,0.15,1)</only>
+				</li>
+				<li>
+					<weight>15</weight>
+					<only>(0.6,0.45,0.18,1)</only>
+				</li>
+				<li>
+					<weight>20</weight>
+					<only>(0.8,0.6,0.23,1)</only>
+				</li>
+			</options>
+		</colorGenerator>
+		<thingCategories>
+			<li>SpecialApparelCat</li>
+		</thingCategories>
+		<generateAllowChance>0.8</generateAllowChance>
+	</ThingDef>
+
+</Defs>

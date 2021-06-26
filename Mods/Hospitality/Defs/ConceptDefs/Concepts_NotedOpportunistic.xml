@@ -8,11 +8,11 @@
     <label>Guest beds</label>
     <priority>50</priority>
     <needsOpportunity>True</needsOpportunity>
-    <helpText>Visitors prefer to sleep in beds.\n\nThere are specific guest beds you can build for them.</helpText>
+    <helpText>Visitors prefer to sleep in beds.\n\nYou can convert beds to guest beds using the "For guests" button.</helpText>
     <highlightTags>
       <li>MainTab-Architect-Closed</li>
       <li>DesignationCategoryButton-Furniture-Closed</li>
-      <li>Designator-Build-GuestBed</li>
+      <li>Designator-Build-Bed</li>
     </highlightTags>
   </ConceptDef>
 
@@ -25,6 +25,14 @@
     <highlightTags>
       <li>ITab-Guest-Closed</li>
     </highlightTags>
+  </ConceptDef>
+
+  <ConceptDef>
+    <defName>GuestWork</defName>
+    <label>Guests help out</label>
+    <priority>40</priority>
+    <needsOpportunity>True</needsOpportunity>
+    <helpText>Happy guests will help with work inside of their area if they are skilled enough. You can disable this or raise the required skill in the mod options.</helpText>
   </ConceptDef>
 
 </Defs>

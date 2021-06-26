@@ -1,32 +1,31 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
 	<ThingDef Name="BaseZeon" Abstract="True">
-		
 		<category>Pawn</category>
 		<selectable>true</selectable>
 		<tickerType>Normal</tickerType>
 		<altitudeLayer>Pawn</altitudeLayer>
 		<useHitPoints>false</useHitPoints>
-		<hasTooltip>true</hasTooltip>		
+		<hasTooltip>true</hasTooltip>
 		<inspectorTabs>
 			<li>ITab_Pawn_Health</li>
 			<li>ITab_Pawn_Character</li>
-			<li>Combat_Realism.ITab_Inventory</li>
+			<li>CombatExtended.ITab_Inventory</li>
+			<li>ITab_Pawn_Log</li>
 		</inspectorTabs>
 		<comps>
-		  <li>
-			<compClass>CompAttachBase</compClass>
-		 </li>
-		  <li>
-			<compClass>Combat_Realism.CompPawnGizmo</compClass>
-		 </li>
-		  <li>
-			<compClass>Combat_Realism.CompInventory</compClass>
-		 </li>
+			<li>
+				<compClass>CompAttachBase</compClass>
+			</li>
+			<li>
+				<compClass>CombatExtended.CompPawnGizmo</compClass>
+			</li>
+			<li>
+				<compClass>CombatExtended.CompInventory</compClass>
+			</li>
 		</comps>
 		<drawGUIOverlay>true</drawGUIOverlay>
-		<race>			
+		<race>
 			<needsRest>false</needsRest>
 			<foodType>None</foodType>
 			<ageGenerationCurve>
@@ -47,26 +46,23 @@
 				</points>
 			</litterSizeCurve>
 			<lifeExpectancy>2000</lifeExpectancy>
-
-			  <soundCallIntervalRange>
+			<soundCallIntervalRange>
 				<min>1000</min>
 				<max>2000</max>
-			  </soundCallIntervalRange>
-			<specialshadowData>
+			</soundCallIntervalRange>
+			<specialShadowData>
 				<volume>(0.3, 0.8, 0.4)</volume>
 				<offset>(0,0,-0.3)</offset>
-			</specialshadowData>
+			</specialShadowData>
 		</race>
-	</ThingDef>	
-	
+	</ThingDef>
 
 	<ThingDef ParentName="BaseZeon">
-		<defName>Zeon</defName>
+		<defName>Mech_Zeon</defName>
 		<label>Zeon</label>
 		<thingClass>SK.Events.Zeon</thingClass>
-		<description></description>
 		<uiIconPath>Things/Pawn/Humanlike/UI/IconHuman</uiIconPath>
-		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<statBases>
 			<Mass>1000</Mass>
 			<MarketValue>50000</MarketValue>
@@ -76,59 +72,70 @@
 			<Flammability>0</Flammability>
 			<ComfyTemperatureMin>-178</ComfyTemperatureMin>
 			<ComfyTemperatureMax>1500</ComfyTemperatureMax>
-			<ArmorRating_Blunt>0.9</ArmorRating_Blunt>
-			<ArmorRating_Heat>0.7</ArmorRating_Heat>
-			<ArmorRating_Electric>5.0</ArmorRating_Electric>
-			<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+			<ArmorRating_Blunt>35</ArmorRating_Blunt>
+			<ArmorRating_Sharp>10</ArmorRating_Sharp>
 			<MeatAmount>0</MeatAmount>
-			<AimingDelayFactor>0.20</AimingDelayFactor>			
+			<AimingDelayFactor>0.20</AimingDelayFactor>
 			<LeatherAmount>0</LeatherAmount>
-			<CarryWeight>250</CarryWeight>
-			<CarryBulk>180</CarryBulk>
-			<ArmorPenetration>1.3</ArmorPenetration>
+			<CarryWeight>350</CarryWeight>
+			<CarryBulk>280</CarryBulk>
+			<MeleeDodgeChance>0.25</MeleeDodgeChance>
+			<MeleeCritChance>0.3</MeleeCritChance>
+			<MeleeParryChance>0.2</MeleeParryChance>
+			<SmokeSensitivity>0</SmokeSensitivity>
+			<MaxHitPoints>1000</MaxHitPoints>
 		</statBases>
-		<verbs>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.25</defaultCooldownTime>
-				<meleeDamageBaseAmount>75</meleeDamageBaseAmount>
-				<meleeDamageDef>Cut</meleeDamageDef>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>leftbladecut</id>-->
+				<label>left blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>58</power>
+				<cooldownTime>1.8</cooldownTime>
 				<linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
-				<surpriseAttack>
-				  <extraMeleeDamages>
-					<li>
-					  <def>Stun</def>
-					  <amount>50</amount>
-					</li>
-				  </extraMeleeDamages>
-				</surpriseAttack>
+				<armorPenetrationSharp>90</armorPenetrationSharp>
+				<armorPenetrationBlunt>35</armorPenetrationBlunt>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 			</li>
-			<li>
-				<verbClass>Verb_MeleeAttack</verbClass>
-				<defaultCooldownTime>1.25</defaultCooldownTime>
-				<meleeDamageBaseAmount>72</meleeDamageBaseAmount>
-				<meleeDamageDef>Cut</meleeDamageDef>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>rightbladecut</id>-->
+				<label>right blade</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>40</power>
+				<cooldownTime>1.6</cooldownTime>
 				<linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
-				<surpriseAttack>
-				  <extraMeleeDamages>
-					<li>
-					  <def>Stun</def>
-					  <amount>50</amount>
-					</li>
-				  </extraMeleeDamages>
-				</surpriseAttack>
+				<armorPenetrationSharp>80</armorPenetrationSharp>
+				<armorPenetrationBlunt>30</armorPenetrationBlunt>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 			</li>
-		</verbs>
+			<li Class="CombatExtended.ToolCE">
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>30</power>
+				<cooldownTime>6.65</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<chanceFactor>0.2</chanceFactor>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<armorPenetrationSharp>90</armorPenetrationSharp>
+				<armorPenetrationBlunt>100</armorPenetrationBlunt>
+			</li>
+		</tools>
 		<race>
 			<hasGenders>false</hasGenders>
-			<thinkTreeMain>Mechanoid</thinkTreeMain>			
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
 			<intelligence>ToolUser</intelligence>
 			<makesFootprints>true</makesFootprints>
 			<fleshType>Mechanoid</fleshType>
 			<body>Scyther</body>
-			<baseBodySize>5.5</baseBodySize>
+			<baseBodySize>1.5</baseBodySize>
 			<baseHungerRate>0</baseHungerRate>
-			<baseHealthScale>9</baseHealthScale>
+			<baseHealthScale>20</baseHealthScale>
 			<soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
 			<soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
@@ -136,24 +143,25 @@
 				<li>
 					<def>MechanoidFullyFormed</def>
 					<minAge>0</minAge>
-					  <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
-					  <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
-					  <soundCall>Pawn_Mech_Centipede_Call</soundCall>
+					<soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+					<soundCall>Pawn_Mech_Centipede_Call</soundCall>
 				</li>
 			</lifeStageAges>
-	  <hediffGiverSets>
-        <li>UndeadPassiveSet</li>
-      </hediffGiverSets>
+			<hediffGiverSets>
+				<li>UndeadPassiveSet</li>
+			</hediffGiverSets>
 		</race>
-    <recipes>
-      <li>ShutDownMechanoid</li>
-    </recipes>
-    <butcherProducts>
-		<Weapon_Parts>20</Weapon_Parts>
-		<TitaniumBar>70</TitaniumBar>
-		<DepletedUranium>75</DepletedUranium>
-		<CarbonAlloy>75</CarbonAlloy>
-    </butcherProducts>
+		<butcherProducts>
+			<TitaniumBar>70</TitaniumBar>
+			<CarbonAlloy>75</CarbonAlloy>
+			<IonCannonControllerCore>1</IonCannonControllerCore>
+		</butcherProducts>
+		<modExtensions>
+			<li Class="CombatExtended.RacePropertiesExtensionCE">
+				<bodyShape>Humanoid</bodyShape>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
-</ThingDefs>
+</Defs>

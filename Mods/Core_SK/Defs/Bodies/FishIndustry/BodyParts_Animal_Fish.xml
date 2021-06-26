@@ -2,161 +2,116 @@
 <Defs>
 
   <BodyPartDef>
-    <defName>FishBody</defName>
-    <label>body</label>
-    <hitPoints>40</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_body</li>
-    </activities>
-  </BodyPartDef>
-
-  <BodyPartDef>
-    <defName>FishHead</defName>
-    <label>head</label>
-    <hitPoints>30</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <activities>
-      <li>Hearing_head</li>
-    </activities>
-  </BodyPartDef>
-
-  <BodyPartDef>
     <defName>FishMouth</defName>
     <label>mouth</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Eating_source</li>
-      <li>Talking_source</li>
-    </activities>
+    <tags>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>LeftGill</defName>
-    <label>left gill</label>
+    <defName>Gill</defName>
+    <label>gill</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>false</skinCovered>
-    <activities>
-      <li>Breathing_main</li>
-    </activities>
+    <tags>
+      <li>BreathingSource</li>
+    </tags>
     <spawnThingOnRemoved>Lung</spawnThingOnRemoved>
   </BodyPartDef>
 
   <BodyPartDef>
-    <defName>RightGill</defName>
-    <label>right gill</label>
+    <defName>Fin</defName>
+    <label>fin</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
-    <skinCovered>false</skinCovered>
-    <activities>
-      <li>Breathing_main</li>
-    </activities>
-    <spawnThingOnRemoved>Lung</spawnThingOnRemoved>
-  </BodyPartDef>
-
-  <BodyPartDef>
-    <defName>LeftFin</defName>
-    <label>left fin</label>
-    <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_leftWay</li>
-    </activities>
-  </BodyPartDef>
-
-  <BodyPartDef>
-    <defName>RightFin</defName>
-    <label>right fin</label>
-    <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
-    <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_rightWay</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>DorsalFin</defName>
     <label>right fin</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_tool</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>VentralFin</defName>
     <label>left fin</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_tool</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>CaudalFin</defName>
     <label>right fin</label>
     <hitPoints>30</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_body</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>SquidBody</defName>
     <label>body</label>
     <hitPoints>40</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_body</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>SquidHead</defName>
     <label>head</label>
     <hitPoints>30</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Hearing_head</li>
-    </activities>
+    <tags>
+      <li>HearingSource</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>SquidMouth</defName>
     <label>mouth</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Eating_source</li>
-      <li>Talking_source</li>
-    </activities>
+    <tags>
+      <li>EatingSource</li>
+      <li>TalkingSource</li>
+    </tags>
   </BodyPartDef>
 
   <BodyPartDef>
     <defName>Tentacle</defName>
     <label>right fin</label>
     <hitPoints>20</hitPoints>
-    <oldInjuryBaseChance>0.08</oldInjuryBaseChance>
+    <permanentInjuryChanceFactor>0.08</permanentInjuryChanceFactor>
     <skinCovered>true</skinCovered>
-    <activities>
-      <li>Moving_body</li>
-    </activities>
+    <tags>
+      <li>MovingLimbCore</li>
+    </tags>
   </BodyPartDef>
 
 </Defs>

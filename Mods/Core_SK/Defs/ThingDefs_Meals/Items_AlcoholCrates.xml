@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Resources>
+<Defs>
 
-	<ThingDef Name="AlcoholCrateBase" ParentName="ResourceBase" Abstract="True">
-		<description>A crate containing 75 bottles of alcohol.</description>
+	<ThingDef Name="AlcoholCrateBase" ParentName="SK_ResourceBase" Abstract="True">
+		<description>A crate containing various items depending on the crate type. Alcohol crates always contain 75 bottles of the corresponding type.</description>
 		<graphicData>
 			<graphicClass>Graphic_StackCount</graphicClass>
 			<drawSize>(2,2)</drawSize>
@@ -17,7 +17,7 @@
 		</statBases>
 		<stackLimit>2</stackLimit>
 		<thingCategories>
-			<li>Drugs</li>
+			<li>Alcohol</li>
 		</thingCategories>
 		<tradeTags>
 			<li>Exotic</li>
@@ -25,9 +25,13 @@
 	</ThingDef>
 	
 	
+	<ThingDef Name="Patreonbrew_base" ParentName="AlcoholCrateBase" Abstract="True">
+		<description>A brew of deliciousness from our supporters.</description>
+	</ThingDef>	
+
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>cider_Crate</defName>
-		<label>crate of Shinzee's apple cider</label>
+		<label>Crate of GG's apple cider</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -35,7 +39,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>rum_Crate</defName>
-		<label>crate of REinstein's Rum</label>
+		<label>Crate of GuiltyHollow's Rum</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -43,7 +47,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>Wine_Crate</defName>
-		<label>crate of Ramsi's wine</label>
+		<label>Crate of Sidfu's wine</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -51,7 +55,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>strawberrywine_Crate</defName>
-		<label>crate of spoon's wine</label>
+		<label>Crate of Laurens' strawberry wine</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -59,7 +63,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>saki_Crate</defName>
-		<label>crate of WHiZ Sake</label>
+		<label>Crate of Owlchemist's Sake</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -67,7 +71,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>vodka_Crate</defName>
-		<label>crate of Syntria Vodka</label>
+		<label>Crate of Skyarkhangel's Vodka</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -75,7 +79,7 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>tequila_Crate</defName>
-		<label>crate of Kitty's Tequila</label>
+		<label>Crate of Szara Kryik's Tequila</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
@@ -83,17 +87,74 @@
 
 	<ThingDef ParentName="AlcoholCrateBase">
 		<defName>Whiskey_Crate</defName>
-		<label>crate of Quill18's Whiskey</label>
+		<label>Crate of Adenia's Whiskey</label>
 		<graphicData>
 			<texPath>Things/Crate/BeerCrate</texPath>
 		</graphicData>
 	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Moonshine_Crate</defName>
+		<label>Crate of Ky6000's Moonshine</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
-</Resources>
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Gin_Crate</defName>
+		<label>Crate of NiciusB's Gin</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Brandy_Crate</defName>
+		<label>Crate of Puffamagicdragon's Brandy</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Cognac_Crate</defName>
+		<label>Crate of Kiko20's Cognac</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Kahlua_Crate</defName>
+		<label>Crate of Fsempri's Kahlua</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Arak_Crate</defName>
+		<label>Crate of sKeptr's Arak</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Applejack_Crate</defName>
+		<label>Crate of Lore's Applejack</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
 
+	<ThingDef ParentName="Patreonbrew_base">
+		<defName>Patreonbrew_Crate</defName>
+		<label>Crate of Patreonbrew</label>
+		<graphicData>
+			<texPath>Things/Crate/BeerCrate</texPath>
+		</graphicData>
+	</ThingDef>
+
+</Defs>

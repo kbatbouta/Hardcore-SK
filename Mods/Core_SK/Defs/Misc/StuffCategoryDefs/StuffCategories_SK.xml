@@ -18,12 +18,27 @@
 	
 	<StuffCategoryDef>
 		<defName>RareMetallic</defName>
-		<label>Rare Metallic</label>
+		<label>Rare metallic</label>
 	</StuffCategoryDef>
 
 	<StuffCategoryDef>
 		<defName>SolidMetallic</defName>
-		<label>Solid Metallic</label>
+		<label>Solid metallic</label>
+	</StuffCategoryDef>
+	
+	<StuffCategoryDef>
+		<defName>HeavyMetallic</defName>
+		<label>Heavy metallic</label>
+	</StuffCategoryDef>
+	
+	<StuffCategoryDef>
+		<defName>StrongMetallic</defName>
+		<label>Strong metallic</label>
+	</StuffCategoryDef>
+	
+	<StuffCategoryDef>
+		<defName>RuggedMetallic</defName>
+		<label>Rugged metallic</label>
 	</StuffCategoryDef>
 	
 	<StuffCategoryDef>
@@ -34,6 +49,11 @@
 	<StuffCategoryDef>
 		<defName>Stony</defName>
 		<label>Stony</label>
+	</StuffCategoryDef>
+	
+	<StuffCategoryDef>
+		<defName>Bricks</defName>
+		<label>Bricks</label>
 	</StuffCategoryDef>
 
 	<StuffCategoryDef>

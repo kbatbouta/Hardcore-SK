@@ -1,132 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ThingDefs>
-
-  <!-- =========== REALISTIC PRODUCTION SK MOD =========== -->
-  
-  <ThingDef Name="BaseGun" Abstract="True">
-    <category>Item</category>
-    <thingClass>ThingWithComps</thingClass>
-    <equipmentType>Primary</equipmentType>
-    <pathCost>10</pathCost>
-    <useHitPoints>True</useHitPoints>
-    <selectable>True</selectable>
-    <graphicData>
-    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
-    </graphicData>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>3</DeteriorationRate>
-      <SellPriceFactor>0.3</SellPriceFactor>
-    </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>True</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <techLevel>Industrial</techLevel>
-    <inspectorTabs>
-      <li>ITab_Art</li>
-    </inspectorTabs>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-      <li>
-        <compClass>CompEquippable</compClass>
-      </li>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
-      <li Class="CompProperties_Art">
-        <nameMaker>ArtName_WeaponGun</nameMaker>
-        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
-        <minQualityForArtistic>Excellent</minQualityForArtistic>
-      </li>
-    </comps>
-    <smeltProducts>
-      <SteelBar>10</SteelBar>
-    </smeltProducts>
-  </ThingDef>
-  
-  
-  <ThingDef Name="BaseGunCR" Abstract="True">
-    <category>Item</category>
-    <thingClass>ThingWithComps</thingClass>
-    <equipmentType>Primary</equipmentType>
-    <pathCost>10</pathCost>
-    <useHitPoints>True</useHitPoints>
-    <selectable>True</selectable>
-    <graphicData>
-    <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
-    </graphicData>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>3</DeteriorationRate>
-      <SellPriceFactor>0.3</SellPriceFactor>
-    </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>True</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <techLevel>Industrial</techLevel>
-    <inspectorTabs>
-      <li>ITab_Art</li>
-    </inspectorTabs>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-      <li>
-        <compClass>CompEquippable</compClass>
-      </li>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
-      <li Class="CompProperties_Art">
-        <nameMaker>ArtName_WeaponGun</nameMaker>
-        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
-        <minQualityForArtistic>Excellent</minQualityForArtistic>
-      </li>
-    </comps>
-    <smeltProducts>
-      <SteelBar>10</SteelBar>
-    </smeltProducts>
-  </ThingDef>
-  
-  <ThingDef Name="BaseBulletanilla" Abstract="True">
-    <category>Projectile</category>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Projectile</altitudeLayer>
-    <thingClass>Bullet</thingClass>
-    <label>bullet</label>
-    <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
-    <graphicData>
-    <shaderType>Transparent</shaderType>
-    </graphicData>
-  </ThingDef>
-
-	<!-- ============================ Bullets ================================== -->
-    
-<!--
-	<ThingDef ParentName="BaseBullet">
-		<defName>Bullet_FlameThrowerJet</defName>
-		<thingClass>SK.BulletIncendiaryCR</thingClass>
-		<label>FlameThrower Jet</label>
+<Defs>
+	<!-- BASE -->
+	<ThingDef Name="SK_BaseGun" Abstract="True">
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<equipmentType>Primary</equipmentType>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<selectable>True</selectable>
 		<graphicData>
-			<texPath>Things/Projectile/Jet</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
 		</graphicData>
-		<projectile>
-			<flyOverhead>false</flyOverhead>
-			<damageDef>Flame</damageDef>
-			<damageAmountBase>3</damageAmountBase>
-			<speed>20</speed>
-			<postExplosionSpawnThingDef>Napalm_Fuel</postExplosionSpawnThingDef>
-			<explosionSpawnChance>0.7</explosionSpawnChance>
-		</projectile>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>3</DeteriorationRate>
+			<SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<techLevel>Industrial</techLevel>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponGun</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<smeltProducts>
+			<Plasteel>10</Plasteel>
+		</smeltProducts>
 	</ThingDef>
--->
 
-	
-	<ThingDef ParentName="BaseBulletanilla">
+	<ThingDef Name="BaseGunCR" Abstract="True">
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<equipmentType>Primary</equipmentType>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<selectable>True</selectable>
+		<graphicData>
+			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>3</DeteriorationRate>
+			<SellPriceFactor>0.70</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<techLevel>Industrial</techLevel>
+		<inspectorTabs>
+			<li>ITab_Art</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_Forbiddable" />
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+			<li>
+				<compClass>CompQuality</compClass>
+			</li>
+			<li Class="CompProperties_Art">
+				<nameMaker>NamerArtWeaponGun</nameMaker>
+				<descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+				<minQualityForArtistic>Excellent</minQualityForArtistic>
+			</li>
+		</comps>
+		<smeltProducts>
+			<Plasteel>10</Plasteel>
+		</smeltProducts>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BaseGunCR" Name="BaseGun_ShortBarreled" Abstract="True">
+		<equippedStatOffsets>
+			<Suppressability>-0.25</Suppressability>
+		</equippedStatOffsets>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>grip</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.4</cooldownTime>
+				<armorPenetrationBlunt>1.25</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>barrelblunt</id>-->
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.5</cooldownTime>
+				<armorPenetrationBlunt>1.25</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>barrelpoke</id>-->
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>7</power>
+				<cooldownTime>1.3</cooldownTime>
+				<armorPenetrationBlunt>1.25</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BaseGunCR" Name="BaseGun_LongBarreled" Abstract="True">
+		<equippedStatOffsets>
+			<Suppressability>-0.35</Suppressability>
+		</equippedStatOffsets>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.6</cooldownTime>
+				<armorPenetrationBlunt>1.5</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>barrelblunt</id>-->
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.7</cooldownTime>
+				<armorPenetrationBlunt>1.75</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				 <!--<id>barrelpoke</id>-->
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>1.4</cooldownTime>
+				<armorPenetrationBlunt>1.35</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BaseGunCR" Name="BaseGun_Heavy" Abstract="True">
+		<equippedStatOffsets>
+			<Suppressability>-0.45</Suppressability>
+		</equippedStatOffsets>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>14</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetrationBlunt>2.5</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BaseGunCR" Name="BaseGun_Other" Abstract="True">
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.6</cooldownTime>
+				<armorPenetrationBlunt>1</armorPenetrationBlunt>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<!-- PROJECTILE -->
+	<ThingDef Name="SK_BaseBulletanilla" Abstract="True">
+		<category>Projectile</category>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>Projectile</altitudeLayer>
+		<thingClass>Bullet</thingClass>
+		<label>bullet</label>
+		<useHitPoints>False</useHitPoints>
+		<neverMultiSelect>True</neverMultiSelect>
+		<graphicData>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+	</ThingDef>
+	<ThingDef ParentName="SK_BaseBulletanilla">
 		<defName>Bullet_FireExtinguisher</defName>
 		<thingClass>SK.Projectile_Extinguishing</thingClass>
 		<label>foam</label>
@@ -141,145 +235,8 @@
 			<speed>20</speed>
 		</projectile>
 	</ThingDef>
-
-  
-  <!-- ============================ Guns ================================== -->
-  
-  
-<!-- F L A M E T H R O W E R S -->
-  
-	<!-- =================== M240 Incinerator Unit ================== -->
-<!--
-	  <ThingDef ParentName="BaseGunCR">
-		<defName>Gun_M240_USCM</defName>
-		<label>M240 Flamethrower</label>
-		<description>The M240 Incinerator Unit, also known as the M240 Flamethrower (or M240 Flamethrower) and colloquially as the "Bake-a-Flake," is a carbine-style flamethrower employed by the United States Colonial Marine Corps. The M240 is undoubtedly one of the most fearsome weapons in the Marine inventory, and has proven especially useful in close combat against soft targets. It is also ideal for use against fortifications.</description>
-		<graphicData>
-		  <texPath>Things/Weapons/M240</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-		<soundInteract>InteractRifle</soundInteract>
-		<statBases>
-			<MarketValue>1600</MarketValue>
-			<AimEfficiency>0.55</AimEfficiency>
-			<ShotSpread>0.08</ShotSpread>
-			<SwayFactor>3.8</SwayFactor>
-			<RangedWeapon_Cooldown>0.7</RangedWeapon_Cooldown>
-		</statBases>
-    <tradeTags>
-      <li>Exotic</li>
-    </tradeTags>
-    <weaponTags>
-    <li>Specialranged</li>
-	<li>TierOneSMG</li>
-	<li>TierOneSMG</li>
-    </weaponTags>
-    <thingCategories>
-      <li>Specialranged</li>
-    </thingCategories>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.21</MoveSpeed>
-			<WorkSpeedGlobal>-0.15</WorkSpeedGlobal>
-		</equippedStatOffsets>
-		<verbs>
-		  <li Class="Combat_Realism.VerbPropertiesCR">
-			<verbClass>Combat_Realism.Verb_ShootCR</verbClass>
-			<hasStandardCommand>true</hasStandardCommand>
-			<projectileDef>Bullet_FlameThrowerJet</projectileDef>
-			<warmupTime>0.70</warmupTime>
-			<range>16</range>
-			<burstShotCount>20</burstShotCount>
-			<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
-			<soundCast>MediumMG</soundCast>
-			<soundCastTail>GunTail_Light</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
-		  </li>
-		</verbs>
-		<comps>
-		  <li Class="Combat_Realism.CompProperties_FireModes">
-			<compClass>Combat_Realism.CompFireModes</compClass>
-			<aiUseBurstMode>FALSE</aiUseBurstMode>
-			<aiUseAimMode>FALSE</aiUseAimMode>
-		  </li>
-		  <li Class="Combat_Realism.CompProperties_AmmoUser">
-			<magazineSize>100</magazineSize>
-			<reloadTicks>450</reloadTicks>
-			<ammoSet>AmmoSet_45ACP</ammoSet>
-		  </li>
-		</comps>
-    <smeltProducts>
-      <Heavy_Component>1</Heavy_Component>
-      <Weapon_Parts>6</Weapon_Parts>
-    </smeltProducts>
-	  </ThingDef>
-
-
-  <ThingDef ParentName="BaseGunCR">
-    <defName>Gun_FlameThrower</defName>
-    <label>X15 Flamethrower</label>
-    <description>A compact flamethrower, able to fire jets of flammable liquid.</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/WeaponRanged/Flame/FlameThrower</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>InteractRifle</soundInteract>
-    <statBases>
-		<MarketValue>1800</MarketValue>
-		<AimEfficiency>0.9</AimEfficiency>
-		<ShotSpread>2.8</ShotSpread>
-		<SwayFactor>3.5</SwayFactor>
-		<RangedWeapon_Cooldown>0.6</RangedWeapon_Cooldown>
-    </statBases>
-    <tradeTags>
-      <li>Exotic</li>
-    </tradeTags>
-    <weaponTags>
-      <li>Specialranged</li>
-	<li>TierTwoSMG</li>
-	<li>TierTwoSMG</li>
-    </weaponTags>
-    <thingCategories>
-      <li>Specialranged</li>
-    </thingCategories>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-			<WorkSpeedGlobal>-0.12</WorkSpeedGlobal>
-		</equippedStatOffsets>
-		<verbs>
-		  <li Class="Combat_Realism.VerbPropertiesCR">
-			<verbClass>Combat_Realism.Verb_ShootCR</verbClass>
-			<hasStandardCommand>true</hasStandardCommand>
-			<projectileDef>Bullet_FlameThrowerJet</projectileDef>
-			<warmupTime>0.60</warmupTime>
-			<range>16</range>
-			<burstShotCount>30</burstShotCount>
-			<ticksBetweenBurstShots>3</ticksBetweenBurstShots>
-			<soundCast>FlameThrower</soundCast>
-			<soundCastTail>GunTail_Light</soundCastTail>
-			<muzzleFlashScale>9</muzzleFlashScale>
-		  </li>
-		</verbs>
-		<comps>
-		  <li Class="Combat_Realism.CompProperties_FireModes">
-			<compClass>Combat_Realism.CompFireModes</compClass>
-			<aiUseBurstMode>FALSE</aiUseBurstMode>
-			<aiUseAimMode>FALSE</aiUseAimMode>
-		  </li>
-		  <li Class="Combat_Realism.CompProperties_AmmoUser">
-			<magazineSize>120</magazineSize>
-			<reloadTicks>550</reloadTicks>
-			<ammoSet>AmmoSet_45ACP</ammoSet>
-		  </li>
-		</comps>
-  </ThingDef>
--->
-  
-  
-<!-- C H A R G E L A N C E -->
-
- 	<!--=============== Fire Extinguisher ====================-->
-
-	<ThingDef ParentName="BaseGun">
+	<!-- FIRE EXTINGUISHER -->
+	<ThingDef ParentName="SK_BaseGun">
 		<defName>Gun_FireExtinguisher</defName>
 		<label>Fire Extinguisher</label>
 		<description>A gun loaded with expanding foam, used to extinguish fires.</description>
@@ -287,7 +244,8 @@
 			<texPath>Things/Weapons/FireExtinguisher</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<soundInteract>InteractRifle</soundInteract>
+		<soundInteract>Interact_Rifle</soundInteract>
+		<techLevel>Industrial</techLevel>
 		<statBases>
 			<MarketValue>800</MarketValue>
 			<AccuracyTouch>0.5</AccuracyTouch>
@@ -298,19 +256,14 @@
 			<Bulk>12.00</Bulk>
 			<Mass>6.00</Mass>
 		</statBases>
-		<equippedStatOffsets>
-			<MoveSpeed>-0.15</MoveSpeed>
-			<WorkSpeedGlobal>-0.1</WorkSpeedGlobal>
-		</equippedStatOffsets>
 		<verbs>
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
-				<projectileDef>Bullet_FireExtinguisher</projectileDef>
+				<defaultProjectile>Bullet_FireExtinguisher</defaultProjectile>
 				<hasStandardCommand>true</hasStandardCommand>
 				<targetParams>
 					<canTargetLocations>true</canTargetLocations>
 				</targetParams>
-				<ai_IsIncendiary>false</ai_IsIncendiary>
 				<warmupTime>0.15</warmupTime>
 				<burstShotCount>20</burstShotCount>
 				<ticksBetweenBurstShots>2</ticksBetweenBurstShots>
@@ -321,14 +274,13 @@
 		</verbs>
 		<weaponTags>
 			<li>Utility</li>
+			<li>CE_OneHandedWeapon</li>
 		</weaponTags>
-    <thingCategories>
-      <li>SpecialWeapons</li>
-    </thingCategories>
-    <smeltProducts>
-      <Weapon_Parts>8</Weapon_Parts>
-    </smeltProducts>
+		<thingCategories>
+			<li>SpecialWeapons</li>
+		</thingCategories>
+		<smeltProducts>
+			<Weapon_Parts>8</Weapon_Parts>
+		</smeltProducts>
 	</ThingDef>
-
-</ThingDefs>
-
+</Defs>

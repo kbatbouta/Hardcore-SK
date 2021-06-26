@@ -1,315 +1,503 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<TerrainDefs>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
 
-	<TerrainDef Name="FloorBase" Abstract="True">
+	<TerrainDef Name="SK_FloorBase" Abstract="True">
 		<layerable>true</layerable>
 		<affordances>
 			<li>Light</li>
+			<li>Medium</li>
 			<li>Heavy</li>
-			<li>SmoothHard</li>
 		</affordances>
-		<PathCost>-2</PathCost>
+		<pathCost>0</pathCost>
 		<statBases>
-			<WorkToBuild>500</WorkToBuild>
+			<WorkToBuild>420</WorkToBuild>
 		</statBases>
 		<designationCategory>Floors</designationCategory>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<constructEffect>ConstructDirt</constructEffect>
-		<AcceptTerrainSourceFilth>True</AcceptTerrainSourceFilth>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<tags>
+			<li>Floor</li>
+		</tags>
 	</TerrainDef>
 
-	<TerrainDef Abstract="True" ParentName="FloorBase" Name="TileStoneBase">
-		<RenderPrecedence>220</RenderPrecedence>
-		<Description>Solid stone tiles for a castle feeling.
-Beauty: 2.</Description>
+	<TerrainDef Abstract="True" ParentName="SK_FloorBase" Name="SK_TileStoneBase">
+		<renderPrecedence>220</renderPrecedence>
+		<description>Solid stone tiles for a castle feeling.
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/TileStone</texturePath>
-		<PathCost>-2</PathCost>
+		<pathCost>0</pathCost>
 		<statBases>
-			<WorkToBuild>700</WorkToBuild>
+			<WorkToBuild>520</WorkToBuild>
 			<Beauty>2</Beauty>
 		</statBases>
-
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
+		<tags>
+      <li>Floor</li>
+    </tags>
 	</TerrainDef>
 
 
 	<!-- ================= Outside Tile ================= -->
 
-	<TerrainDef ParentName="FloorBase">
+	<TerrainDef ParentName="SK_FloorBase">
 		<defName>Concrete</defName>
 		<label>Concrete</label>
-		<Description>Quick-poured concrete in a flat, grey surface. You'll need to be able to dig out the ground to pour this. 
-Beauty: 2.</Description>
+		<description>Quick-poured concrete in a flat, grey surface. You'll need to be able to dig out the ground to pour this. 
+Beauty: 1.</description>
 		<texturePath>Terrain/Surfaces/Concrete</texturePath>
-		<EdgeType>Hard</EdgeType>
-		<RenderPrecedence>150</RenderPrecedence>
-		<PathCost>0</PathCost>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>150</renderPrecedence>
+		<pathCost>0</pathCost>
 		<statBases>
-			<Beauty>2</Beauty>
+			<WorkToBuild>200</WorkToBuild>
+			<Beauty>1</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<ConcreteResource>3</ConcreteResource>
-		</CostList>
+		</costList>
 		<designationCategory>OutsideFloors</designationCategory>
-		<researchPrerequisites><li>FloorArtII</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtII</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="FloorBase">
+	<TerrainDef ParentName="SK_FloorBase">
 		<defName>DarkConcrete</defName>
 		<label>Dark Concrete</label>
-		<Description>Dark concrete in a honeycomb pattern. You'll need to be able to dig out the ground to pour this. 
-Beauty: 2.</Description>
+		<description>Dark concrete in a honeycomb pattern. You'll need to be able to dig out the ground to pour this. 
+Beauty: 1.</description>
 		<texturePath>Terrain/Surfaces/DarkConcrete</texturePath>
-		<EdgeType>Hard</EdgeType>
-		<RenderPrecedence>150</RenderPrecedence>
-		<PathCost>0</PathCost>
+		<edgeType>Hard</edgeType>
+		<renderPrecedence>150</renderPrecedence>
+		<pathCost>0</pathCost>
 		<statBases>
-			<Beauty>2</Beauty>
+			<WorkToBuild>200</WorkToBuild>
+			<Beauty>1</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<ConcreteResource>3</ConcreteResource>
-		</CostList>
+		</costList>
 		<designationCategory>OutsideFloors</designationCategory>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
+		<researchPrerequisites>
+			<li>FloorArtII</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="FloorBase">
-		<DefName>CeramicTile</DefName>
+	<TerrainDef ParentName="SK_FloorBase">
+		<defName>CeramicTile</defName>
 		<label>Ceramic Tile</label>
-		<RenderPrecedence>230</RenderPrecedence>
-		<Description>Small white ceramic tiles with a dark bordering. Quick to move around on. 
-Beauty: 3.</Description>
+		<renderPrecedence>230</renderPrecedence>
+		<description>Small white ceramic tiles with a dark bordering. Quick to move around on. 
+Beauty: 3.</description>
 		<texturePath>Terrain/Surfaces/CeramicTile</texturePath>
 		<statBases>
-			<WorkToBuild>1200</WorkToBuild>
+			<WorkToBuild>400</WorkToBuild>
 			<Beauty>3</Beauty>
+			<Cleanliness>0.4</Cleanliness>
 		</statBases>
-		<CostList>
+		<costList>
 			<ConcreteResource>1</ConcreteResource>
-			<Ceramics>1</Ceramics>
-		</CostList>
-		<researchPrerequisites><li>FloorArtIV</li></researchPrerequisites>
+			<Ceramics>2</Ceramics>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArtIII</li>
+		</researchPrerequisites>
 		<designationCategory>OutsideFloors</designationCategory>
+			<tags>
+      <li>FineFloor</li>
+    </tags>
 	</TerrainDef>
 
-	<TerrainDef ParentName="FloorBase">
-		<DefName>PavedTile</DefName>
+	<TerrainDef ParentName="SK_FloorBase">
+		<defName>PavedTile</defName>
 		<label>Paved Tile</label>
-		<RenderPrecedence>230</RenderPrecedence>
-		<Description>Large grey tiles with a thick, dark border. Quick to move around on. 
-Beauty: 3.</Description>
+		<renderPrecedence>230</renderPrecedence>
+		<description>Large grey tiles with a thick, dark border. Quick to move around on. 
+Beauty: 2.</description>
 		<texturePath>Terrain/Surfaces/PavedTile</texturePath>
 		<statBases>
-			<WorkToBuild>1200</WorkToBuild>
-			<Beauty>3</Beauty>
+			<WorkToBuild>200</WorkToBuild>
+			<Beauty>2</Beauty>
 		</statBases>
-		<CostList>
+		<costList>
 			<ConcreteResource>2</ConcreteResource>
-			<Component>1</Component>
-		</CostList>
-		<researchPrerequisites><li>FloorArtIII</li></researchPrerequisites>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArtII</li>
+		</researchPrerequisites>
 		<designationCategory>OutsideFloors</designationCategory>
 	</TerrainDef>
 
 	<!-- ============ Tile stone ============ -->
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>TileSandstone</DefName>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileSandstone</defName>
 		<label>Sandstone Tile</label>
 		<color>(126,104,94)</color>
-		<CostList>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksSandstone>3</BlocksSandstone>
-		</CostList>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>TileGranite</DefName>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileGranite</defName>
 		<label>Granite Tile</label>
 		<color>(105,95,97)</color>
-		<CostList>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksGranite>3</BlocksGranite>
-		</CostList>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>TileLimestone</DefName>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileLimestone</defName>
 		<label>Limestone Tile</label>
 		<color>(158,153,135)</color>
-		<CostList>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksLimestone>3</BlocksLimestone>
-		</CostList>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>TileSlate</DefName>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileSlate</defName>
 		<label>Slate Tile</label>
 		<color>(70,70,70)</color>
-		<CostList>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksSlate>3</BlocksSlate>
-		</CostList>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 	</TerrainDef>
 
-	<TerrainDef ParentName="TileStoneBase">
-		<DefName>TileMarble</DefName>
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileMarble</defName>
 		<label>Marble Tile</label>
 		<color>(132,135,132)</color>
-		<CostList>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
 			<BlocksMarble>3</BlocksMarble>
-		</CostList>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
 	</TerrainDef> 
 
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>ClayBrickTile</defName>
+		<label>Clay tile</label>
+		<color>(163,109,64)</color>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
+			<ClayBrick>3</ClayBrick>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+	</TerrainDef> 
+
+	<TerrainDef ParentName="SK_TileStoneBase">
+		<defName>TileCeramics</defName>
+		<label>Ceramics Tile</label>
+		<color>(255,255,255)</color>
+		<statBases>
+			<WorkToBuild>520</WorkToBuild>
+			<Beauty>2</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>3</Ceramics>
+		</costList>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+	</TerrainDef>
+
+	<!-- ============ Flagstone ============ -->
+
+	<TerrainDef Abstract="True" ParentName="SK_FloorBase" Name="SK_FlagstoneBase">
+		<renderPrecedence>220</renderPrecedence>
+		<description>Roughly-cut stone tiles. Not super pretty, but they make good surfaces for roads and outdoor walkways. Deconstructing flagstone yields no resources. Beauty: 1.</description>
+		<texturePath>Terrain/Surfaces/Flagstone</texturePath>
+		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>1</Beauty>
+		</statBases>
+		<tags>
+			<li>Road</li>
+		</tags>
+		<researchPrerequisites>
+			<li>FloorArt</li>
+		</researchPrerequisites>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_FlagstoneBase">
+		<defName>FlagstoneSandstone</defName>
+		<label>sandstone flagstone</label>
+		<color>(126,104,94)</color>
+		<costList>
+			<BlocksSandstone>2</BlocksSandstone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_FlagstoneBase">
+		<defName>FlagstoneGranite</defName>
+		<label>granite flagstone</label>
+		<color>(105,95,97)</color>
+		<costList>
+			<BlocksGranite>2</BlocksGranite>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_FlagstoneBase">
+		<defName>FlagstoneLimestone</defName>
+		<label>limestone flagstone</label>
+		<color>(158,153,135)</color>
+		<costList>
+			<BlocksLimestone>2</BlocksLimestone>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_FlagstoneBase">
+		<defName>FlagstoneSlate</defName>
+		<label>slate flagstone</label>
+		<color>(105,105,105)</color>
+		<costList>
+			<BlocksSlate>2</BlocksSlate>
+		</costList>
+	</TerrainDef>
+
+	<TerrainDef ParentName="SK_FlagstoneBase">
+		<defName>FlagstoneMarble</defName>
+		<label>marble flagstone</label>
+		<color>(132,135,132)</color>
+		<costList>
+			<BlocksMarble>2</BlocksMarble>
+		</costList>
+	</TerrainDef>
 
 	<!-- ============ Rough Sandstone ============ -->
 
-	<TerrainDef  ParentName="FloorBase">
-		<DefName>RoughSandstoneFloor</DefName>
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughSandstoneFloor</defName>
 		<label>Rough Sandstone</label>
-		<RenderPrecedence>190</RenderPrecedence>
-		<Description>Sandstone eroded by the elements.
-Beauty: -1.</Description>
+		<renderPrecedence>190</renderPrecedence>
+		<description>Sandstone eroded by the elements.
+Beauty: 0.</description>
 		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
-		<EdgeType>Fade</EdgeType>
-		<PathCost>0</PathCost>
-		<ScatterType>Rocky</ScatterType>
-		<TakeFootprints>True</TakeFootprints>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
 		<constructEffect>ConstructDirt</constructEffect>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<statBases>
-			<Beauty>-1</Beauty>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksSandstone>3</BlocksSandstone>
-		</CostList>
+		<costList>
+			<BlocksSandstone>1</BlocksSandstone>
+		</costList>
 		<affordances>
 			<li>Light</li>
 			<li>Heavy</li>
 			<li>SmoothableStone</li>
 		</affordances>
 		<color>(126,104,94)</color>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
 	<!-- ============= Rough Granite ============ -->
-	<TerrainDef  ParentName="FloorBase">
-		<DefName>RoughGraniteFloor</DefName>
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughGraniteFloor</defName>
 		<label>Rough Granite</label>
-		<RenderPrecedence>191</RenderPrecedence>
-		<Description>Granite eroded by the elements. 
-Beauty: -1.</Description>
+		<renderPrecedence>191</renderPrecedence>
+		<description>Granite eroded by the elements. 
+Beauty: 0.</description>
 		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
-		<EdgeType>Fade</EdgeType>
-		<PathCost>0</PathCost>
-		<ScatterType>Rocky</ScatterType>
-		<TakeFootprints>True</TakeFootprints>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
 		<constructEffect>ConstructDirt</constructEffect>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<statBases>
-			<Beauty>-1</Beauty>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksGranite>3</BlocksGranite>
-		</CostList>
+		<costList>
+			<BlocksGranite>1</BlocksGranite>
+		</costList>
 		<affordances>
 			<li>Light</li>
 			<li>Heavy</li>
 			<li>SmoothableStone</li>
 		</affordances>
 		<color>(105,95,97)</color>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
 	<!-- ============ Rough Limestone ============ -->
-	<TerrainDef  ParentName="FloorBase">
-		<DefName>RoughLimestoneFloor</DefName>
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughLimestoneFloor</defName>
 		<label>Rough Limestone</label>
-		<RenderPrecedence>192</RenderPrecedence>
-		<Description>Limestone eroded by the elements. 
-Beauty: -1.</Description>
+		<renderPrecedence>192</renderPrecedence>
+		<description>Limestone eroded by the elements. 
+Beauty: 0.</description>
 		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
-		<EdgeType>Fade</EdgeType>
-		<PathCost>0</PathCost>
-		<ScatterType>Rocky</ScatterType>
-		<TakeFootprints>True</TakeFootprints>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
 		<constructEffect>ConstructDirt</constructEffect>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<statBases>
-			<Beauty>-1</Beauty>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksLimestone>3</BlocksLimestone>
-		</CostList>
+		<costList>
+			<BlocksLimestone>1</BlocksLimestone>
+		</costList>
 		<affordances>
 			<li>Light</li>
 			<li>Heavy</li>
 			<li>SmoothableStone</li>
 		</affordances>
 		<color>(158,153,135)</color>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
 	<!-- ============ Rough Slate ============ -->
-	<TerrainDef  ParentName="FloorBase">
-		<DefName>RoughSlateFloor</DefName>
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughSlateFloor</defName>
 		<label>Rough Slate</label>
-		<RenderPrecedence>193</RenderPrecedence>
-		<Description>Slate eroded by the elements. 
-Beauty: -1.</Description>
+		<renderPrecedence>193</renderPrecedence>
+		<description>Slate eroded by the elements. 
+Beauty: 0.</description>
 		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
-		<EdgeType>Fade</EdgeType>
-		<PathCost>0</PathCost>
-		<ScatterType>Rocky</ScatterType>
-		<TakeFootprints>True</TakeFootprints>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
 		<constructEffect>ConstructDirt</constructEffect>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<statBases>
-			<Beauty>-1</Beauty>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksSlate>3</BlocksSlate>
-		</CostList>
+		<costList>
+			<BlocksSlate>1</BlocksSlate>
+		</costList>
 		<affordances>
 			<li>Light</li>
 			<li>Heavy</li>
 			<li>SmoothableStone</li>
 		</affordances>
 		<color>(70,70,70)</color>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
 	<!-- =========== Rough Marble ============= -->
-	<TerrainDef  ParentName="FloorBase">
-		<DefName>RoughMarbleFloor</DefName>
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughMarbleFloor</defName>
 		<label>Rough Marble</label>
-		<RenderPrecedence>194</RenderPrecedence>
-		<Description>Marble eroded by the elements. 
-Beauty: -1.</Description>
+		<renderPrecedence>194</renderPrecedence>
+		<description>Marble eroded by the elements. 
+Beauty: 0.</description>
 		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
-		<EdgeType>Fade</EdgeType>
-		<PathCost>-1</PathCost>
-		<ScatterType>Rocky</ScatterType>
-		<TakeFootprints>True</TakeFootprints>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
 		<constructEffect>ConstructDirt</constructEffect>
-		<Fertility>0</Fertility>
+		<fertility>0</fertility>
 		<statBases>
-			<Beauty>-1</Beauty>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
 		</statBases>
-		<CostList>
-			<BlocksMarble>3</BlocksMarble>
-		</CostList>
+		<costList>
+			<BlocksMarble>1</BlocksMarble>
+		</costList>
 		<affordances>
 			<li>Light</li>
 			<li>Heavy</li>
 			<li>SmoothableStone</li>
 		</affordances>
 		<color>(132,135,132)</color>
-		<researchPrerequisites><li>FloorArt</li></researchPrerequisites>
 		<designationCategory>NaturalFloors</designationCategory>
 	</TerrainDef>
 
-</TerrainDefs>
+	<!-- =========== Rough Ceramics ============= -->	
+	<TerrainDef  ParentName="SK_FloorBase">
+		<defName>RoughCeramicsFloor</defName>
+		<label>Rough Ceramics</label>
+		<renderPrecedence>194</renderPrecedence>
+		<description>Ceramics eroded by the elements. 
+Beauty: 0.</description>
+		<texturePath>Terrain/Surfaces/RoughStone</texturePath>
+		<edgeType>Fade</edgeType>
+		<pathCost>0</pathCost>
+		<scatterType>Rocky</scatterType>
+		<takeFootprints>True</takeFootprints>
+		<constructEffect>ConstructDirt</constructEffect>
+		<fertility>0</fertility>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<Beauty>0</Beauty>
+		</statBases>
+		<costList>
+			<Ceramics>1</Ceramics>
+		</costList>
+		<affordances>
+			<li>Light</li>
+			<li>Heavy</li>
+			<li>SmoothableStone</li>
+		</affordances>
+		<color>(255,255,255)</color>
+		<designationCategory>NaturalFloors</designationCategory>
+	</TerrainDef>
+
+</Defs>
+
+
+
+
+
+
+

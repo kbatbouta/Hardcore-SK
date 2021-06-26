@@ -1,5 +1,375 @@
  _____________________________________________________________________________
  
+   Version 1.2.1
+ _____________________________________________________________________________
+
+  - Added support for game version 1.2
+  - Added support for the new way that hair and skin colors are implemented
+    in the Alien Races mod
+  - Better error handling when adding injuries and implants to pawns
+  - Removed the "bruise" injury and other non-permanent "Hediff_Injury"
+    injuries from the list of options.
+  - Updated Harmony to 2.0.2
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.9
+ _____________________________________________________________________________
+
+  - Better error handling in various panels.
+  - Fixed Backstory and Trait panel tooltip display so that tagged strings
+    are properly highlighted.
+  - Support for more injuries and health conditions.
+  - Added a tooltip description when choosing injuries and health conditions.
+  - Apparel/faction-related bug fix when loading presets.
+  - Performance improvements when initializing the equipment panel.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.8
+ _____________________________________________________________________________
+
+  - Fixed compatibility issue with Psychology and Facial Stuff mods.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.7
+ _____________________________________________________________________________
+
+  - Changed the way that ThingComps added to pawns by other mods are handled
+    by Prepare Carefully.
+    - ThingComps are now copied along with everything else when Prepare
+      Carefully makes copies of all of the starting pawns.
+    - ThingComps for popular mods are now saved with presets so that mod
+      makers do not need to write custom code to integrate with the Prepare
+      Carefully preset functionality
+    - The hope is to make it easier for other mods to work with this mod.
+  - Fixed an issue when loading certain types of health conditions/injuries.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.6
+ _____________________________________________________________________________
+
+  - Updated Harmony to 2.0.0.8.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.4
+ _____________________________________________________________________________
+
+  - Fixed an issue when adding faction pawns from the Shattered Empire.
+  - Compatibility fix with Vanilla Hair Expanded.
+  - Fixed an issue with the randomize backstories button when the Alien Races
+    mod is enabled.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.3
+ _____________________________________________________________________________
+
+  - Fixed an issue when saving presets.
+  - Fixed an issue with Alien Races mods when the mod does not define a
+    color generator.
+  - Fixed an issue when trying to choose equipment materials.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.2
+ _____________________________________________________________________________
+
+  - Fixed an issue when initializing health options.
+  - Fixed an issue with a new color generator option in the Alien Races mod.
+
+ _____________________________________________________________________________
+ 
+   Version 1.1.1
+ _____________________________________________________________________________
+
+  - Added support for RimWorld 1.1.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.16
+ _____________________________________________________________________________
+
+  - Fixed problem with head selection when the Alien Races mod is enabled.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.15
+ _____________________________________________________________________________
+
+  - Better error handling when loading the classes needed to add the
+    Prepare Carefully button to the character configuration screen.
+  - Fix for alien hair color swatches.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.14
+ _____________________________________________________________________________
+
+  - Fixed "memory leak" issue when displaying the equipment tab.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.13
+ _____________________________________________________________________________
+
+  - Bug-fix for item categories with multiple parent categories.
+  - Bug fix for choosing body parts for injuries that affect specific parts.
+  - Bug fix for races with no defined age generation curve.
+  - Updated the version of Harmony to 1.2.0.1.
+  - Added "manifest" file to support the Mod Manager mod.
+  - Ammunition equipment from Combat Extended is now classified under the
+    "Weapons" category.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.12
+ _____________________________________________________________________________
+
+ - Removed the limit on the number of allowed traits.
+ - Characters created from faction templates are no longer re-assigned to
+   the default player colony "pawn kind" definition.
+ - Equipment definitions are not loaded until afer the user interface is
+   displayed.  When you have a ton of other mods enabled, this should make it
+   feel less like the mod is "hanging" after clicking the "Prepare Carefully"
+   button.
+ - Bug fixes for and improved compatibility with Alien Races mod:
+   - Fixed duplicate add-ons
+   - Fixed issues with head types and body types
+   - Fixed issues with mixed up hair and skin colors
+ - The age generation curve in a race's thing definition now determines the
+   minimum and maximum age allowed for a starting character. This provides
+   better compatibility with the Baby and Children mod.
+ - Shift-click to skip the confirmation dialog when deleting a pawn.
+ - Added support for more modded items in the equipment selection view.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.11
+ _____________________________________________________________________________
+
+ - Fixed problem with temporary pawns in the Relationships tab.
+ - Tweaks to the way that Prepare Carefully is injected into the game code.
+
+ _____________________________________________________________________________
+ 
+   Version 1.0.10
+ _____________________________________________________________________________
+
+ - Added support for 1.0.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.9
+ _____________________________________________________________________________
+
+ - Fixed a problem when randomizing backstories.
+ - Added missing backstories back to the backstory dialogs.
+ - Added a "matching faction only" backstory filter.
+ - Fixed a problem where hair selections were being removed due to specific
+   alien races.  Now all hairs are available for "humanlike" pawns.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.8
+ _____________________________________________________________________________
+
+ - Backstory options are limited to those for the selected pawn kind.
+ - Fixed the info card for animals in the equipment tab view.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.7
+ _____________________________________________________________________________
+
+ - Fixed a problem where added faction pawns could not be used to create a
+   custom relationship.
+ - Compatibility with unstable build version 0.19.1987
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.6
+ _____________________________________________________________________________
+
+ - Rearranged the backstory filters.
+ - Fixed a problem with custom relationships not being initialized.
+ - Added an initialization error dialog.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.5
+ _____________________________________________________________________________
+
+ - Added world characters to Prepare Carefully.  The character list is now
+   divided into separate colony and world character lists.
+ - Added a faction selector for world characters.
+ - Added the concept of "temporary" pawns to the relationship tab to allow
+   you to connect two pawns in a relationship without adding the intermediate
+   pawn to the world.
+ - Added filters to the backstory dialogs.
+ - Changes to the preset file format.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.4
+ _____________________________________________________________________________
+
+ - Compatibility with development build version 1.0.1969 
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.3
+ _____________________________________________________________________________
+
+ - Fix to match changes in the HediffComp_GetsPermanent class.
+ - Updated version of Harmony to 1.1
+ - Fixes for Alien Races mod compatibility
+ - UI performance optimizations
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.2
+ _____________________________________________________________________________
+
+ - Fixes to how related pawns are spawned into the world.
+ - Fix for how XP progress to the next skill level is updated.
+
+ _____________________________________________________________________________
+ 
+   Version 0.19.1
+ _____________________________________________________________________________
+
+ - Added minimum support for beta 19
+
+ _____________________________________________________________________________
+ 
+   Version 0.18.2
+ _____________________________________________________________________________
+
+ - Capitalized incapable of work type labels.
+ - Removed left behind colonists from parent-child relationship dialog.
+
+ _____________________________________________________________________________
+ 
+   Version 0.18.1
+ _____________________________________________________________________________
+
+ - Added support for Beta 18.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.7
+ _____________________________________________________________________________
+
+ - Bug fixes and mod compatibility fixes.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.6
+ _____________________________________________________________________________
+
+ - New UI for managing implants and bionics.
+ - Trait tooltips now display conflicting traits.
+ - Changed how the Prepare Carefully button is added to the character
+   customization page.  Now using Harmony patches to display the button
+   instead of replacing the page with a scenario part.
+ - Bug fix: Previous/next buttons for traits now skip over conflicting traits.
+ - Bug fix: No longer treating all implants as replaced parts, which was
+   causing implant locations to be disabled in some cases when they should not
+   have been.
+ - Bug fix: Characters are no longer saved with implants that don't match
+   their race when using one of the alien races mods.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.5
+ _____________________________________________________________________________
+
+ - Can now choose from both player and non-player factions when creating a
+   new faction pawn.
+ - Bug fix: Hidden pawns are not killed if they have already been added into
+   the world.
+ - Bug fix: Apparel generated for faction pawns is now also set to normal
+   quality with no damage.
+ - Bug fix: Fixed skill name labels so that they are localized properly.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.4
+ _____________________________________________________________________________
+
+ - Bug fix: Better filtering of invalid factions and pawn kinds to avoid
+   errors when adding a character from a different faction.
+ - Bug fix: The randomize options now take into account a character's faction.
+ - Bug fix: Updated preset file format so that sibling-only parent/child
+   groups are no longer lost when saving a preset.
+ - Bug fix: Removed the save-game dependency created by customized scenario
+   parts.
+   Bug fix: Fixed the "Review Scenario" button in the gameplay menu.
+   Bug fix: Sibling and some other relationships are no longer lost when
+   saving a game.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.3
+ _____________________________________________________________________________
+
+ - Bug fix: Presets that include Alpha 16-saved characters that have had
+   relationships added will now save and load properly.
+ - Mod compatibility fixes.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.2
+ _____________________________________________________________________________
+
+ - Bug fix: No longer adding random health conditions when loading a
+   character.
+ - Bug fix: Now correctly clearing out health conditions when randomizing a
+   character.
+
+ _____________________________________________________________________________
+ 
+   Version 0.17.1.1
+ _____________________________________________________________________________
+
+ - Added support for Alpha 17
+ - New tabbed interface.  The character list moves from being a list of tabs
+   across the top to being a scrolling list on the left.  The tabs across
+   the top are now used to navigate between the mod pages.
+ - Re-arranged interface for the character customization page.
+ - New relationships page with a new interface for creating parent/child and
+   other relationships in a more predictable way.
+ - Added support for a fourth trait.
+ - Added support for more than 10 colonists.
+ - You can now directly type values into numeric fields for age and equipment
+   counts.
+ - Reworked how the mod integrates with scenarios and map generation (it no
+   longer overwrites the vanilla Genstep_ScenParts class).
+ - Added warnings for when no colonists are capable of work types that are
+   considered required.
+ - Added the ability to add pawns from other factions to your list of
+   starting colonists.
+
+ _____________________________________________________________________________
+ 
+   Version 0.16.1.4
+ _____________________________________________________________________________
+     
+ - Fix for modded items that cannot be assigned custom colors.
+
+ _____________________________________________________________________________
+ 
+   Version 0.16.1.3
+ _____________________________________________________________________________
+     
+ - Fixed the way that the option list for bionics/implants is built.
+
+ _____________________________________________________________________________
+ 
    Version 0.16.1.2
  _____________________________________________________________________________
      

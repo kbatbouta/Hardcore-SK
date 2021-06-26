@@ -2,39 +2,48 @@
 <Defs>
 
 	<IncidentDef>
-		<defName>CovertPodCrash</defName>
-		<label>skynet agent pod drop</label>
-		<targetType>BaseMap</targetType>
-		<workerClass>Skynet.IncidentWorker_AgentPodCrash</workerClass>
-		<baseChance>3</baseChance>
+		<defName>Salvation</defName>
+		<label>salvation</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>Skynet.IncidentWorker_Salvation</workerClass>
+		<populationEffect>None</populationEffect>
 		<category>ThreatSmall</category>
-		<populationEffect>None</populationEffect>
-		<earliestDay>90</earliestDay>
+		<baseChance>2.4</baseChance>
+		<earliestDay>180</earliestDay>
 		<minRefireDays>50</minRefireDays>
+		<minThreatPoints>7500</minThreatPoints>
 	</IncidentDef>
-	
+
 	<IncidentDef>
-		<defName>LurePasses</defName>
-		<label>skynet agent passes</label>
-		<targetType>BaseMap</targetType>
-		<workerClass>Skynet.IncidentWorker_LurePasses</workerClass>
-		<baseChance>2.2</baseChance>
-		<category>ThreatBig</category>
+		<defName>AgentPodCrash</defName>
+		<label>transport pod crash</label>
+		<category>ThreatSmall</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>Skynet.IncidentWorker_AgentPodCrash</workerClass>
+		<baseChance>0.4</baseChance>
+		<minRefireDays>30</minRefireDays>
+		<earliestDay>180</earliestDay>
 		<populationEffect>None</populationEffect>
-		<earliestDay>150</earliestDay>
-		<minRefireDays>50</minRefireDays>
+		<minThreatPoints>7000</minThreatPoints>
 	</IncidentDef>
-	
-  <IncidentDef>
-    <defName>Salvation</defName>
-    <label>salvation</label>
-	<targetType>BaseMap</targetType>
-    <workerClass>Skynet.IncidentWorker_Salvation</workerClass>
-	<populationEffect>None</populationEffect>
-	<category>ThreatSmall</category>
-    <baseChance>2.4</baseChance>
-	<earliestDay>80</earliestDay>
-    <minRefireDays>50</minRefireDays>
-  </IncidentDef>
- 
+
+	<IncidentDef>
+		<defName>AgentTravelerGroup</defName>
+		<label>traveler group</label>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>Skynet.IncidentWorker_AgentTravelerGroup</workerClass>
+		<category>ThreatSmall</category>
+		<baseChance>0.6</baseChance>
+		<minRefireDays>30</minRefireDays>
+		<earliestDay>180</earliestDay>
+		<populationEffect>None</populationEffect>
+		<minThreatPoints>7000</minThreatPoints>
+	</IncidentDef>
+
 </Defs>

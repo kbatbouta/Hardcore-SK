@@ -1,23 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
-  <ThingDef Name="BuildingBaseMT" Abstract="True">
-    <category>Building</category>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-    <selectable>true</selectable>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-    <repairEffect>Repair</repairEffect>
-    <filthLeaving>BuildingRubble</filthLeaving>
-  </ThingDef>
-
-  <ThingDef ParentName="BuildingBaseMT">
+  <ThingDef ParentName="SK_BuildingBase">
     <defName>MechanoidTerraformer</defName>
     <label>Strange artifact</label>
     <description>This strange artifact seems to modify the local weather. You should send someone to study it.
 Be careful however, this thing stinks mechanoid technology...</description>
-    <thingClass>MechanoidTerraformer.Building_MechanoidTerraformer</thingClass>
-    <TickerType>Normal</TickerType>
+    <thingClass>SK.Events.Building_MechanoidTerraformer</thingClass>
+    <tickerType>Normal</tickerType>
     <graphicData>
       <texPath>Things/Building/MechanoidTerraformer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -29,7 +19,7 @@ Be careful however, this thing stinks mechanoid technology...</description>
     <fillPercent>1</fillPercent>
     <statBases>
       <WorkToBuild>100000</WorkToBuild>
-      <MaxHitPoints>1000</MaxHitPoints>
+      <MaxHitPoints>2000</MaxHitPoints>
       <Flammability>0</Flammability>
     </statBases>
     <comps>
@@ -45,28 +35,24 @@ Be careful however, this thing stinks mechanoid technology...</description>
     <hasInteractionCell>true</hasInteractionCell>
     <interactionCellOffset>(0,0,-2)</interactionCellOffset>
     <costList>
-      <SteelBar>250</SteelBar>
-      <Component>40</Component>
+      <Plasteel>250</Plasteel>
+      <ComponentSpacer>20</ComponentSpacer>
       <MagneticMaterial>30</MagneticMaterial>
       <Mechanism>10</Mechanism>
-      <Microchips>7</Microchips>
-      <WeatherControllerCore>1</WeatherControllerCore>
+      <Microchips>3</Microchips>
     </costList>
     <killedLeavings>
       <ChunkSlagSteel>1</ChunkSlagSteel>
     </killedLeavings>
-    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <staticSunShadowHeight>0.75</staticSunShadowHeight>
     <constructEffect>ConstructMetal</constructEffect>
   </ThingDef>
 
-  <ThingDef ParentName="BuildingBaseMT" Name="MechanoidPylonBase">
+  <ThingDef ParentName="SK_BuildingBase" Name="MechanoidPylonBase">
     <defName>MechanoidPylon</defName>
     <label>Mechanoid pylon</label>
     <description>A mechanoid pylon, used to harness the sky's power. It seems to be protected by a shield powered by the terraformer.</description>
-    <thingClass>Building</thingClass>
-    <category>Building</category>
     <graphicData>
       <texPath>Things/Building/MechanoidPylon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -76,14 +62,14 @@ Be careful however, this thing stinks mechanoid technology...</description>
     </graphicData>
     <useHitPoints>false</useHitPoints>
     <statBases>
-      <MaxHitPoints>300</MaxHitPoints>
-      <WorkToBuild>1500</WorkToBuild>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
       <Flammability>0.0</Flammability>
     </statBases>
     <costList>
-      <SteelBar>170</SteelBar>
+      <Plasteel>170</Plasteel>
       <MagneticMaterial>5</MagneticMaterial>
-      <Component>25</Component>
+	  <ComponentSpacer>12</ComponentSpacer>
       <Electronics>10</Electronics>
       <Mechanism>5</Mechanism>
     </costList>
@@ -94,12 +80,10 @@ Be careful however, this thing stinks mechanoid technology...</description>
     <coversFloor>true</coversFloor>
     <tickerType>Never</tickerType>
     <rotatable>false</rotatable>
-    <selectable>true</selectable>
     <neverMultiSelect>false</neverMultiSelect>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <holdsRoof>false</holdsRoof>
     <blockLight>true</blockLight>
-    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <constructEffect>ConstructMetal</constructEffect>
   </ThingDef>
 
@@ -109,4 +93,4 @@ Be careful however, this thing stinks mechanoid technology...</description>
     <label>Mechanoid pylon</label>
   </ThingDef>
 
-</ThingDefs>
+</Defs>

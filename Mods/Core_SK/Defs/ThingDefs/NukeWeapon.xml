@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThingDefs>
+<Defs>
 
 <ThingDef Name="NukeBullet" Abstract="True">
 	<category>Projectile</category>
@@ -25,12 +25,12 @@
     <projectile>
 		<flyOverhead>true</flyOverhead>
 		<damageDef>Stun</damageDef>
-		<DamageAmountBase>0</DamageAmountBase>
-		<Speed>1000</Speed>
+		<damageAmountBase>0</damageAmountBase>
+		<speed>1000</speed>
 	</projectile>
   </ThingDef>
 
-  <ThingDef ParentName="BaseGun">
+  <ThingDef ParentName="SK_BaseGun">
 		<defName>Weapon_TacticalNuclearStrike</defName>
 		<label>Tactical Nuclear Strike</label>
 		<description>A device with a code giving you access to a tactical nuclear missile onboard with a combat supplier. You can use this device to order a tactical nuclear strike at any time. This item is a one time use. The warhead can't reach the target if it is inside of a mountain.</description>
@@ -39,7 +39,7 @@
 		<graphicClass>Graphic_Single</graphicClass>
 	</graphicData>
 	<soundInteract>NukeReady</soundInteract>
-    <canBeSpawningInventory>false</canBeSpawningInventory>
+    
     <statBases>
       <MarketValue>10000</MarketValue>
     </statBases>
@@ -47,7 +47,7 @@
 		   <li>
 			<verbClass>Verb_ShootOneUse</verbClass>
         	<hasStandardCommand>true</hasStandardCommand>
-			<projectileDef>Bullet_Nuke</projectileDef>
+			<defaultProjectile>Bullet_Nuke</defaultProjectile>
 			<warmupTime>2.40</warmupTime>
             <range>9999</range>
 			<forcedMissRadius>3</forcedMissRadius>
@@ -61,4 +61,4 @@
 		</verbs>
 	</ThingDef>
 -->
-</ThingDefs>
+</Defs>

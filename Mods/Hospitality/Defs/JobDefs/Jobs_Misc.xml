@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<JobDefs>
+<Defs>
 
 	<JobDef>
 		<defName>CharmGuest</defName>
@@ -20,17 +20,23 @@
 		<joyMaxParticipants>1</joyMaxParticipants>
 		<joyDuration>8000</joyDuration>
 		<joyGainRate>1</joyGainRate>
-		<joyKind>Study</joyKind>
+		<joyKind>Shopping</joyKind>
   </JobDef>
 
   <JobDef>
     <defName>BrowseItems</defName>
     <driverClass>Hospitality.JobDriver_BrowseItems</driverClass>
-    <reportString>Checking out TargetB.</reportString>
+    <reportString>Browsing wares.</reportString>
     <joyDuration>3000</joyDuration>
     <joyMaxParticipants>1</joyMaxParticipants>
     <joyGainRate>1</joyGainRate>
-    <joyKind>Study</joyKind>
+    <joyKind>Shopping</joyKind>
   </JobDef>
 
-</JobDefs>
+  <JobDef>
+    <defName>ClaimGuestBed</defName>
+    <driverClass>Hospitality.JobDriver_ClaimBed</driverClass>
+    <reportString>Claiming a bed.</reportString>
+  </JobDef>
+
+</Defs>
